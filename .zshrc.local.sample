@@ -1,0 +1,5 @@
+# 環境ごとの設定
+
+# alias
+alias ls="ls -xF --color=auto"
+
