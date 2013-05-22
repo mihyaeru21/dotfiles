@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=(.gitignore .vim)
+DOT_FILES=(.gitignore .vim .vimrc)
 
 for file in ${DOT_FILES[@]}
 do
@@ -10,6 +10,7 @@ do
         echo $HOME/$file 'already exists'
     else
         ln -s $HOME/dotfiles/$file $HOME/$file
+        echo $HOME/$file 'symbolid link created'
     fi
 done
 
