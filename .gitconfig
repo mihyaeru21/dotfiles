@@ -1,0 +1,22 @@
+[user]
+	name = Mihyaeru
+	email = mihyaeru.app@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	quotepath = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+    s   = status
+    st  = status
+    a   = add
+    b   = branch
+    ch  = checkout
+    co  = commit
