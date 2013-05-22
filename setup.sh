@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=(.vimrc .gvimrc)
+DOT_FILES=(.gitignore)
 
 for file in ${DOT_FILES[@]}
 do
@@ -8,6 +8,8 @@ do
 done
 
 # install NeoBundle
-mkdir -p ~/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+if [ ! -d ~/.vim/bundle ]; then
+    mkdir -p ~/.vim/bundle
+    git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+fi
 
