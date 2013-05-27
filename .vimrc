@@ -29,7 +29,7 @@ set cursorline
 set cmdheight=2
 set ambiwidth=double
 set laststatus=2
-set statusline=[%n]%m%r%f\ %=\ %w%y[%{&fenc}:%{&ff}][%l,%c][%P]
+set statusline=[%n]%m%r%f\ %=\ %w%y[%{&fenc}:%{&ff}][%l/%L,%c]
 
 
 "----------------------------------------
