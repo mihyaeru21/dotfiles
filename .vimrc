@@ -13,6 +13,12 @@ set tabstop=4
 set softtabstop=0
 set nobackup
 set noswapfile
+let ostype = system("uname") 
+if ostype == "Linux\n"
+    set clipboard=unnamedplus
+elseif ostype == "Darwin\n"
+    set clipboard=unnamed
+endif
 
 
 "----------------------------------------
@@ -30,6 +36,7 @@ set cmdheight=2
 set ambiwidth=double
 set laststatus=2
 set statusline=[%n]%m%r%f\ %=\ %w%y[%{&fenc}:%{&ff}][%l/%L,%c]
+set hlsearch
 
 
 "----------------------------------------
