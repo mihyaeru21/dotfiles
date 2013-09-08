@@ -57,6 +57,11 @@ imap <C-e> <End>
 "highligh PmenuSbar ctermbg=0
 
 
+"----------------------------------------
+" filetype
+"----------------------------------------
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 
 "----------------------------------------
 " NeoBundle
