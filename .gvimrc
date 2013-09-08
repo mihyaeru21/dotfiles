@@ -7,4 +7,6 @@ if ostype == "Linux\n"
     set guioptions-=r
 endif
 
+" インサートモードを抜けると同時にIMEオフ
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
