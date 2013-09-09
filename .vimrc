@@ -7,12 +7,15 @@ set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set textwidth=0
 set autoindent
+set smartindent
+set incsearch
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=0
 set nobackup
 set noswapfile
+
 let ostype = system("uname") 
 if ostype == "Linux\n"
     set clipboard=unnamedplus
@@ -43,7 +46,7 @@ set hlsearch
 " map
 "----------------------------------------
 imap <C-a> <Home>
-imap <C-e> <End>>
+imap <C-e> <End>
 
 
 "----------------------------------------
@@ -53,6 +56,11 @@ imap <C-e> <End>>
 "highligh PmenuSel ctermbg=1
 "highligh PmenuSbar ctermbg=0
 
+
+"----------------------------------------
+" filetype
+"----------------------------------------
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 
 "----------------------------------------
