@@ -93,12 +93,14 @@ let g:neocomplcache_auto_completion_start_length=2
 "----------------------------------------
 " Unite.vim
 "----------------------------------------
-nnoremap :ub :<C-u>Unite buffer<CR>
-nnoremap :uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap :ur :<C-u>Unite -buffer-name=register<CR>
-nnoremap :um :<C-u>Unite file_mru<CR>
-nnoremap :uu :<C-u>Unite buffer file_mru<CR>
-nnoremap :ua :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
+nnoremap [unite]b :<C-u>Unite buffer<CR>
+nnoremap [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap [unite]r :<C-u>Unite -buffer-name=register<CR>
+nnoremap [unite]m :<C-u>Unite file_mru<CR>
+nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
+nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
 
 
 "----------------------------------------
