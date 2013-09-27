@@ -13,10 +13,17 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=0
-set nobackup
-set noswapfile
+set backup    " バックアップファイルは作る
+set swapfile  " スワップファイルも作る
 
+" スワップファイルとバックアップのディレクトリ
+set backupdir=~/.vim_backup
+let &directory = &backupdir
+
+" OSの種類
 let ostype = system("uname") 
+
+" クリップボードの設定
 if ostype == "Linux\n"
     set clipboard=unnamedplus
 elseif ostype == "Darwin\n"
