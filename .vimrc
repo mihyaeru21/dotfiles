@@ -27,7 +27,7 @@ endif
 "----------------------------------------
 " 表示
 "----------------------------------------
-colorscheme default
+colorscheme torte
 syntax on
 set showcmd
 set showmode
