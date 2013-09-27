@@ -72,7 +72,16 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'Shougo/vimproc'  " 推奨らしい
+" 推奨らしい
+NeoBundle 'Shougo/vimproc', {
+\   'build' : {
+\       'windows' : 'make -f make_mingw32.mak',
+\       'cygwin'  : 'make -f make_cygwin.mak',
+\       'mac'     : 'make -f make_mac.mak',
+\       'unix'    : 'make -f make_unix.mak',
+\   },
+\ }
+
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
