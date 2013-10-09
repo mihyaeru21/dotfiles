@@ -13,10 +13,17 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=0
-set nobackup
-set noswapfile
+set backup    " バックアップファイルは作る
+set swapfile  " スワップファイルも作る
 
+" スワップファイルとバックアップのディレクトリ
+set backupdir=~/.vim_backup
+let &directory = &backupdir
+
+" OSの種類
 let ostype = system("uname") 
+
+" クリップボードの設定
 if ostype == "Linux\n"
     set clipboard=unnamedplus
 elseif ostype == "Darwin\n"
@@ -27,7 +34,7 @@ endif
 "----------------------------------------
 " 表示
 "----------------------------------------
-colorscheme default
+colorscheme torte
 syntax on
 set showcmd
 set showmode
@@ -72,7 +79,16 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'Shougo/vimproc'  " 推奨らしい
+" 推奨らしい
+NeoBundle 'Shougo/vimproc', {
+\   'build' : {
+\       'windows' : 'make -f make_mingw32.mak',
+\       'cygwin'  : 'make -f make_cygwin.mak',
+\       'mac'     : 'make -f make_mac.mak',
+\       'unix'    : 'make -f make_unix.mak',
+\   },
+\ }
+
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
