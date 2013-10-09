@@ -91,19 +91,6 @@ let g:neocomplcache_auto_completion_start_length=2
 
 
 "----------------------------------------
-" Unite.vim
-"----------------------------------------
-nnoremap [unite] <Nop>
-nmap <Space>u [unite]
-nnoremap [unite]b :<C-u>Unite buffer<CR>
-nnoremap [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap [unite]r :<C-u>Unite -buffer-name=register<CR>
-nnoremap [unite]m :<C-u>Unite file_mru<CR>
-nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
-nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
-
-
-"----------------------------------------
 " quickrun
 "----------------------------------------
 let g:quickrun_config = {
@@ -114,4 +101,24 @@ let g:quickrun_config = {
 \       'hook/time/enable' : 1,
 \   }
 \}
+
+
+"----------------------------------------
+" プラグイン用マッピング
+"----------------------------------------
+" Unite.vim
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
+nnoremap [unite]b :<C-u>Unite buffer<CR>
+nnoremap [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap [unite]r :<C-u>Unite -buffer-name=register<CR>
+nnoremap [unite]m :<C-u>Unite file_mru<CR>
+nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
+nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
+
+nnoremap <Space>n :NERDTree
+nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
+vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
+
+
 
