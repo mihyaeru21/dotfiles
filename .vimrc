@@ -34,7 +34,7 @@ endif
 "----------------------------------------
 " 表示
 "----------------------------------------
-colorscheme torte
+colorscheme pablo
 syntax on
 set showcmd
 set showmode
