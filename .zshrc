@@ -4,6 +4,9 @@ export LANG=ja_JP.UTF-8
 autoload -U compinit
 compinit
 
+# zmvを使えるように
+autoload -Uz zmv
+
 # 履歴関連
 HISTFILE=~/.zsh_history
 HISTSIZE=300000
