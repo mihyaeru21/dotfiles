@@ -34,7 +34,7 @@ endif
 "----------------------------------------
 " 表示
 "----------------------------------------
-colorscheme torte
+colorscheme pablo
 syntax on
 set showcmd
 set showmode
@@ -54,6 +54,8 @@ set hlsearch
 "----------------------------------------
 imap <C-a> <Home>
 imap <C-e> <End>
+nnoremap <Space>s :sp<CR>
+nnoremap <Space>v :vsp<CR>
 
 
 "----------------------------------------
