@@ -4,7 +4,7 @@
 #
 # create symbolic link
 #
-DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc)
+DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .bin)
 for file in ${DOT_FILES[@]}
 do
     if [ -f $HOME/$file ]; then

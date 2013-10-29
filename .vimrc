@@ -27,7 +27,7 @@ let ostype = system("uname")
 if ostype == "Linux\n"
     set clipboard=unnamedplus
 elseif ostype == "Darwin\n"
-    set clipboard=unnamed
+    set clipboard=unnamed,autoselect
 endif
 
 
