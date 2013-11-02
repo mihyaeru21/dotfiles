@@ -15,6 +15,7 @@ set tabstop=4
 set softtabstop=0
 set backup    " バックアップファイルは作る
 set swapfile  " スワップファイルも作る
+set smartcase " 検索語に大文字が無い場合は大文字小文字を無視
 
 " スワップファイルとバックアップのディレクトリ
 set backupdir=~/.vim_backup
