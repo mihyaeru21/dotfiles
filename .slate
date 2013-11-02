@@ -1,0 +1,25 @@
+# alias
+alias cas ctrl;alt;shift
+
+# ウィンドウを移動
+bind right:shift;alt nudge +5% +0
+bind left:shift;alt  nudge -5% +0
+bind up:shift;alt    nudge +0   -5%
+bind down:shift;alt  nudge +0   +5%
+
+# 全画面化
+bind k:shift;alt corner top-left resize:screenSizeX;screenSizeY
+
+# 画面左/右半分に設定
+bind h:shift;alt corner top-left resize:screenSizeX/2;screenSizeY
+bind l:shift;alt corner top-right resize:screenSizeX/2;screenSizeY
+
+# スクリーンを移動
+bind n:shift;alt throw left
+bind m:shift;alt throw left
+bind ,:shift;alt throw right
+bind .:shift;alt throw right
+
+# undo
+bind u:shift;alt undo
+
