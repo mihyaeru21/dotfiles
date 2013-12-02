@@ -97,6 +97,8 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'mattn/sonictemplate-vim'
 
 filetype plugin on  " Required
 filetype indent on  " Required
