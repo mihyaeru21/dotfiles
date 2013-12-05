@@ -13,9 +13,11 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=0
-set backup    " バックアップファイルは作る
-set swapfile  " スワップファイルも作る
-set smartcase " 検索語に大文字が無い場合は大文字小文字を無視
+set backup     " バックアップファイルは作る
+set swapfile   " スワップファイルも作る
+set ignorecase " 検索語に大文字が無い場合は大文字小文字を無視
+set smartcase  " 大文字が入ると大文字小文字を区別
+set shiftround " >とかを使った時にきれいな位置に合わせる
 
 " スワップファイルとバックアップのディレクトリ
 set backupdir=~/.vim_backup
@@ -57,6 +59,10 @@ imap <C-a> <Home>
 imap <C-e> <End>
 nnoremap <Space>s :sp<CR>
 nnoremap <Space>v :vsp<CR>
+nnoremap <C-w><C-h> 5<C-w><  " ウィンドウ横を小さく
+nnoremap <C-w><C-j> 5<C-w>-  " ウィンドウ縦を小さく
+nnoremap <C-w><C-k> 5<C-w>+  " ウィンドウ縦を大きく
+nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 
 
 "----------------------------------------
@@ -94,6 +100,7 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
