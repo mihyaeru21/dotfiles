@@ -7,7 +7,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 	quotepath = false
-	pager = lv -c
+	pager = less
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
