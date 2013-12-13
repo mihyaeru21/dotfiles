@@ -1,3 +1,6 @@
+" プラグイン周りを先に読み込む
+source ~/dotfiles/.vimrc.bundle
+
 "----------------------------------------
 " 基本設定
 "----------------------------------------
@@ -37,7 +40,7 @@ endif
 "----------------------------------------
 " 表示
 "----------------------------------------
-colorscheme pablo
+colorscheme jellybeans
 syntax on
 set showcmd
 set showmode
@@ -79,36 +82,6 @@ nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 
-"----------------------------------------
-" NeoBundle
-"----------------------------------------
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#rc(expand('~/.vim/bundle/'))
-
-" 推奨らしい
-NeoBundle 'Shougo/vimproc', {
-\   'build' : {
-\       'windows' : 'make -f make_mingw32.mak',
-\       'cygwin'  : 'make -f make_cygwin.mak',
-\       'mac'     : 'make -f make_mac.mak',
-\       'unix'    : 'make -f make_unix.mak',
-\   },
-\ }
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'mattn/sonictemplate-vim'
-
-filetype plugin on  " Required
-filetype indent on  " Required
 
 
 "----------------------------------------
