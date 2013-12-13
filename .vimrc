@@ -81,6 +81,13 @@ nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 "----------------------------------------
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+" Perl
+augroup filetypedetect
+    autocmd! BufNewFile,BufRead *.t setfiletype perl
+    autocmd! BufNewFile,BufRead *.psgi setfiletype perl
+    autocmd! BufNewFile,BufRead *.tt setfiletype perl
+augroup END
+
 
 
 
