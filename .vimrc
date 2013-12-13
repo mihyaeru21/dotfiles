@@ -86,6 +86,7 @@ augroup filetypedetect
     autocmd! BufNewFile,BufRead *.t setfiletype perl
     autocmd! BufNewFile,BufRead *.psgi setfiletype perl
     autocmd! BufNewFile,BufRead *.tt setfiletype perl
+    autocmd! BufNewFile,BufRead *.tx setfiletype xslate
 augroup END
 
 
