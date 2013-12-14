@@ -28,8 +28,9 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 # プロンプト
 setopt prompt_subst
 source $HOME/.zsh/prompt-git-current-branch
-PROMPT='%F{green}%n $%f '
-RPROMPT='`prompt-git-current-branch`%F{yellow}[%m:%~]%f'
+local p_first="%F{cyan}[%n@%m:%~]%f`prompt-git-current-branch`"$'\n'
+local p_second="%F{green}((\`o')) %f"
+PROMPT='$p_first$p_second'
 
 # ターミナルのタイトル
 case "${TERM}" in
