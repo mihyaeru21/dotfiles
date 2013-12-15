@@ -31,5 +31,6 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mattn/sonictemplate-vim'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'motemen/xslate-vim'
 NeoBundle 'tpope/vim-fugitive'
 
