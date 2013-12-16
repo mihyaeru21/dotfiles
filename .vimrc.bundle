@@ -33,4 +33,5 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'motemen/xslate-vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'szw/vim-tags'
 
