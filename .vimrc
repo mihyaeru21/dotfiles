@@ -80,6 +80,8 @@ nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 " filetype
 "----------------------------------------
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.podspec set filetype=ruby
+autocmd BufNewFile,BufRead Podfile set filetype=ruby
 
 " Perl
 augroup filetypedetect
@@ -88,8 +90,6 @@ augroup filetypedetect
     autocmd! BufNewFile,BufRead *.tt setfiletype perl
     autocmd! BufNewFile,BufRead *.tx setfiletype xslate
 augroup END
-
-
 
 
 "----------------------------------------
@@ -128,6 +128,4 @@ nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru boo
 nnoremap <Space>n :NERDTree<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
-
-
 
