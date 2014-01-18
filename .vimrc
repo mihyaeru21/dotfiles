@@ -83,6 +83,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.podspec set filetype=ruby
 autocmd BufNewFile,BufRead Podfile set filetype=ruby
 autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
+autocmd BufNewFile,BufRead *.tex set filetype=tex  " plaintexになるのを防ぐ
 
 " Perl
 augroup filetypedetect
