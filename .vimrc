@@ -82,6 +82,7 @@ nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.podspec set filetype=ruby
 autocmd BufNewFile,BufRead Podfile set filetype=ruby
+autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
 
 " Perl
 augroup filetypedetect
