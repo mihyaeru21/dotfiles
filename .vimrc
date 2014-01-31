@@ -127,7 +127,7 @@ nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
 nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
 
-nnoremap <Space>n :NERDTree<CR>
+nnoremap <Space>n :NERDTreeToggle<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 
