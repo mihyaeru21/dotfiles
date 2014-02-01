@@ -57,3 +57,7 @@ export PATH=$PATH:~/.bin
 # 環境ごとの設定ファイルを読み込む
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+# コマンドのシンタックスハイライト
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
