@@ -22,3 +22,5 @@
     ch  = checkout
     co  = commit
     logp = log --graph --decorate
+[push]
+	default = simple
