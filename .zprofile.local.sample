@@ -1,0 +1,17 @@
+# 環境ごとの設定
+
+# Mac用
+
+# /usr/local/sbin が既にPATHにある場合は何もしない
+if ! echo $PATH | grep -q '/usr/local/sbin'
+then
+    #export PYTHONPATH=~/leep/LeapSDK/lib
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH  # /usr/local/bin を優先
+    export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
+
+
+# Linux用
+# 今のところ無し
+

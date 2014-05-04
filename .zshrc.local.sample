@@ -1,18 +1,23 @@
 # 環境ごとの設定
 
+# Mac用
+
+# alias
+alias ls="ls -xFG"
+function sublime() {
+    open -a /Applications/Sublime\ Text\ 2.app $1
+}
+function skim() {
+    open -a /Applications/Skim.app $1
+}
+
+# 補完関係？
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+
+
+# Linux用
+
 # alias
 alias ls="ls -xF --color=auto"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-# plenv
-export PATH="$HOME/.plenv/bin:$PATH"
-eval "$(plenv init - zsh)"
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
 
