@@ -48,11 +48,7 @@ alias lla="ls -al"
 alias u="cd ../"
 alias uu="cd ../../"
 alias uuu="cd ../../../"
-alias tmux='tmuxx'
 
-# path
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/.bin
 
 # 環境ごとの設定ファイルを読み込む
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
