@@ -6,7 +6,7 @@ function prompt-git-current-branch {
     then
         return
     fi
-    name=`basename $name`
+    name=`echo $name | sed s#refs/heads/##`
 
     st=`git status`
     if [[ -n `echo $st | grep "^nothing to"` ]]
