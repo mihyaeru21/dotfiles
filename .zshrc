@@ -28,7 +28,8 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 # プロンプト
 setopt prompt_subst
 source $HOME/.zsh/prompt-git-current-branch
-PROMPT='%F{cyan}[%n@%m:%~]%f`prompt-git-current-branch`
+source $HOME/.zsh/anyenv-program-version
+PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``prompt-git-current-branch`
 %F{green}((\`o'\'')) %f'
 
 # ターミナルのタイトル
