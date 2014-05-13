@@ -39,4 +39,7 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'python_fold'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'kchmck/vim-coffee-script'   " CoffeeScript
+NeoBundle 'hotchpotch/perldoc-vim'   " perldoc
+
 
