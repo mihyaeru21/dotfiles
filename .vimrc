@@ -21,6 +21,8 @@ set swapfile   " スワップファイルも作る
 set ignorecase " 検索語に大文字が無い場合は大文字小文字を無視
 set smartcase  " 大文字が入ると大文字小文字を区別
 set shiftround " >とかを使った時にきれいな位置に合わせる
+set wildmenu   " タブ補完の候補をステータスバーに表示
+set wildmode=full  " 補完のしかた？
 
 " スワップファイルとバックアップのディレクトリ
 set backupdir=~/.vim_backup
