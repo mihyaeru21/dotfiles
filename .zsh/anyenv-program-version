@@ -51,7 +51,7 @@ function anyenv_ruby_version {
 }
 
 function anyenv_versions_local_only {
-    langs=("python" "perl" "ruby")
+    langs=("python" "perl" "ruby" "node")
     for lang in "${langs[@]}" ; do
         find_in_local_env $lang $lang
     done
