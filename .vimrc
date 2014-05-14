@@ -23,6 +23,7 @@ set smartcase  " 大文字が入ると大文字小文字を区別
 set shiftround " >とかを使った時にきれいな位置に合わせる
 set wildmenu   " タブ補完の候補をステータスバーに表示
 set wildmode=full  " 補完のしかた？
+set history=1000
 
 " スワップファイルとバックアップのディレクトリ
 set backupdir=~/.vim_backup
@@ -68,6 +69,10 @@ nnoremap <C-w><C-h> 5<C-w><  " ウィンドウ横を小さく
 nnoremap <C-w><C-j> 5<C-w>-  " ウィンドウ縦を小さく
 nnoremap <C-w><C-k> 5<C-w>+  " ウィンドウ縦を大きく
 nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
+" コマンドモードで途中入力履歴呼び出し
+cnoremap <C-p> <Up>
+" コマンドモードで途中入力履歴呼び出し
+cnoremap <C-n> <Down>
 
 
 "----------------------------------------
