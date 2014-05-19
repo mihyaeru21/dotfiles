@@ -46,5 +46,8 @@ NeoBundle 'kana/vim-textobj-user'      " 下二つの依存プラグイン
 NeoBundle 'kana/vim-textobj-indent'    " インデントによるテキストオブジェクト
 NeoBundle 'kana/vim-textobj-entire'    " ファイル全体を示すテキストオブジェクト
 NeoBundle 'sjl/gundo.vim'              " 変更履歴の歴史を辿る
+NeoBundle 'mattn/webapi-vim'           " Web APIをいじるためのベース機能
+NeoBundle 'mattn/vimplenote-vim'       " Simplenote  requires: ['mattn/webapi-vim']
+NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
 
 

@@ -24,3 +24,5 @@
     logp = log --graph --decorate
 [push]
 	default = simple
+[github]
+	user = mihyaeru21

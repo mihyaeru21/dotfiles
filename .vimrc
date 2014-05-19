@@ -123,6 +123,13 @@ let g:quickrun_config = {
 
 
 "----------------------------------------
+" Gist-vim
+"----------------------------------------
+let g:gist_show_privates = 1  " secret gistを表示する
+let g:gist_post_private = 1   " デフォルトでsecretにする
+
+
+"----------------------------------------
 " プラグイン用マッピング
 "----------------------------------------
 " Unite.vim
@@ -138,4 +145,7 @@ nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru boo
 nnoremap <Space>n :NERDTreeToggle<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
+
+" Vimplenote には o オプションはないらしい
+" command ToDo VimpleNote -o 7d4d2bd7df6211e3a30a97fd17d6c4e4
 
