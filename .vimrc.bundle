@@ -45,5 +45,6 @@ NeoBundle 'tpope/vim-commentary'       " コメントアウト
 NeoBundle 'kana/vim-textobj-user'      " 下二つの依存プラグイン
 NeoBundle 'kana/vim-textobj-indent'    " インデントによるテキストオブジェクト
 NeoBundle 'kana/vim-textobj-entire'    " ファイル全体を示すテキストオブジェクト
+NeoBundle 'sjl/gundo.vim'              " 変更履歴の歴史を辿る
 
 

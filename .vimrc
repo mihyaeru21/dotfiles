@@ -73,6 +73,7 @@ nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 cnoremap <C-p> <Up>
 " コマンドモードで途中入力履歴呼び出し
 cnoremap <C-n> <Down>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "----------------------------------------
