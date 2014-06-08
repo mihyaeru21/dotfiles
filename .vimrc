@@ -145,7 +145,21 @@ nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru boo
 nnoremap <Space>n :NERDTreeToggle<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
+nnoremap <Space>g :Gitv<CR>
 
 " Vimplenote には o オプションはないらしい
 " command ToDo VimpleNote -o 7d4d2bd7df6211e3a30a97fd17d6c4e4
+
+" gitv
+autocmd FileType gitv call s:my_gitv_settings()
+function! s:my_gitv_settings()
+    nnoremap <silent><buffer> t :<C-u>windo call <SID>toggle_git_folding()<CR>1<C-w>w
+endfunction
+
+autocmd FileType git setlocal nofoldenable foldlevel=0
+function! s:toggle_git_folding()
+    if &filetype ==# 'git'
+        setlocal foldenable!
+    endif
+endfunction
 
