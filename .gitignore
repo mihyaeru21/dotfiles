@@ -33,4 +33,5 @@ profile
 Pods/*
 Podfile.lock
 
+tags
 
