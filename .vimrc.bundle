@@ -51,4 +51,5 @@ NeoBundle 'mattn/webapi-vim'           " Web APIをいじるためのベース�
 NeoBundle 'mattn/vimplenote-vim'       " Simplenote  requires: ['mattn/webapi-vim']
 NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
 NeoBundle 'gregsexton/gitv'            " Gitのログを見るやつ
+NeoBundle 'c9s/perlomni.vim'           " Perlのオムニ補完
 
