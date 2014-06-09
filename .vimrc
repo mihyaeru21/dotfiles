@@ -101,6 +101,11 @@ augroup filetypedetect
     autocmd! BufNewFile,BufRead *.tx setfiletype xslate
 augroup END
 
+" CoffeeScript
+augroup filetypedetect
+    autocmd! BufNewFile,BufRead *.coffee setfiletype coffee
+augroup END
+
 
 "----------------------------------------
 " NeoComplete
