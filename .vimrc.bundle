@@ -22,10 +22,10 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 
 NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
