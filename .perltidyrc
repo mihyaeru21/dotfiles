@@ -4,3 +4,6 @@
 -st     # Output to STDOUT
 -se     # Errors to STDERR
 -wbb="% + - * / x != == >= <= =~ < > | & **= += *= &= <<= &&= -= /= //= |= >>= ||= .= %= ^= x="
+-sbt=2
+-bbt=2
+-nsfs
