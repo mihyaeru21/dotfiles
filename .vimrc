@@ -174,6 +174,13 @@ let g:gist_post_private = 1   " デフォルトでsecretにする
 
 
 "----------------------------------------
+" neosnippet
+"----------------------------------------
+let s:my_snippet = '~/.snippet/'
+let g:neosnippet#snippets_directory = s:my_snippet
+
+
+"----------------------------------------
 " プラグイン用マッピング
 "----------------------------------------
 " Unite.vim
