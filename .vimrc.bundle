@@ -56,4 +56,5 @@ NeoBundle 'gregsexton/gitv'            " Gitのログを見るやつ
 NeoBundle 'c9s/perlomni.vim'           " Perlのオムニ補完
 NeoBundle 'YankRing.vim'               " ペースト時に良い感じにヤンク履歴を漁れる
 NeoBundle 'vim-perl/vim-perl'          " Perlのシンタックスとか
+NeoBundle 'sorah/unite-ghq'            " Uniteでghq
 

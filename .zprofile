@@ -9,3 +9,6 @@ then
     eval "$(anyenv init - zsh)"
 fi
 
+# Go
+export GOPATH=$HOME/.go
+export PATH="$PATH:$GOPATH/bin"
