@@ -74,6 +74,11 @@ cnoremap <C-p> <Up>
 " コマンドモードで途中入力履歴呼び出し
 cnoremap <C-n> <Down>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+" タブ操作周り
+nmap <Space>t [tab]
+nnoremap [tab]t :tabnew<CR>
+nnoremap [tab]n :tabnext<CR>
+nnoremap [tab]p :tabprevious<CR>
 
 
 "----------------------------------------
