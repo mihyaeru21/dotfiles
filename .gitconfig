@@ -15,13 +15,15 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
-    s   = status
-    st  = status
-    a   = add
-    b   = branch
-    ch  = checkout
-    co  = commit
+    s    = status
+    st   = status
+    a    = add
+    br   = branch
+    co   = checkout
+    ci   = commit
     logp = log --graph --decorate
+    wt   = whatchanged --stat
+    ck   = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD | egrep '\\.(t|p([lm]|sgi))$' | xargs -n 1 -P2 perl -wc"
 [push]
 	default = simple
 [github]
