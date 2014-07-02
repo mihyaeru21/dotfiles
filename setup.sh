@@ -20,7 +20,7 @@ done
 #
 # copy local files
 #
-LOCAL_FILES=(.zshrc.local .zprofile.local)
+LOCAL_FILES=(.zshrc.local .zprofile.local .gitconfig.local)
 for local_file in ${LOCAL_FILES[@]}
 do
     if [ ! -f $HOME/$local_file ]
