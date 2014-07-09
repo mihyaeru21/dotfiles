@@ -49,6 +49,7 @@ alias lla="ls -al"
 alias u="cd ../"
 alias uu="cd ../../"
 alias uuu="cd ../../../"
+alias b="cd -"
 
 
 # 環境ごとの設定ファイルを読み込む
@@ -58,3 +59,12 @@ alias uuu="cd ../../../"
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+
+# ghqのリストをpecoってcdするやつ
+function gp() {
+    target_dir=`ghq list --full-path | peco`
+    if [ -n "$target_dir" ]; then
+        cd $target_dir
+    fi
+}
