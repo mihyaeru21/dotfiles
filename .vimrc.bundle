@@ -58,4 +58,7 @@ NeoBundle 'YankRing.vim'               " ペースト時に良い感じにヤン
 NeoBundle 'vim-perl/vim-perl'          " Perlのシンタックスとか
 NeoBundle 'sorah/unite-ghq'            " Uniteでghq
 NeoBundle 'Glench/Vim-Jinja2-Syntax'   " jinja2のシンタックス
+NeoBundle 'tacroe/unite-mark'          " Uniteでmark
+NeoBundle 'Shougo/unite-outline'       " Uniteでoutline解析
+NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
 

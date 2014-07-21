@@ -198,6 +198,10 @@ nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
 nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
 nnoremap [unite]g :<C-u>Unite ghq<CR>
+nnoremap [unite]l :<C-u>Unite line<CR>
+nnoremap [unite]o :<C-u>Unite outline<CR>
+nnoremap [unite]t :<C-u>Unite tag<CR>
+nnoremap [unite]M :<C-u>Unite mark<CR>
 
 nnoremap <Space>n :NERDTreeToggle<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
