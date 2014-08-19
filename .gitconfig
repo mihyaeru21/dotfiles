@@ -20,10 +20,15 @@
     br   = branch
     co   = checkout
     ci   = commit
-    logp = log --graph --decorate
     wt   = whatchanged --stat
     ck   = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD | egrep '\\.(t|p([lm]|sgi))$' | xargs -n 1 -P2 perl -wc"
     f    = fetch
+    logpr = log --graph --decorate
+    logo  = log --oneline
+    logog = "log --oneline --grep=$1"
+    logp  = log -p
+    logpg = "log -p --grep=$1"
+    logs  = log --stat
 [push]
 	default = simple
 [github]
