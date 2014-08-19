@@ -113,6 +113,26 @@ augroup END
 
 
 "----------------------------------------
+" markdown中でハイライトさせたい言語
+"----------------------------------------
+let g:markdown_fenced_languages = [
+\  'python',
+\  'perl',
+\  'ruby',
+\  'vim',
+\  'lisp',
+\  'javascript',
+\  'js=javascript',
+\  'json=javascript',
+\  'coffee',
+\  'xml',
+\  'html',
+\  'css',
+\  'sh',
+\  'zsh',
+\]
+
+"----------------------------------------
 " NeoComplete
 "----------------------------------------
 let g:acp_enableAtStartup = 0
@@ -142,13 +162,13 @@ nnoremap [ag] <Nop>
 nmap <Space>a [ag]
 
 " grep検索
-nnoremap [ag]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap [ag]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " カーソル位置の単語をgrep検索
-nnoremap [ag]c :<C-u>Unite grep:.  -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap [ag]c :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
 " grep検索結果の再呼出
-nnoremap [ag]r  :<C-u>UniteResume search-buffer<CR>
+nnoremap [ag]r :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -196,12 +216,17 @@ nnoremap [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap [unite]r :<C-u>Unite -buffer-name=register<CR>
 nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
-nnoremap [unite]a :<C-u>UniteWithBufferDir -fuffer-name=file buffer file_mru bookmark file<CR>
+nnoremap [unite]a :<C-u>UniteWithBufferDir -buffer-name=file buffer file_mru bookmark file<CR>
 nnoremap [unite]g :<C-u>Unite ghq<CR>
 nnoremap [unite]l :<C-u>Unite line<CR>
 nnoremap [unite]o :<C-u>Unite outline<CR>
 nnoremap [unite]t :<C-u>Unite tag<CR>
 nnoremap [unite]M :<C-u>Unite mark<CR>
+
+nnoremap [unite]pb :<C-u>Unite buffer -auto-preview<CR>
+nnoremap [unite]pl :<C-u>Unite line -auto-preview<CR>
+nnoremap [unite]po :<C-u>Unite outline -auto-preview<CR>
+nnoremap [unite]pM :<C-u>Unite mark -auto-preview<CR>
 
 nnoremap <Space>n :NERDTreeToggle<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
