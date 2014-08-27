@@ -130,6 +130,7 @@ let g:markdown_fenced_languages = [
 \  'css',
 \  'sh',
 \  'zsh',
+\  'sql',
 \]
 
 "----------------------------------------
