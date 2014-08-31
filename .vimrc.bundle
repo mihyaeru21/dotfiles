@@ -61,4 +61,6 @@ NeoBundle 'Glench/Vim-Jinja2-Syntax'   " jinja2のシンタックス
 NeoBundle 'tacroe/unite-mark'          " Uniteでmark
 NeoBundle 'Shougo/unite-outline'       " Uniteでoutline解析
 NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
+NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
+NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
 
