@@ -5,3 +5,5 @@
 --blib
 --recurse
 -w
+--trap
+--failures
