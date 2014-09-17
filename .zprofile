@@ -2,10 +2,11 @@
 [ -f ~/.zprofile.local ] && source ~/.zprofile.local
 
 # anyenv
-# PATHに既に 'anyenv' が含まれている時は何もしない
-if [ -d ~/.anyenv ] && ! echo $PATH | grep -q 'anyenv'
-then
+if [ -d "$HOME/.anyenv" ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
+    for env_name in `ls $HOME/.anyenv/envs` ; do
+        export PATH="$HOME/.anyenv/envs/$env_name/shims:$PATH"
+    done
     eval "$(anyenv init - zsh)"
 fi
 

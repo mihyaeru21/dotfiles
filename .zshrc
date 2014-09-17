@@ -7,6 +7,9 @@ compinit
 # zmvを使えるように
 autoload -Uz zmv
 
+# pathの重複をみとめない
+typeset -U path PATH
+
 # 履歴関連
 HISTFILE=~/.zsh_history
 HISTSIZE=300000
