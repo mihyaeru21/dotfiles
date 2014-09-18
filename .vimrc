@@ -49,7 +49,7 @@ set showcmd
 set showmode
 set showmatch
 set number
-set scrolloff=5
+set scrolloff=0
 set cursorline
 set cmdheight=2
 set ambiwidth=double
