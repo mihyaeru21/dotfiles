@@ -223,6 +223,7 @@ nnoremap [unite]l :<C-u>Unite line<CR>
 nnoremap [unite]o :<C-u>Unite outline<CR>
 nnoremap [unite]t :<C-u>Unite tag<CR>
 nnoremap [unite]M :<C-u>Unite mark<CR>
+nnoremap [unite]r :<C-u>UniteResume<CR>
 
 nnoremap [unite]pb :<C-u>Unite buffer -auto-preview<CR>
 nnoremap [unite]pl :<C-u>Unite line -auto-preview<CR>
