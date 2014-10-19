@@ -14,6 +14,10 @@ bind k:shift;alt corner top-left resize:screenSizeX;screenSizeY
 bind h:shift;alt corner top-left resize:screenSizeX/2;screenSizeY
 bind l:shift;alt corner top-right resize:screenSizeX/2;screenSizeY
 
+# 画面上/下半分に設定
+bind i:shift;alt move 0;0 screenSizeX;screenSizeY/2
+bind j:shift;alt move 0;screenSizeY/2 screenSizeX;screenSizeY/2
+
 # スクリーンを移動
 bind n:shift;alt throw left
 bind m:shift;alt throw left
