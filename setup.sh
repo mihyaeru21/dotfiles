@@ -67,3 +67,12 @@ else
     echo 'anyenv already exists'
 fi
 
+anyenv_plugin_root=$(anyenv root)/plugins
+if [ ! -d $anyenv_plugin_root ]
+then
+    mkdir -p $anyenv_plugin_root
+    git clone https://github.com/znz/anyenv-update.git $anyenv_plugin_root/anyenv-update
+else
+    echo 'anyenv update already exists'
+fi
+
