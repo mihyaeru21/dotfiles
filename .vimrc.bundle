@@ -6,10 +6,10 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-filetype plugin on  " Required in NeoBundle
-filetype indent on  " Required in NeoBundle
+" Required in NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " 推奨らしい
 NeoBundle 'Shougo/vimproc', {
@@ -63,4 +63,10 @@ NeoBundle 'Shougo/unite-outline'       " Uniteでoutline解析
 NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
 NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
 NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
+
+" 設定の終了
+call neobundle#end()
+
+filetype plugin on  " Required in NeoBundle
+filetype indent on  " Required in NeoBundle
 
