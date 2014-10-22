@@ -4,8 +4,7 @@
 # create symbolic link
 #
 DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet)
-for file in ${DOT_FILES[@]}
-do
+for file in ${DOT_FILES[@]}; do
     if [ -f $HOME/$file ]; then
         echo $HOME/$file 'already exists'
     elif [ -d $HOME/$file ]; then
@@ -21,10 +20,8 @@ done
 # copy local files
 #
 LOCAL_FILES=(.zshrc.local .zprofile.local .gitconfig.local)
-for local_file in ${LOCAL_FILES[@]}
-do
-    if [ -f $HOME/$local_file ]
-    then
+for local_file in ${LOCAL_FILES[@]}; do
+    if [ -f $HOME/$local_file ]; then
         echo $HOME/$local_file 'already exists'
     else
         cp $HOME/dotfiles/"${local_file}.sample" $HOME/$local_file
@@ -38,8 +35,7 @@ done
 #
 
 # バックアップ用ディレクトリ
-if [ -d $HOME/.vim_backup ]
-then
+if [ -d $HOME/.vim_backup ]; then
     echo 'vim backup already exists'
 else
     mkdir $HOME/.vim_backup
@@ -47,8 +43,7 @@ else
 fi
 
 # install NeoBundle
-if [ -d .vim/bundle ]
-then
+if [ -d .vim/bundle ]; then
     echo 'NeoBundle already exists'
 else
     mkdir -p .vim/bundle
@@ -59,8 +54,7 @@ fi
 #
 # anyenv
 #
-if [ -d $HOME/.anyenv ]
-then
+if [ -d $HOME/.anyenv ]; then
     echo 'anyenv already exists'
 else
     echo 'Installing anyenv...'
@@ -68,8 +62,7 @@ else
 fi
 
 anyenv_plugin_root=$HOME/.anyenv/plugins
-if [ -d $anyenv_plugin_root ]
-then
+if [ -d $anyenv_plugin_root ]; then
     echo 'anyenv update already exists'
 else
     mkdir -p $anyenv_plugin_root
