@@ -23,12 +23,12 @@ done
 LOCAL_FILES=(.zshrc.local .zprofile.local .gitconfig.local)
 for local_file in ${LOCAL_FILES[@]}
 do
-    if [ ! -f $HOME/$local_file ]
+    if [ -f $HOME/$local_file ]
     then
+        echo $HOME/$local_file 'already exists'
+    else
         cp $HOME/dotfiles/"${local_file}.sample" $HOME/$local_file
         echo "copy ${local_file} to home directory"
-    else
-        echo $HOME/$local_file 'already exists'
     fi
 done
 
@@ -38,41 +38,41 @@ done
 #
 
 # バックアップ用ディレクトリ
-if [ ! -d $HOME/.vim_backup ]
+if [ -d $HOME/.vim_backup ]
 then
+    echo 'vim backup already exists'
+else
     mkdir $HOME/.vim_backup
     echo 'create vim backup'
-else
-    echo 'vim backup already exists'
 fi
 
 # install NeoBundle
-if [ ! -d .vim/bundle ]
+if [ -d .vim/bundle ]
 then
+    echo 'NeoBundle already exists'
+else
     mkdir -p .vim/bundle
     git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
-else
-    echo 'NeoBundle already exists'
 fi
 
 
 #
 # anyenv
 #
-if [ ! -d $HOME/.anyenv ]
+if [ -d $HOME/.anyenv ]
 then
+    echo 'anyenv already exists'
+else
     echo 'Installing anyenv...'
     git clone https://github.com/riywo/anyenv ~/.anyenv
-else
-    echo 'anyenv already exists'
 fi
 
-anyenv_plugin_root=$(anyenv root)/plugins
-if [ ! -d $anyenv_plugin_root ]
+anyenv_plugin_root=$HOME/.anyenv/plugins
+if [ -d $anyenv_plugin_root ]
 then
+    echo 'anyenv update already exists'
+else
     mkdir -p $anyenv_plugin_root
     git clone https://github.com/znz/anyenv-update.git $anyenv_plugin_root/anyenv-update
-else
-    echo 'anyenv update already exists'
 fi
 
