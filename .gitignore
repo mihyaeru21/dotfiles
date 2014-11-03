@@ -31,7 +31,6 @@ profile
 
 # CocoaPods
 Pods/*
-Podfile.lock
 
 tags
 
