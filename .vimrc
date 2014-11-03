@@ -175,7 +175,7 @@ nnoremap [ag]r :<C-u>UniteResume search-buffer<CR>
 if executable('ag')
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts = '--nogroup --nocolor --column ' .
-        \  '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+        \  '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' --ignore ''local'''
     let g:unite_source_grep_recursive_opt = ''
 endif
 
