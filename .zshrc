@@ -22,6 +22,7 @@ setopt auto_pushd    # ディレクトリ履歴
 setopt correct       # 類似コマンド表示
 setopt list_packed   # 補完候補を詰めて表示
 setopt nolistbeep    # ビープ音を鳴らさない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完する時に大文字小文字を区別しない
 
 # カラー表示
 export LSCOLORS=gxfxcxdxbxegedabagacad
