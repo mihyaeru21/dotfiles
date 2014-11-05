@@ -56,14 +56,9 @@ alias uuu="cd ../../../"
 alias b="cd -"
 
 
-# 環境ごとの設定ファイルを読み込む
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-# コマンドのシンタックスハイライト
-if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
+############################################################
+# functions
+############################################################
 
 # ghqのリストをpecoってcdするやつ
 function gpc() {
@@ -207,4 +202,10 @@ function get_vcs_info_msg() {
     fi
 }
 
+
+# antigen, plugin
+[ -f ~/.antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
+
+# 環境ごとの設定ファイル
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
