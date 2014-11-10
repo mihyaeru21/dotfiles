@@ -63,6 +63,7 @@ NeoBundle 'Shougo/unite-outline'       " Uniteでoutline解析
 NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
 NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
 NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
+NeoBundle 'haya14busa/incsearch.vim'   " / の置き換え
 
 " 設定の終了
 call neobundle#end()
