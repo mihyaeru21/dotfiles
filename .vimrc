@@ -214,7 +214,7 @@ let g:neosnippet#snippets_directory = s:my_snippet
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
 nnoremap [unite]b :<C-u>Unite buffer<CR>
-nnoremap [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap [unite]ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap [unite]r :<C-u>Unite -buffer-name=register<CR>
 nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
@@ -225,6 +225,8 @@ nnoremap [unite]o :<C-u>Unite outline<CR>
 nnoremap [unite]t :<C-u>Unite tag<CR>
 nnoremap [unite]M :<C-u>Unite mark<CR>
 nnoremap [unite]r :<C-u>UniteResume<CR>
+nnoremap [unite]fg :<C-u>Unite file_rec/git -start-insert<CR>
+nnoremap [unite]fa :<C-u>Unite file_async/git -start-insert<CR>
 
 nnoremap [unite]pb :<C-u>Unite buffer -auto-preview<CR>
 nnoremap [unite]pl :<C-u>Unite line -auto-preview<CR>
