@@ -1,4 +1,6 @@
 export LANG=ja_JP.UTF-8
+export LANGUAGE=ja_JP
+export LC_ALL=ja_JP.UTF-8
 
 # 補完
 autoload -U compinit
