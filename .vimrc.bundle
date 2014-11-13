@@ -64,6 +64,9 @@ NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
 NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
 NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
 NeoBundle 'haya14busa/incsearch.vim'   " / の置き換え
+NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
+NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
+NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
 
 " 設定の終了
 call neobundle#end()
