@@ -67,6 +67,7 @@ NeoBundle 'haya14busa/incsearch.vim'   " / の置き換え
 NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
 NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
 NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
+NeoBundle 'GutenYe/json5.vim'          " JSON5のシンタックス
 
 " 設定の終了
 call neobundle#end()
