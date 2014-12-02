@@ -69,6 +69,7 @@ NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
 NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
 NeoBundle 'GutenYe/json5.vim'          " JSON5のシンタックス
 NeoBundle 'othree/eregex.vim'          " 正規表現をPerl/Ruby的に書けるようにするやつ
+NeoBundle 'mattn/emmet-vim'            " emmetだよ
 
 " 設定の終了
 call neobundle#end()
