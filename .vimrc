@@ -215,6 +215,16 @@ let g:eregex_default_enable = 0
 let g:eregex_forward_delim = '/'
 let g:eregex_backward_delim = '?'
 
+
+"----------------------------------------
+" VimClojure
+"----------------------------------------
+let vimclojure#WantNailgun       = 1
+let vimclojure#NailgunClient     = "ng"
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow      = 1
+
+
 "----------------------------------------
 " プラグイン用マッピング
 "----------------------------------------
