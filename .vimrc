@@ -189,6 +189,10 @@ let g:quickrun_config = {
 \       'runner' : 'vimproc',
 \       'runner/vimproc/updatetime' : 40,
 \       'hook/time/enable' : 1,
+\   },
+\   'coffee' : {
+\       'command' : 'coffee',
+\       'exec'    : ['%c %s'],
 \   }
 \}
 
