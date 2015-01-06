@@ -32,5 +32,10 @@ profile
 # CocoaPods
 Pods/*
 
+# ctags file
 tags
+
+# temporary files
+,*
+,/
 
