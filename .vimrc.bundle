@@ -40,7 +40,7 @@ NeoBundle 'motemen/xslate-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'python_fold'
-NeoBundle 'tyru/caw.vim'
+" NeoBundle 'tyru/caw.vim'
 NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'kchmck/vim-coffee-script'   " CoffeeScript
 NeoBundle 'hotchpotch/perldoc-vim'     " perldoc
