@@ -71,6 +71,7 @@ NeoBundle 'GutenYe/json5.vim'          " JSON5のシンタックス
 NeoBundle 'othree/eregex.vim'          " 正規表現をPerl/Ruby的に書けるようにするやつ
 NeoBundle 'mattn/emmet-vim'            " emmetだよ
 NeoBundle 'VimClojure'                 " Closure!
+NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
 
 " 設定の終了
 call neobundle#end()
