@@ -34,8 +34,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mattn/sonictemplate-vim'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'motemen/xslate-vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -74,6 +72,11 @@ NeoBundle 'mattn/emmet-vim'            " emmetだよ
 NeoBundle 'VimClojure'                 " Closure!
 NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
 NeoBundle 'csscomb/vim-csscomb'        " css整形
+
+" colorscheme
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " 設定の終了
 call neobundle#end()
