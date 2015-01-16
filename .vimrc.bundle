@@ -75,6 +75,7 @@ NeoBundle 'csscomb/vim-csscomb'        " css整形
 
 " colorscheme
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 
