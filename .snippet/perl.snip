@@ -1,5 +1,12 @@
 # ==== User definition ====
 
+snippet use
+    use strict;
+    use warnings;
+    use utf8;
+    use 5.20.0;
+    
+
 snippet subtest
     subtest '${1:test_name}' => sub {
         ${0:TARGET}
