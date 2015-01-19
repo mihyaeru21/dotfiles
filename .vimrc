@@ -43,8 +43,11 @@ endif
 "----------------------------------------
 " 表示
 "----------------------------------------
-colorscheme jellybeans
 syntax on
+set t_Co=256
+colorscheme gruvbox
+set background=dark
+
 set showcmd
 set showmode
 set showmatch
