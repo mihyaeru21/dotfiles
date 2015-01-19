@@ -74,10 +74,16 @@ NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
 NeoBundle 'csscomb/vim-csscomb'        " css整形
 
 " colorscheme
+NeoBundle 'sjl/badwolf'
+NeoBundle 'desert256.vim'
+NeoBundle 'tomasr/molokai'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'vim-scripts/pyte'
 NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'altercation/vim-colors-solarized'
+
 
 " 設定の終了
 call neobundle#end()
