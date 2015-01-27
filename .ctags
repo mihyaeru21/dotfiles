@@ -2,3 +2,4 @@
 --recurse=yes
 --langmap=Perl:+.t
 --exclude=*.js
+--c++-kinds=+l
