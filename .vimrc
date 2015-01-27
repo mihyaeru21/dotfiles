@@ -134,6 +134,7 @@ let g:markdown_fenced_languages = [
 \  'sh',
 \  'zsh',
 \  'sql',
+\  'json5',
 \]
 
 "----------------------------------------
