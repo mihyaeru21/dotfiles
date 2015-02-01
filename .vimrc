@@ -45,7 +45,7 @@ endif
 "----------------------------------------
 syntax on
 set t_Co=256
-colorscheme gruvbox
+colorscheme lucius
 set background=dark
 
 set showcmd
