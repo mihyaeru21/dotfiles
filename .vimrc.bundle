@@ -66,6 +66,7 @@ NeoBundle 'haya14busa/incsearch.vim'   " / の置き換え
 NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
 NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
 NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
+NeoBundle 'nathanaelkane/vim-indent-guides'     " show indent bar
 NeoBundle 'GutenYe/json5.vim'          " JSON5のシンタックス
 NeoBundle 'othree/eregex.vim'          " 正規表現をPerl/Ruby的に書けるようにするやつ
 NeoBundle 'mattn/emmet-vim'            " emmetだよ
