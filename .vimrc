@@ -59,6 +59,8 @@ set ambiwidth=double
 set laststatus=2
 set statusline=[%n]%m%r%f\ %=\ %w%y[%{&fenc}:%{&ff}][%l/%L,%c]
 set hlsearch
+set list
+set listchars=tab:>-,trail:_
 
 
 "----------------------------------------
