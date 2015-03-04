@@ -102,6 +102,7 @@ autocmd BufNewFile,BufRead *.podspec set filetype=ruby
 autocmd BufNewFile,BufRead Podfile set filetype=ruby
 autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
 autocmd BufNewFile,BufRead *.tex set filetype=tex  " plaintexになるのを防ぐ
+autocmd BufNewFile,BufRead *.swift set filetype=swift  " plaintexになるのを防ぐ
 
 " Perl
 augroup filetypedetect
@@ -199,7 +200,11 @@ let g:quickrun_config = {
 \   'coffee' : {
 \       'command' : 'coffee',
 \       'exec'    : ['%c %s'],
-\   }
+\   },
+\   'swift' : {
+\       'command' : 'swift',
+\       'exec'    : ['%c %s'],
+\   },
 \}
 
 

@@ -75,6 +75,7 @@ NeoBundle 'VimClojure'                 " Closure!
 NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
 NeoBundle 'csscomb/vim-csscomb'        " css整形
 NeoBundle 'scrooloose/syntastic'       " syntaxを見てくれる
+NeoBundle 'Keithbsmiley/swift.vim'         " swiftのsyntax
 
 " colorscheme
 NeoBundle 'sjl/badwolf'
