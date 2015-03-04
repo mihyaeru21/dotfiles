@@ -10,6 +10,11 @@ if [ -d "$HOME/.anyenv" ] ; then
     eval "$(anyenv init - zsh)"
 fi
 
+# pyenv
+if [ -d "$HOME/.anyenv/envs/pyenv/plugins/pyenv-virtualenv" ] ; then
+    eval "$(pyenv virtualenv-init - zsh)"
+fi
+
 # Go
 export GOPATH=$HOME/.go
 export PATH="$PATH:$GOPATH/bin"
