@@ -45,7 +45,7 @@ endif
 "----------------------------------------
 syntax on
 set t_Co=256
-colorscheme lucius
+colorscheme hybrid
 set background=dark
 
 set showcmd
