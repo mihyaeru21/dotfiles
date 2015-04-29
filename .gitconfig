@@ -29,6 +29,7 @@
     logp  = log -p
     logpg = "log -p --grep=$1"
     logs  = log --stat
+    jiralog = log --date=short --no-merges --pretty=format:"|%h|%an|%ad|%s|"
 [push]
 	default = simple
 [github]
