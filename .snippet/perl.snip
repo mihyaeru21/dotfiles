@@ -12,3 +12,11 @@ snippet subtest
         ${0:TARGET}
     };
 
+snippet validator
+    my $v; $v //= Data::Validator->new(
+        foo  => 'Foo',
+        hoge => +{ isa => 'HashRef', default => sub { +{} } },
+    )->with(qw/Method/);
+    my ($class, $args) = $v->validate(@_);
+    my () = @$args{qw/  /};
+
