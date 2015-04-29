@@ -103,6 +103,7 @@ autocmd BufNewFile,BufRead Podfile set filetype=ruby
 autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
 autocmd BufNewFile,BufRead *.tex set filetype=tex  " plaintexになるのを防ぐ
 autocmd BufNewFile,BufRead *.swift set filetype=swift  " plaintexになるのを防ぐ
+autocmd BufNewFile,BufRead *.json set filetype=json5   " json5のシンタックス読みやすいやで
 
 " Perl
 augroup filetypedetect
