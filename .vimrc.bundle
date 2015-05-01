@@ -77,6 +77,7 @@ NeoBundle 'csscomb/vim-csscomb'        " css整形
 " NeoBundle 'scrooloose/syntastic'       " syntaxを見てくれる
 NeoBundle 'Keithbsmiley/swift.vim'     " swiftのsyntax
 NeoBundle 'cespare/vim-toml'           " tomlのsyntax
+NeoBundle 'vim-scripts/taglist.vim'    " tagでアウトライン
 
 " colorscheme
 NeoBundle 'sjl/badwolf'

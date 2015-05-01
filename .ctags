@@ -1,4 +1,3 @@
---append=yes
 --recurse=yes
 --langmap=Perl:+.t
 --exclude=*.js

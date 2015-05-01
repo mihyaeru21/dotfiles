@@ -271,6 +271,15 @@ let g:indent_guides_exclude_filetypes     = ['help', 'nerdtree', 'text', 'quickr
 
 
 "----------------------------------------
+" taglist
+"----------------------------------------
+set tags=tags
+let Tlist_Ctags_Cmd        = '/usr/bin/ctags'
+let Tlist_Show_One_File    = 1
+let Tlist_Use_Right_Window = 1
+
+
+"----------------------------------------
 " プラグイン用マッピング
 "----------------------------------------
 " Unite.vim
@@ -300,6 +309,8 @@ nnoremap <Space>n :NERDTreeToggle<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 nnoremap <Space>g :Gitv<CR>
+
+nnoremap <Space>l :TlistToggle<CR>
 
 " Vimplenote には o オプションはないらしい
 " command ToDo VimpleNote -o 7d4d2bd7df6211e3a30a97fd17d6c4e4
