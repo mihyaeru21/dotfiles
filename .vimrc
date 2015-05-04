@@ -306,6 +306,7 @@ nnoremap [unite]po :<C-u>Unite outline -auto-preview<CR>
 nnoremap [unite]pM :<C-u>Unite mark -auto-preview<CR>
 
 nnoremap <Space>n :NERDTreeToggle<CR>
+nnoremap <Space>f :VimFilerExplorer -find<CR>
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 nnoremap <Space>g :Gitv<CR>
