@@ -274,9 +274,13 @@ let g:indent_guides_exclude_filetypes     = ['help', 'nerdtree', 'text', 'quickr
 " taglist
 "----------------------------------------
 set tags=tags
-let Tlist_Ctags_Cmd        = '/usr/bin/ctags'
 let Tlist_Show_One_File    = 1
 let Tlist_Use_Right_Window = 1
+if ostype == "Linux\n"
+    let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+elseif ostype == "Darwin\n"
+    let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+endif
 
 
 "----------------------------------------
