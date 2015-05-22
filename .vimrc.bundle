@@ -21,74 +21,91 @@ NeoBundle 'Shougo/vimproc', {
 \   },
 \ }
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neomru.vim'
+" common
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'mattn/sonictemplate-vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'motemen/xslate-vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'szw/vim-tags'
-NeoBundle 'python_fold'
-" NeoBundle 'tyru/caw.vim'
-NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'kchmck/vim-coffee-script'   " CoffeeScript
-NeoBundle 'hotchpotch/perldoc-vim'     " perldoc
-NeoBundle 'tpope/vim-commentary'       " コメントアウト
-NeoBundle 'kana/vim-textobj-user'      " 下二つの依存プラグイン
-NeoBundle 'kana/vim-textobj-indent'    " インデントによるテキストオブジェクト
-NeoBundle 'kana/vim-textobj-entire'    " ファイル全体を示すテキストオブジェクト
-NeoBundle 'sjl/gundo.vim'              " 変更履歴の歴史を辿る
-NeoBundle 'mattn/webapi-vim'           " Web APIをいじるためのベース機能
-NeoBundle 'mattn/vimplenote-vim'       " Simplenote  requires: ['mattn/webapi-vim']
-NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
-NeoBundle 'gregsexton/gitv'            " Gitのログを見るやつ
-NeoBundle 'c9s/perlomni.vim'           " Perlのオムニ補完
 " NeoBundle 'YankRing.vim'               " ペースト時に良い感じにヤンク履歴を漁れる
-NeoBundle 'vim-perl/vim-perl'          " Perlのシンタックスとか
-NeoBundle 'sorah/unite-ghq'            " Uniteでghq
-NeoBundle 'Glench/Vim-Jinja2-Syntax'   " jinja2のシンタックス
-NeoBundle 'tacroe/unite-mark'          " Uniteでmark
-NeoBundle 'Shougo/unite-outline'       " Uniteでoutline解析
-NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
-NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
-NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
 NeoBundle 'haya14busa/incsearch.vim'   " / の置き換え
-NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
-NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
-NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
+NeoBundle 'kana/vim-textobj-entire'    " ファイル全体を示すテキストオブジェクト
+NeoBundle 'kana/vim-textobj-indent'    " インデントによるテキストオブジェクト
+NeoBundle 'kana/vim-textobj-user'      " 下二つの依存プラグイン
 NeoBundle 'nathanaelkane/vim-indent-guides'     " show indent bar
-NeoBundle "y-uuki/perl-local-lib-path.vim"      " libとかlocal/libにパスを通してくれる
-NeoBundle 'GutenYe/json5.vim'          " JSON5のシンタックス
 NeoBundle 'othree/eregex.vim'          " 正規表現をPerl/Ruby的に書けるようにするやつ
-NeoBundle 'mattn/emmet-vim'            " emmetだよ
-NeoBundle 'VimClojure'                 " Closure!
-NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
-NeoBundle 'csscomb/vim-csscomb'        " css整形
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'sjl/gundo.vim'              " 変更履歴の歴史を辿る
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+
+" unite
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite-outline'       " Uniteでoutline解析
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'sorah/unite-ghq'            " Uniteでghq
+NeoBundle 'tacroe/unite-mark'          " Uniteでmark
+NeoBundle 'tsukkee/unite-tag'          " Uniteでtag
+NeoBundle 'ujihisa/unite-colorscheme'
+
+" program
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neosnippet.vim'
+" NeoBundle 'mattn/sonictemplate-vim'
 " NeoBundle 'scrooloose/syntastic'       " syntaxを見てくれる
-NeoBundle 'Keithbsmiley/swift.vim'     " swiftのsyntax
-NeoBundle 'cespare/vim-toml'           " tomlのsyntax
+NeoBundle 'szw/vim-tags'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-commentary'       " コメントアウト
+" NeoBundle 'tyru/caw.vim'
+NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
 NeoBundle 'vim-scripts/taglist.vim'    " tagでアウトライン
 
+" git
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'gregsexton/gitv'            " Gitのログを見るやつ
+NeoBundle 'tpope/vim-fugitive'
+
+" perl
+NeoBundle "y-uuki/perl-local-lib-path.vim"      " libとかlocal/libにパスを通してくれる
+NeoBundle 'c9s/perlomni.vim'           " Perlのオムニ補完
+NeoBundle 'hotchpotch/perldoc-vim'     " perldoc
+NeoBundle 'vim-perl/vim-perl'          " Perlのシンタックスとか
+NeoBundle 'motemen/xslate-vim'
+
+" html/css
+NeoBundle 'csscomb/vim-csscomb'        " css整形
+NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
+NeoBundle 'mattn/emmet-vim'            " emmetだよ
+
+" markdown
+NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
+NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
+NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
+NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
+
+" 各言語のアレ
+NeoBundle 'Glench/Vim-Jinja2-Syntax'   " jinja2のシンタックス
+NeoBundle 'GutenYe/json5.vim'          " JSON5のシンタックス
+NeoBundle 'Keithbsmiley/swift.vim'     " swiftのsyntax
+NeoBundle 'VimClojure'                 " Closure!
+NeoBundle 'cespare/vim-toml'           " tomlのsyntax
+NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'kchmck/vim-coffee-script'   " CoffeeScript
+NeoBundle 'python_fold'
+
+" app
+NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
+NeoBundle 'mattn/vimplenote-vim'       " Simplenote  requires: ['mattn/webapi-vim']
+NeoBundle 'mattn/webapi-vim'           " Web APIをいじるためのベース機能
+
 " colorscheme
-NeoBundle 'sjl/badwolf'
-NeoBundle 'desert256.vim'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'vim-scripts/pyte'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'desert256.vim'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'sjl/badwolf'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'vim-scripts/pyte'
+NeoBundle 'w0ng/vim-hybrid'
 
 
 " 設定の終了
