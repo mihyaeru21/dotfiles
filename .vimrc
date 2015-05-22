@@ -130,7 +130,8 @@ let g:markdown_fenced_languages = [
 \  'lisp',
 \  'javascript',
 \  'js=javascript',
-\  'json=javascript',
+\  'json=json5',
+\  'json5',
 \  'coffee',
 \  'xml',
 \  'html',
@@ -138,7 +139,6 @@ let g:markdown_fenced_languages = [
 \  'sh',
 \  'zsh',
 \  'sql',
-\  'json5',
 \]
 
 "----------------------------------------
