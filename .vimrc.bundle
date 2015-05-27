@@ -90,6 +90,8 @@ NeoBundle 'cespare/vim-toml'           " tomlのsyntax
 NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'kchmck/vim-coffee-script'   " CoffeeScript
 NeoBundle 'python_fold'
+" NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'justmao945/vim-clang'
 
 " app
 NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
