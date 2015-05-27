@@ -81,5 +81,16 @@ else
 fi
 
 
+#
+# tpm (tmux plugin manager)
+#
+if [ -d $HOME/.tmux/plugins/tpm ]; then
+    echo 'tpm already exists'
+else
+    echo 'Installing tpm...'
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+
 echo 'setup complete!!!'
 
