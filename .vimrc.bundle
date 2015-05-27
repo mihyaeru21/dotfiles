@@ -100,6 +100,7 @@ NeoBundle 'mattn/webapi-vim'           " Web APIをいじるためのベース�
 
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'desert256.vim'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'morhetz/gruvbox'

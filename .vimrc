@@ -45,7 +45,7 @@ endif
 "----------------------------------------
 syntax on
 set t_Co=256
-colorscheme hybrid
+colorscheme Tomorrow-Night
 set background=dark
 
 set showcmd
