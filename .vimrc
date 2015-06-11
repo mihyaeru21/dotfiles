@@ -84,6 +84,7 @@ nmap <Space>t [tab]
 nnoremap [tab]t :tabnew<CR>
 nnoremap [tab]n :tabnext<CR>
 nnoremap [tab]p :tabprevious<CR>
+nnoremap <C-]> g<C-]>
 
 
 "----------------------------------------
