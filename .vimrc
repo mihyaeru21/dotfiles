@@ -45,8 +45,8 @@ endif
 "----------------------------------------
 syntax on
 set t_Co=256
-colorscheme Tomorrow-Night
 set background=dark
+colorscheme jellybeans
 
 set showcmd
 set showmode
