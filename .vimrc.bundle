@@ -76,10 +76,10 @@ NeoBundle 'hail2u/vim-css3-syntax'     " css3/scss syntax
 NeoBundle 'mattn/emmet-vim'            " emmetだよ
 
 " markdown
-NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
-NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
+" NeoBundle 'godlygeek/tabular'                   " rcmdnk/vim-markdownで使う
+" NeoBundle 'joker1007/vim-markdown-quote-syntax' " rcmdnk/vim-markdownで使う
 NeoBundle 'kannokanno/previm'          " Markdownとかをプレビューする
-NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
+" NeoBundle 'rcmdnk/vim-markdown'                 " markdownのシンタックスとかいろいろ
 
 " 各言語のアレ
 NeoBundle 'Glench/Vim-Jinja2-Syntax'   " jinja2のシンタックス
