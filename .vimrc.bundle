@@ -57,6 +57,7 @@ NeoBundle 'tpope/vim-commentary'       " コメントアウト
 " NeoBundle 'tyru/caw.vim'
 NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
 NeoBundle 'vim-scripts/taglist.vim'    " tagでアウトライン
+NeoBundle 'cohama/lexima.vim'          " 閉じるのを補完してくれる
 
 " git
 NeoBundle 'airblade/vim-gitgutter'
