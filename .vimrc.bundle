@@ -35,6 +35,9 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sjl/gundo.vim'              " 変更履歴の歴史を辿る
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle 'jceb/vim-hier'              " quickfixの行をハイライトする
+NeoBundle 'dannyob/quickfixstatus'     " エラー箇所のエラー内容を表示する
 
 " unite
 NeoBundle 'Shougo/neomru.vim'
@@ -51,6 +54,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neosnippet.vim'
 " NeoBundle 'mattn/sonictemplate-vim'
 " NeoBundle 'scrooloose/syntastic'       " syntaxを見てくれる
+NeoBundle 'osyo-manga/vim-watchdogs'   " syntax  deps: 'thinca/vim-quickrun', 'Shougo/vimproc', 'osyo-manga/shabadou.vim'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-commentary'       " コメントアウト

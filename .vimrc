@@ -339,6 +339,19 @@ endif
 "----------------------------------------
 let g:previm_enable_realtime = 1
 
+
+"----------------------------------------
+" vim-watchdogs
+"----------------------------------------
+let g:watchdogs_check_BufWritePost_enable = 1
+
+" チェック後にquickfixを開かない
+let g:quickrun_config["watchdogs_checker/_"] = {
+\   "outputter/quickfix/open_cmd" : "",
+\}
+call watchdogs#setup(g:quickrun_config)
+
+
 "----------------------------------------
 " プラグイン用マッピング
 "----------------------------------------
