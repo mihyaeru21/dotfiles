@@ -116,6 +116,7 @@ NeoBundle 'sjl/badwolf'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/pyte'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'fatih/vim-go'
 
 
 " 設定の終了
