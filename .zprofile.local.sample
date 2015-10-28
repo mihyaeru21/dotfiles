@@ -10,6 +10,9 @@ then
     export PATH="/usr/local/heroku/bin:$PATH"
 fi
 
+# Go
+export GOROOT=/usr/local/opt/go/libexec
+
 
 
 # Linux用
