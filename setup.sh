@@ -3,7 +3,7 @@
 #
 # create symbolic link
 #
-DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet)
+DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .bin)
 for file in ${DOT_FILES[@]}; do
     if [ -f $HOME/$file ]; then
         echo $HOME/$file 'already exists'
