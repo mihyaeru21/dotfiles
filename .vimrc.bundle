@@ -99,6 +99,7 @@ NeoBundle 'python_fold'
 NeoBundle 'justmao945/vim-clang'
 NeoBundle 'zah/nim.vim'
 NeoBundle 'rhysd/vim-crystal'
+NeoBundle 'udalov/kotlin-vim'
 
 " app
 NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
