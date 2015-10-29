@@ -1,0 +1,46 @@
+# refs: https://gist.github.com/nolanlawson/8694399 : bash-version
+_gradle() {
+  local cur="$1"
+  local gradle_cmd='gradle'
+  if [[ -x ./gradlew ]]; then
+    gradle_cmd='./gradlew'
+  fi
+  if [[ -x ../gradlew ]]; then
+    gradle_cmd='../gradlew'
+  fi
+
+  local completions=''
+  local cache_dir="$HOME/.gradle_tabcompletion"
+  mkdir -p $cache_dir
+
+  local gradle_files_checksum='hoge';
+  if [[ -f build.gradle ]]; then # top-level gradle file
+    if [[ -x `which md5 2> /dev/null` ]]; then # mac
+      local all_gradle_files="$(find . -name build.gradle 2>/dev/null)"
+      gradle_files_checksum="$(md5 -q -s "${all_gradle_files}")"
+    else # linux
+      gradle_files_checksum="$(find . -name build.gradle | xargs md5sum | md5sum)"
+    fi
+  else # no top-level gradle file
+    gradle_files_checksum='no_gradle_files'
+  fi
+
+  if [[ -f $cache_dir/$gradle_files_checksum ]]; then # cached! yay!
+    completions=$(\cat $cache_dir/$gradle_files_checksum)
+  else # not cached! boo-urns!
+    completions=$($gradle_cmd --no-color --quiet tasks | grep --color=none ' - ' | awk '{print $1}' | tr '\n' ' ')
+    if [[ ! -z $completions ]]; then
+      echo $completions > $cache_dir/$gradle_files_checksum
+    fi
+  fi
+
+  local -a commands
+  commands=( "${(z)completions}" )
+  compadd $commands
+  return 1;
+}
+
+compdef _gradle gradle
+compdef _gradle gradlew
+compdef _gradle ./gradlew
+
