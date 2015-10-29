@@ -23,7 +23,6 @@ build/*
 *.xcworkspace
 !default.xcworkspace
 xcuserdata
-profile
 *.moved-aside
 
 # AppCode
