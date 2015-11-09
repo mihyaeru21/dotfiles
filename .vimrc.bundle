@@ -100,6 +100,7 @@ NeoBundle 'justmao945/vim-clang'
 NeoBundle 'zah/nim.vim'
 NeoBundle 'rhysd/vim-crystal'
 NeoBundle 'udalov/kotlin-vim'
+NeoBundle 'othree/yajs'
 
 " app
 NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
