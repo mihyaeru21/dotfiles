@@ -68,6 +68,12 @@ alias uu="cd ../../"
 alias uuu="cd ../../../"
 alias b="cd -"
 
+# slackのやつ
+alias st-p1="skintone.pl +1 | pbcopy"
+alias st-pray="skintone.pl pray | pbcopy"
+alias st-muscle="skintone.pl muscle | pbcopy"
+alias st-point_up="skintone.pl point_up | pbcopy"
+alias st-point_up_2="skintone.pl point_up_2 | pbcopy"
 
 # vcs_infoの設定ファイル
 [ -f ~/dotfiles/.zshrc.vcs ] && source ~/dotfiles/.zshrc.vcs
