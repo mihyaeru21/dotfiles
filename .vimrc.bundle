@@ -67,6 +67,7 @@ NeoBundle 'cohama/lexima.vim'          " 閉じるのを補完してくれる
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'gregsexton/gitv'            " Gitのログを見るやつ
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'lambdalisue/vim-gita'
 
 " perl
 NeoBundle "y-uuki/perl-local-lib-path.vim"      " libとかlocal/libにパスを通してくれる
