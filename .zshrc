@@ -47,7 +47,7 @@ setopt prompt_subst
 source $HOME/.zsh/prompt-git-current-branch
 source $HOME/.zsh/anyenv-program-version
 PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``get_vcs_info_msg`
-%F{yellow}[%D %*]%f%F{green}((\`o'\'')) %f'
+%F{yellow}[%D %*]%f%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 
 # ターミナルのタイトル
 case "${TERM}" in
