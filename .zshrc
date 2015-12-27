@@ -67,6 +67,7 @@ alias u="cd ../"
 alias uu="cd ../../"
 alias uuu="cd ../../../"
 alias b="cd -"
+alias be="bundle exec"
 
 # slackのやつ
 alias st-p1="skintone.pl +1 | pbcopy"
