@@ -121,28 +121,6 @@ augroup END
 
 
 "----------------------------------------
-" markdown中でハイライトさせたい言語
-"----------------------------------------
-let g:markdown_fenced_languages = [
-\  'python',
-\  'perl',
-\  'ruby',
-\  'vim',
-\  'lisp',
-\  'javascript',
-\  'js=javascript',
-\  'json=json5',
-\  'json5',
-\  'coffee',
-\  'xml',
-\  'html',
-\  'css',
-\  'sh',
-\  'zsh',
-\  'sql',
-\]
-
-"----------------------------------------
 " NeoComplete
 "----------------------------------------
 let g:acp_enableAtStartup = 0
