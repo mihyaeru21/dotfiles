@@ -2,6 +2,7 @@
 *~
 .*~
 .vim/bundle/
+.config/nvim/bundle/
 
 # TeX
 *.dvi

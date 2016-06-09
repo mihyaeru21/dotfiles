@@ -1,9 +1,17 @@
 #!/bin/bash
 
+if [ -d $HOME/.config ]; then
+    echo $HOME/.config 'already exists'
+else
+    mkdir $HOME/.config
+    echo $HOME/.config 'created'
+fi
+
+
 #
 # create symbolic link
 #
-DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .bin)
+DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .bin .config/nvim)
 for file in ${DOT_FILES[@]}; do
     if [ -f $HOME/$file ]; then
         echo $HOME/$file 'already exists'
@@ -48,6 +56,14 @@ if [ -d .vim/bundle ]; then
 else
     mkdir -p .vim/bundle
     git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
+fi
+
+# install Dein
+if [ -d .config/nvim/bundle ]; then
+    echo 'Dein already exists'
+else
+    mkdir -p .config/nvim/bundle
+    git clone https://github.com/Shougo/dein.vim .config/nvim/bundle/repos/github.com/Shougo/dein.vim
 fi
 
 
