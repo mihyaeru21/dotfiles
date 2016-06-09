@@ -1,0 +1,65 @@
+[[plugins]]
+repo             = 'Shougo/deoplete.nvim'
+on_event         = 'InsertEnter'
+hook_post_source = 'call deoplete#enable()'
+
+[[plugins]]
+repo     = 'Shougo/neosnippet.vim'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo     = 'Shougo/neosnippet-snippets'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo  = 'vim-perl/vim-perl'
+on_ft = ['perl']
+
+[[plugins]]
+repo  = 'y-uuki/perl-local-lib-path.vim'
+on_ft = ['perl']
+
+[[plugins]]
+repo  = 'motemen/xslate-vim'
+on_ft = ['perl']
+
+[[plugins]]
+repo  = 'mattn/emmet-vim'
+on_ft = ['html']
+
+[[plugins]]
+repo  = 'kannokanno/previm'
+on_ft = ['markdown']
+
+[[plugins]]
+repo  = 'Keithbsmiley/swift.vim'
+on_ft = ['swift']
+
+[[plugins]]
+repo  = 'VimClojure'
+on_ft = ['clojure']
+
+[[plugins]]
+repo  = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+
+[[plugins]]
+repo  = 'zah/nim.vim'
+on_ft = ['nim']
+
+[[plugins]]
+repo  = 'rhysd/vim-crystal'
+on_ft = ['crystal']
+
+[[plugins]]
+repo  = 'udalov/kotlin-vim'
+on_ft = ['kotlin']
+
+[[plugins]]
+repo  = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+[[plugins]]
+repo  = 'fatih/vim-go'
+on_ft = ['go']
+
