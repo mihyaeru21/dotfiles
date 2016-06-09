@@ -19,5 +19,5 @@ if [ -d "$HOME/.anyenv/envs/pyenv/plugins/pyenv-virtualenv" ] ; then
 fi
 
 # Go
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"

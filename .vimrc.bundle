@@ -38,6 +38,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'osyo-manga/shabadou.vim'
 NeoBundle 'jceb/vim-hier'              " quickfixの行をハイライトする
 NeoBundle 'dannyob/quickfixstatus'     " エラー箇所のエラー内容を表示する
+NeoBundle 'Konfekt/FastFold'
+
 
 " unite
 NeoBundle 'Shougo/neomru.vim'
@@ -102,6 +104,8 @@ NeoBundle 'zah/nim.vim'
 NeoBundle 'rhysd/vim-crystal'
 NeoBundle 'udalov/kotlin-vim'
 NeoBundle 'othree/yajs'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 " app
 NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
