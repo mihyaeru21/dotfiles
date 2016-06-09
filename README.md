@@ -1,0 +1,9 @@
+dotfiles
+========
+
+## Install
+
+```
+./setup.sh
+```
+
