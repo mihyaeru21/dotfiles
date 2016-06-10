@@ -139,3 +139,21 @@ let g:go_highlight_operators         = 1
 let g:go_highlight_build_sonstraints = 1
 
 
+
+
+augroup filetypedetect
+    autocmd! BufNewFile,BufRead *.t       setfiletype perl
+    autocmd! BufNewFile,BufRead *.psgi    setfiletype perl
+    autocmd! BufNewFile,BufRead *.tt      setfiletype perl
+    autocmd! BufNewFile,BufRead *.tx      setfiletype xslate
+    autocmd! BufNewFile,BufRead *.md      setfiletype markdown
+    autocmd! BufNewFile,BufRead *.podspec setfiletype ruby
+    autocmd! BufNewFile,BufRead Podfile   setfiletype ruby
+    autocmd! BufNewFile,BufRead *.gp      setfiletype gnuplot
+    autocmd! BufNewFile,BufRead *.tex     setfiletype tex
+    autocmd! BufNewFile,BufRead *.swift   setfiletype swift
+    autocmd! BufNewFile,BufRead *.coffee  setfiletype coffee
+    autocmd! BufNewFile,BufRead *.json    setfiletype json5
+    autocmd! BufNewFile,BufRead *.json    setfiletype json5
+augroup END
+
