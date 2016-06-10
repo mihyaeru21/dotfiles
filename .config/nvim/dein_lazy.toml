@@ -67,3 +67,25 @@ on_ft = ['go']
 repo  = 'cespare/vim-toml'
 on_ft = ['toml']
 
+
+# c#
+
+[[plugins]]
+repo  = 'OrangeT/vim-csharp'
+on_ft = ['cs', 'csi', 'csx']
+
+[[plugins]]
+repo  = 'OmniSharp/omnisharp-vim'
+on_ft = ['cs', 'csi', 'csx']
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'msbuild server/OmniSharp.sln'
+  else
+    let cmd = 'xbuild server/OmniSharp.sln'
+  endif
+'''
+
+[[plugins]]
+repo  = 'tpope/vim-dispatch'
+on_ft = ['cs', 'csi', 'csx']
+

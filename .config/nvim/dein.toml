@@ -40,3 +40,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
