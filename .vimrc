@@ -266,7 +266,7 @@ let g:neosnippet#snippets_directory = s:my_snippet
 
 
 "----------------------------------------
-" neosnippet
+" eregex
 "----------------------------------------
 " デフォルトがONだと/とか?に勝手にマッピングされてしまう
 let g:eregex_default_enable = 0
