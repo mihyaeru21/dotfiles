@@ -340,6 +340,13 @@ call watchdogs#setup(g:quickrun_config)
 
 
 "----------------------------------------
+" NERDTree
+"----------------------------------------
+" meta: Unityの管理ファイル
+let NERDTreeIgnore     = ['\.pyc$', '\.meta$', '^.DS_Store$']
+let NERDTreeShowHidden = 1
+
+"----------------------------------------
 " vim-go
 "----------------------------------------
 let g:go_highlight_functions         = 1
