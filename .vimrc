@@ -127,9 +127,10 @@ let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#sources#dictionary#dictionaries = {
-\ 'default'    : '',
-\ 'perl'       : $HOME . '/.vim/dict/perl.dict'
+\   'default' : '',
+\   'perl'    : $HOME.'/.vim/dict/perl.dict',
 \ }
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -137,6 +138,12 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -144,6 +151,9 @@ endif
 
 " Perl用 c9s/perlomni.vimを使っている
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" C#用
+let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
+
 
 
 "----------------------------------------
@@ -289,13 +299,13 @@ let g:indent_guides_exclude_filetypes     = ['help', 'nerdtree', 'text', 'quickr
 " syntastic
 "----------------------------------------
 " recommended settings
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 "----------------------------------------
@@ -399,3 +409,4 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+

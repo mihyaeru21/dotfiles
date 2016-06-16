@@ -55,7 +55,7 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neosnippet.vim'
 " NeoBundle 'mattn/sonictemplate-vim'
-" NeoBundle 'scrooloose/syntastic'       " syntaxを見てくれる
+NeoBundle 'scrooloose/syntastic'       " syntaxを見てくれる
 NeoBundle 'osyo-manga/vim-watchdogs'   " syntax  deps: 'thinca/vim-quickrun', 'Shougo/vimproc', 'osyo-manga/shabadou.vim'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'thinca/vim-quickrun'
@@ -64,6 +64,7 @@ NeoBundle 'tpope/vim-commentary'       " コメントアウト
 NeoBundle 'tyru/open-browser.vim'      " ブラウザで開くやつ
 NeoBundle 'vim-scripts/taglist.vim'    " tagでアウトライン
 NeoBundle 'cohama/lexima.vim'          " 閉じるのを補完してくれる
+NeoBundle 'tpope/vim-dispatch'
 
 " git
 NeoBundle 'airblade/vim-gitgutter'
@@ -106,6 +107,7 @@ NeoBundle 'udalov/kotlin-vim'
 NeoBundle 'othree/yajs'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'fatih/vim-go'
 
 " app
 NeoBundle 'mattn/gist-vim'             " Gist  requires: ['mattn/webapi-vim']
@@ -123,7 +125,17 @@ NeoBundle 'sjl/badwolf'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/pyte'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'fatih/vim-go'
+
+" C#
+NeoBundleLazy 'OrangeT/vim-csharp', { 'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] } }
+NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+\   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+\   'build': {
+\     'windows' : 'msbuild server/OmniSharp.sln',
+\     'mac': 'xbuild server/OmniSharp.sln',
+\     'unix': 'xbuild server/OmniSharp.sln',
+\   },
+\ }
 
 
 " 設定の終了
