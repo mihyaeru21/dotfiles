@@ -53,3 +53,9 @@ let g:syntastic_mode_map = {
 \   'active_filetypes' : ['ruby'],
 \}
 
+
+"----------------------------------------
+" deoplete
+"----------------------------------------
+let g:deoplete#enable_smart_case = 1
+
