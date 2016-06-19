@@ -43,3 +43,9 @@ repo = 'tpope/vim-commentary'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'szw/vim-tags'
+

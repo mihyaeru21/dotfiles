@@ -67,9 +67,6 @@ on_ft = ['go']
 repo  = 'cespare/vim-toml'
 on_ft = ['toml']
 
-
-# c#
-
 [[plugins]]
 repo  = 'OrangeT/vim-csharp'
 on_ft = ['cs', 'csi', 'csx']
@@ -88,4 +85,8 @@ hook_post_update = '''
 [[plugins]]
 repo  = 'tpope/vim-dispatch'
 on_ft = ['cs', 'csi', 'csx']
+
+[[plugins]]
+repo = 'taka84u9/vim-ref-ri'
+on_ft = ['ruby']
 
