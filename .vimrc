@@ -299,14 +299,17 @@ let g:indent_guides_exclude_filetypes     = ['help', 'nerdtree', 'text', 'quickr
 " syntastic
 "----------------------------------------
 " recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_ignore_files = ['\.pm$', '\.t$', '\.pl$']
+let g:syntastic_mode_map = {
+\   'mode'             : 'passive',
+\   'active_filetypes' : ['ruby'],
+\}
 
 
 "----------------------------------------
