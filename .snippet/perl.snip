@@ -4,8 +4,8 @@ snippet use
     use strict;
     use warnings;
     use utf8;
-    use 5.20.0;
-    
+
+    ${0:TARGET}
 
 snippet subtest
     subtest '${1:test_name}' => sub {
@@ -13,10 +13,14 @@ snippet subtest
     };
 
 snippet validator
-    my $v; $v //= Data::Validator->new(
+    state $v = Data::Validator->new(
         foo  => 'Foo',
         hoge => +{ isa => 'HashRef', default => sub { +{} } },
     )->with(qw/Method/);
     my ($class, $args) = $v->validate(@_);
     my () = @$args{qw/  /};
+
+snippet ddp
+    use DDP;
+    p ${0:TARGET}
 
