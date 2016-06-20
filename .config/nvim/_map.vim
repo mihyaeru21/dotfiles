@@ -35,6 +35,10 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
+" quickrun
+nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
+vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
+
 " incsearch.vim の設定
 " 標準の /, ?, g/ を置き換える
 " map /  <Plug>(incsearch-forward)

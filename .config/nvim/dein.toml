@@ -64,3 +64,6 @@ repo = 'thinca/vim-ref'
 [[plugins]]
 repo = 'szw/vim-tags'
 
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+

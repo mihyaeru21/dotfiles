@@ -59,3 +59,24 @@ let g:syntastic_mode_map = {
 "----------------------------------------
 let g:deoplete#enable_smart_case = 1
 
+
+"----------------------------------------
+" quickrun
+"----------------------------------------
+let g:quickrun_config = {
+\   '_' : {
+\       'outputter/buffer/split' : ':botright 8sp',
+\       'runner' : 'vimproc',
+\       'runner/vimproc/updatetime' : 40,
+\       'hook/time/enable' : 1,
+\   },
+\   'coffee' : {
+\       'command' : 'coffee',
+\       'exec'    : ['%c %s'],
+\   },
+\   'swift' : {
+\       'command' : 'swift',
+\       'exec'    : ['%c %s'],
+\   },
+\}
+
