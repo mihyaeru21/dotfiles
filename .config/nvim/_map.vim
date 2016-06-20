@@ -1,5 +1,34 @@
-nnoremap <Space>n :NERDTreeToggle<CR>
+"----------------------------------------
+" プラグイン以外のマッピング
+"----------------------------------------
+" ウィンドウ操作
+nnoremap <Space>s :sp<CR>
+nnoremap <Space>v :vsp<CR>
+nnoremap <C-w><C-h> 5<C-w><  " ウィンドウ横を小さく
+nnoremap <C-w><C-j> 5<C-w>-  " ウィンドウ縦を小さく
+nnoremap <C-w><C-k> 5<C-w>+  " ウィンドウ縦を大きく
+nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
 
+" タブ操作
+nmap <Space>t [tab]
+nnoremap [tab]t :tabnew<CR>
+nnoremap [tab]n :tabnext<CR>
+nnoremap [tab]p :tabprevious<CR>
+
+" <C-]>だけだとジャンプ先タグが複数あった場合に見逃す
+nnoremap <C-]> g<C-]>
+
+" コマンドモードで途中入力履歴呼び出し
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" 現在開いているバッファのパスを展開する
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+
+"----------------------------------------
+" Unite
+"----------------------------------------
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
 nnoremap [unite]b  :<C-u>Unite buffer -start-insert<CR>
@@ -13,34 +42,31 @@ nnoremap [unite]fa :<C-u>Unite file_async/git -start-insert<CR>
 nnoremap [unite]ag :<C-u>Unite grep:. -buffer-name=search-buffer -start-insert<CR>
 nnoremap [unite]ar :<C-u>UniteResume search-buffer -start-insert<CR>
 
-nnoremap <Space>s :sp<CR>
-nnoremap <Space>v :vsp<CR>
-nnoremap <C-w><C-h> 5<C-w><  " ウィンドウ横を小さく
-nnoremap <C-w><C-j> 5<C-w>-  " ウィンドウ縦を小さく
-nnoremap <C-w><C-k> 5<C-w>+  " ウィンドウ縦を大きく
-nnoremap <C-w><C-l> 5<C-w>>  " ウィンドウ横を大きく
-" コマンドモードで途中入力履歴呼び出し
-cnoremap <C-p> <Up>
-" コマンドモードで途中入力履歴呼び出し
-cnoremap <C-n> <Down>
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-" タブ操作周り
-nmap <Space>t [tab]
-nnoremap [tab]t :tabnew<CR>
-nnoremap [tab]n :tabnext<CR>
-nnoremap [tab]p :tabprevious<CR>
-nnoremap <C-]> g<C-]>
 
-" <C-k>でsnippetの展開
+"----------------------------------------
+" NERDTree
+"----------------------------------------
+nnoremap <Space>n :NERDTreeToggle<CR>
+
+
+"----------------------------------------
+" NeoSnippet
+"----------------------------------------
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
+
+"----------------------------------------
 " quickrun
+"----------------------------------------
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 
-" incsearch.vim の設定
+
+"----------------------------------------
+" incsearch
+"----------------------------------------
 " 標準の /, ?, g/ を置き換える
 " map /  <Plug>(incsearch-forward)
 " map ?  <Plug>(incsearch-backward)
