@@ -4,13 +4,14 @@ nnoremap [unite] <Nop>
 nmap <Space>u [unite]
 nnoremap [unite]b  :<C-u>Unite buffer -start-insert<CR>
 nnoremap [unite]m  :<C-u>Unite file_mru -start-insert<CR>
-nnoremap [unite]a  :<C-u>UniteWithBufferDir -buffer-name=file buffer file_mru bookmark file -start-insert<CR>
 nnoremap [unite]l  :<C-u>Unite line -start-insert<CR>
 nnoremap [unite]o  :<C-u>Unite outline -start-insert<CR>
 nnoremap [unite]M  :<C-u>Unite mark -start-insert<CR>
 nnoremap [unite]r  :<C-u>UniteResume -start-insert<CR>
 nnoremap [unite]fg :<C-u>Unite file_rec/git -start-insert<CR>
 nnoremap [unite]fa :<C-u>Unite file_async/git -start-insert<CR>
+nnoremap [unite]ag :<C-u>Unite grep:. -buffer-name=search-buffer -start-insert<CR>
+nnoremap [unite]ar :<C-u>UniteResume search-buffer -start-insert<CR>
 
 nnoremap <Space>s :sp<CR>
 nnoremap <Space>v :vsp<CR>
