@@ -67,3 +67,6 @@ repo = 'szw/vim-tags'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+

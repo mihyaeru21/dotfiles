@@ -28,8 +28,9 @@ repo  = 'mattn/emmet-vim'
 on_ft = ['html']
 
 [[plugins]]
-repo  = 'kannokanno/previm'
-on_ft = ['markdown']
+repo    = 'kannokanno/previm'
+on_ft   = ['markdown']
+depends = ['tyru/open-browser.vim']
 
 [[plugins]]
 repo  = 'Keithbsmiley/swift.vim'
