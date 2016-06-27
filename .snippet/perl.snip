@@ -24,3 +24,17 @@ snippet ddp
     use DDP;
     p ${0:TARGET}
 
+snippet self
+    my $self = shift;
+    ${0:TARGET}
+
+snippet selfm
+    my ($self, ${0:TARGET}) = @_;
+
+snippet class
+    my $class = shift;
+    ${0:TARGET}
+
+snippet classm
+    my ($class, ${0:TARGET}) = @_;
+
