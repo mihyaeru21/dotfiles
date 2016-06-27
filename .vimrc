@@ -1,5 +1,5 @@
 " プラグイン周りを先に読み込む
-source ~/dotfiles/.vimrc.bundle
+source ~/dotfiles/.vim/vimrc.bundle
 
 "----------------------------------------
 " 基本設定
