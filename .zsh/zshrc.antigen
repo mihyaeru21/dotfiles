@@ -1,4 +1,4 @@
-source $HOME/.antigen/antigen.zsh
+source $HOME/.antigen/antigen.zsh # TODO: ~/dotfiles/.zsh/antigen に移動させる
 
 # antigen bundle git    # on にするとなんかやばい
 antigen bundle brew

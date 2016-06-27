@@ -49,9 +49,9 @@ source $HOME/.zsh/anyenv-program-version
 PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``get_vcs_info_msg`
 %F{yellow}[%D %*]%f%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 
-[ -f ~/dotfiles/.zshrc.vcs ]  && source ~/dotfiles/.zshrc.vcs
-[ -f ~/.antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen # TODO: ~/dotfiles/.zsh/antigen に移動させる
-[ -f ~/dotfiles/.zshrc.func ] && source ~/dotfiles/.zshrc.func
+[ -f ~/.antigen/antigen.zsh      ] && source ~/dotfiles/.zsh/zshrc.antigen
+[ -f ~/dotfiles/.zsh/zshrc.vcs   ] && source ~/dotfiles/.zsh/zshrc.vcs
+[ -f ~/dotfiles/.zsh/zshrc.func  ] && source ~/dotfiles/.zsh/zshrc.func
 [ -f ~/dotfiles/.zsh/zshrc.alias ] && source ~/dotfiles/.zsh/zshrc.alias
-[ -f ~/.zshrc.local ]         && source ~/.zshrc.local            # いろいろ上書きできるように最後に読む
+[ -f ~/.zshrc.local              ] && source ~/.zshrc.local # いろいろ上書きできるように最後に読む
 
