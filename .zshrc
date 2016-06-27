@@ -49,42 +49,9 @@ source $HOME/.zsh/anyenv-program-version
 PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``get_vcs_info_msg`
 %F{yellow}[%D %*]%f%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 
-# ターミナルのタイトル
-case "${TERM}" in
-kterm*|xterm)
-    precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
-    ;;
-esac
-
-# alias
-alias e="exit"
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="ls -al"
-alias u="cd ../"
-alias uu="cd ../../"
-alias uuu="cd ../../../"
-alias b="cd -"
-alias be="bundle exec"
-
-# slackのやつ
-alias st-p1="skintone.pl +1 | pbcopy"
-alias st-pray="skintone.pl pray | pbcopy"
-alias st-muscle="skintone.pl muscle | pbcopy"
-alias st-point_up="skintone.pl point_up | pbcopy"
-alias st-point_up_2="skintone.pl point_up_2 | pbcopy"
-
-# vcs_infoの設定ファイル
-[ -f ~/dotfiles/.zshrc.vcs ] && source ~/dotfiles/.zshrc.vcs
-
-# antigen, plugin
-[ -f ~/.antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
-
-# 独自定義の関数
+[ -f ~/dotfiles/.zshrc.vcs ]  && source ~/dotfiles/.zshrc.vcs
+[ -f ~/.antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen # TODO: ~/dotfiles/.zsh/antigen に移動させる
 [ -f ~/dotfiles/.zshrc.func ] && source ~/dotfiles/.zshrc.func
-
-# 環境ごとの設定ファイル (いろいろ上書きできるように最後に読む)
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/dotfiles/.zsh/zshrc.alias ] && source ~/dotfiles/.zsh/zshrc.alias
+[ -f ~/.zshrc.local ]         && source ~/.zshrc.local            # いろいろ上書きできるように最後に読む
 
