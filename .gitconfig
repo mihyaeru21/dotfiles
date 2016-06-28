@@ -33,6 +33,8 @@
     modified      = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD"
     modified-perl = "!git modified | egrep '\\.(t|p([lm]|sgi))$'"
     check-perl    = "!git modified-perl | xargs -n1 -P0 perl -wc"
+    delete-merged = "!git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d"
+    remove-merged = "!git delete-merged"
 [push]
 	default = simple
 [github]
