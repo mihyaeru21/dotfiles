@@ -32,7 +32,7 @@
     jiralog = log --date=short --no-merges --pretty=format:"|%h|%an|%ad|%s|"
     modified      = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD"
     modified-perl = "!git modified | egrep '\\.(t|p([lm]|sgi))$'"
-    check-perl    = "!git modified-perl | xargs -n1 -P0 perl -wc"
+    check-perl    = "!git modified-perl | xargs -n1 -P4 perl -wc"
     delete-merged = "!git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d"
     remove-merged = "!git delete-merged"
     clean-branch  = "!git fetch --prune && git delete-merged"
