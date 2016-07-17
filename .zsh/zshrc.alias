@@ -11,6 +11,11 @@ alias uuuuuu="cd ../../../../../../"
 alias b="cd -"
 alias be="bundle exec"
 
+# haskell
+alias ghc='stack ghc --'
+alias ghci='stack ghci --'
+alias runhaskell='stack runhaskell --'
+
 # slackのやつ
 alias st-p1="skintone.pl +1 | pbcopy"
 alias st-pray="skintone.pl pray | pbcopy"
