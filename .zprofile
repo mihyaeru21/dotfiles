@@ -21,3 +21,7 @@ fi
 # Go
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
+
+# Haskell
+export PATH="$PATH:$HOME/.local/bin"
+
