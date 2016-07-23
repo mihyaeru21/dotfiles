@@ -78,6 +78,10 @@ let g:quickrun_config = {
 \       'command' : 'swift',
 \       'exec'    : ['%c %s'],
 \   },
+\   'haskell' : {
+\       'command' : 'stack',
+\       'exec'    : ['%c runhaskell -- %s'],
+\   },
 \}
 
 
