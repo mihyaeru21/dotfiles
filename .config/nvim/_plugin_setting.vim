@@ -55,6 +55,7 @@ let g:syntastic_mode_map = {
 \   'active_filetypes' : ['ruby', 'haskell', 'python'],
 \}
 
+
 "----------------------------------------
 " deoplete
 "----------------------------------------
@@ -84,6 +85,12 @@ let g:quickrun_config = {
 \       'exec'    : ['%c runhaskell -- %s'],
 \   },
 \}
+
+
+"----------------------------------------
+" Watchdog(perl向け)
+"----------------------------------------
+let g:watchdogs_check_BufWritePost_enable = 1
 
 
 "----------------------------------------

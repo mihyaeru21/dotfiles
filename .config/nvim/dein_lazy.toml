@@ -24,6 +24,11 @@ repo  = 'motemen/xslate-vim'
 on_ft = ['perl']
 
 [[plugins]]
+repo             = 'osyo-manga/vim-watchdogs'
+on_ft            = ['perl']
+hook_post_source = 'call watchdogs#setup(g:quickrun_config)'
+
+[[plugins]]
 repo  = 'mattn/emmet-vim'
 on_ft = ['html']
 
