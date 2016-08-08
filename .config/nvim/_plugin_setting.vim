@@ -52,7 +52,7 @@ let g:syntastic_style_error_symbol       = 'S✗'
 let g:syntastic_style_warning_symbol     = 'S⚠'
 let g:syntastic_mode_map = {
 \   'mode'             : 'passive',
-\   'active_filetypes' : ['ruby', 'haskell'],
+\   'active_filetypes' : ['ruby', 'haskell', 'python'],
 \}
 
 "----------------------------------------
