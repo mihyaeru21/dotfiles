@@ -1,4 +1,7 @@
+--append=no
 --recurse=yes
+--sort=yes
+--tag-relative
 --langmap=Perl:+.t
---exclude=*.js
+--exclude=*.min..js
 --c++-kinds=+l
