@@ -90,7 +90,9 @@ let g:quickrun_config = {
 "----------------------------------------
 " Watchdog(perl向け)
 "----------------------------------------
-let g:watchdogs_check_BufWritePost_enable = 1
+let g:watchdogs_check_BufWritePost_enables = {
+\   'perl' : 1,
+\ }
 
 
 "----------------------------------------
