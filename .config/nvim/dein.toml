@@ -38,12 +38,6 @@ repo = 'tpope/vim-repeat'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'jceb/vim-hier'
-
-[[plugins]]
-repo = 'dannyob/quickfixstatus'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
@@ -56,9 +50,6 @@ repo = 'tpope/vim-fugitive'
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-
-[[plugins]]
 repo = 'thinca/vim-ref'
 
 [[plugins]]
@@ -69,4 +60,10 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 

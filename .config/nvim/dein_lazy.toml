@@ -3,13 +3,10 @@ repo             = 'Shougo/deoplete.nvim'
 on_event         = 'InsertEnter'
 hook_post_source = 'call deoplete#enable()'
 
+# 非同期シンタックスチェック
 [[plugins]]
-repo     = 'Shougo/neosnippet.vim'
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo     = 'Shougo/neosnippet-snippets'
-on_event = 'InsertEnter'
+repo = 'neomake/neomake'
+on_ft = ['ruby', 'perl', 'python', 'javascript', 'haskell', 'rust', 'go']
 
 [[plugins]]
 repo  = 'vim-perl/vim-perl'
@@ -22,15 +19,6 @@ on_ft = ['perl']
 [[plugins]]
 repo  = 'motemen/xslate-vim'
 on_ft = ['perl']
-
-[[plugins]]
-repo  = 'osyo-manga/shabadou.vim'
-on_ft = ['perl']
-
-[[plugins]]
-repo             = 'osyo-manga/vim-watchdogs'
-on_ft            = ['perl']
-hook_post_source = 'call watchdogs#setup(g:quickrun_config)'
 
 [[plugins]]
 repo  = 'mattn/emmet-vim'
