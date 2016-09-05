@@ -27,7 +27,7 @@ done
 #
 # copy local files
 #
-LOCAL_FILES=(.zshrc.local .zprofile.local .gitconfig.local)
+LOCAL_FILES=(.zshrc.local .zprofile.local .gitconfig.local .config/nvim/_local.vim)
 for local_file in ${LOCAL_FILES[@]}; do
     if [ -f $HOME/$local_file ]; then
         echo $HOME/$local_file 'already exists'

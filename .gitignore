@@ -3,6 +3,7 @@
 .*~
 .vim/bundle/
 .config/nvim/bundle/
+.config/nvim/_local.vim
 
 # TeX
 *.dvi
