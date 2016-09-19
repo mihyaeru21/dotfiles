@@ -1,4 +1,4 @@
-default: dotfiles vim neovim
+default: dotfiles vim neovim packages
 	@echo 'done'
 
 # dotfiles
@@ -53,6 +53,41 @@ $(neovim_dir):
 $(dein_dir):
 	mkdir $(dein_dir)
 	git clone https://github.com/Shougo/dein.vim $(dein_dir)/repos/github.com/Shougo/dein.vim
+
+
+# packages
+################################
+
+is_mac    := ${shell uname    | grep Darwin}
+is_ubuntu := ${shell uname -a | grep Ubuntu}
+
+ifdef is_mac
+celler_dir := /usr/local/Cellar
+
+packages: $(celler_dir)
+	brew update
+	brew upgrade
+	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack
+	brew install vim --with-lua --with-luajit
+	brew install macvim --with-lua --with-luajit
+	brew install neovim/neovim/neovim --HEAD
+	brew install rogual/neovim-dot-app/neovim-dot-app --HEAD
+	brew linkapps macvim neovim-dot-app
+
+$(celler_dir):
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+endif
+
+ifdef is_ubuntu
+packages:
+	# for NeoVim
+	sudo apt install software-properties-common
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev
+endif
 
 
 # utilities
