@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #
 # copy local files
 #
@@ -13,36 +12,6 @@ for local_file in ${LOCAL_FILES[@]}; do
         echo "copy ${local_file} to home directory"
     fi
 done
-
-
-#
-# Vim
-#
-
-# バックアップ用ディレクトリ
-if [ -d $HOME/.vim_backup ]; then
-    echo 'vim backup already exists'
-else
-    mkdir $HOME/.vim_backup
-    echo 'create vim backup'
-fi
-
-# install NeoBundle
-if [ -d .vim/bundle ]; then
-    echo 'NeoBundle already exists'
-else
-    mkdir -p .vim/bundle
-    git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
-fi
-
-# install Dein
-if [ -d .config/nvim/bundle ]; then
-    echo 'Dein already exists'
-else
-    mkdir -p .config/nvim/bundle
-    git clone https://github.com/Shougo/dein.vim .config/nvim/bundle/repos/github.com/Shougo/dein.vim
-fi
-
 
 #
 # anyenv
