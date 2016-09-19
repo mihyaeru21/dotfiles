@@ -1,28 +1,5 @@
 #!/bin/bash
 
-if [ -d $HOME/.config ]; then
-    echo $HOME/.config 'already exists'
-else
-    mkdir $HOME/.config
-    echo $HOME/.config 'created'
-fi
-
-
-#
-# create symbolic link
-#
-DOT_FILES=(.gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .bin .config/nvim .rubocop.yml)
-for file in ${DOT_FILES[@]}; do
-    if [ -f $HOME/$file ]; then
-        echo $HOME/$file 'already exists'
-    elif [ -d $HOME/$file ]; then
-        echo $HOME/$file 'already exists'
-    else
-        ln -s $HOME/dotfiles/$file $HOME/$file
-        echo $HOME/$file 'symbolic link created'
-    fi
-done
-
 
 #
 # copy local files
