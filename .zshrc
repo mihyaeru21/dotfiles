@@ -55,24 +55,24 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 
 # プロンプト
 setopt prompt_subst
-source $HOME/.zsh/prompt-git-current-branch
-source $HOME/.zsh/anyenv-program-version
+source .zsh/prompt-git-current-branch
+source .zsh/anyenv-program-version
 PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``get_vcs_info_msg`
 %F{yellow}[%D %*]%f%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 
-[ -f ~/.antigen/antigen.zsh      ] && source ~/dotfiles/.zsh/zshrc.antigen
-[ -f ~/dotfiles/.zsh/zshrc.vcs   ] && source ~/dotfiles/.zsh/zshrc.vcs
-[ -f ~/dotfiles/.zsh/zshrc.func  ] && source ~/dotfiles/.zsh/zshrc.func
-[ -f ~/dotfiles/.zsh/zshrc.alias ] && source ~/dotfiles/.zsh/zshrc.alias
+source .zsh/zshrc.antigen
+source .zsh/zshrc.vcs
+source .zsh/zshrc.func
+source .zsh/zshrc.alias
 
 # Mac用の設定
 if uname | grep Darwin > /dev/null ; then
-    source $HOME/.zsh/zshrc.mac
+    source .zsh/zshrc.mac
 fi
 
 # Linux用の設定
 if uname | grep Linux > /dev/null ; then
-    source $HOME/.zsh/zshrc.linux
+    source .zsh/zshrc.linux
 fi
 
 # 個別の環境用の設定
