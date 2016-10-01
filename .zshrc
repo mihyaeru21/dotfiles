@@ -64,5 +64,14 @@ PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``get_vcs_info_msg`
 [ -f ~/dotfiles/.zsh/zshrc.vcs   ] && source ~/dotfiles/.zsh/zshrc.vcs
 [ -f ~/dotfiles/.zsh/zshrc.func  ] && source ~/dotfiles/.zsh/zshrc.func
 [ -f ~/dotfiles/.zsh/zshrc.alias ] && source ~/dotfiles/.zsh/zshrc.alias
-[ -f ~/.zshrc.local              ] && source ~/.zshrc.local # いろいろ上書きできるように最後に読む
+
+# Mac用の設定
+if uname | grep Darwin > /dev/null ; then
+    source $HOME/.zsh/zshrc.mac
+fi
+
+# Linux用の設定
+if uname | grep Linux > /dev/null ; then
+    source $HOME/.zsh/zshrc.linux
+fi
 

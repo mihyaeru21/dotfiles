@@ -1,0 +1,4 @@
+# Mac用の設定
+
+alias ls="ls -xFG"
+
