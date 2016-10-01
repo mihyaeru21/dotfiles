@@ -75,3 +75,7 @@ if uname | grep Linux > /dev/null ; then
     source $HOME/.zsh/zshrc.linux
 fi
 
+# 個別の環境用の設定
+# いろいろ上書きできるように最後に読む
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
