@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim packages anyenv
+default: dotfiles localfiles vim neovim packages anyenv antigen tpm
 	@echo 'done'
 
 # dotfiles
