@@ -1,2 +1,0 @@
-anyenv install ndenv
-

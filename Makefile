@@ -104,10 +104,18 @@ endif
 # anyenv
 ################################
 
-envs := pyenv plenv rbenv ndenv crenv
+envs := pyenv plenv rbenv ndenv
 env_paths := $(addprefix $(HOME)/.anyenv/envs/, $(envs))
 
-anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update $(env_paths)
+python_version := 3.5.2
+perl_version   := 5.24.0
+ruby_version   := 2.3.0
+node_version   := v4.6.0
+
+env_versions     := $(python_version) $(perl_version) $(ruby_version) $(node_version)
+env_version_dirs := $(join $(addsuffix /versions/, $(env_paths)),$(env_versions))
+
+anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update $(env_paths) $(env_version_dirs)
 
 $(HOME)/.anyenv:
 	git clone https://github.com/riywo/anyenv $(HOME)/.anyenv
@@ -120,7 +128,13 @@ $(HOME)/.anyenv/plugins/anyenv-update: $(HOME)/.anyenv/plugins
 
 $(env_paths):
 	$(eval env := $(shell basename $@))
-	exec $(SHELL) -l ./setup/install-$(env).sh
+	anyenv install $(env)
+
+$(env_version_dirs):
+	$(eval env     := $(shell echo $@ | perl -pe 's!^.*/envs/(\w+)/versions/.*$$!$$1!g'))
+	$(eval version := $(shell basename $@))
+	$(env) install $(version)
+	$(env) global $(version)
 
 
 # antigen (zsh plugin manager)
