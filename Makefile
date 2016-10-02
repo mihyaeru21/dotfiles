@@ -4,17 +4,17 @@ default: dotfiles vim neovim packages
 # dotfiles
 ################################
 
-dot_file_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml
-dot_file_paths := $(addprefix $(HOME)/, $(dot_file_names))
+dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml
+dotfile_paths := $(addprefix $(HOME)/, $(dotfile_names))
 
-dotfiles: $(dot_file_names) $(dot_file_paths)
+dotfiles: $(dotfile_names) $(dotfile_paths)
 
-$(dot_file_paths):
+$(dotfile_paths):
 	$(eval source := $(addprefix $(HOME)/dotfiles/, $(shell basename $@)))
 	$(eval dest   := $@)
 	ln -s $(source) $(dest)
 
-$(dot_file_names):
+$(dotfile_names):
 	@echo 'missing required file:' $@
 	exit 1
 
@@ -94,6 +94,6 @@ endif
 ################################
 
 clean:
-	rm $(dot_file_paths)
+	rm $(dotfile_paths)
 	rm $(neovim_dir)
 
