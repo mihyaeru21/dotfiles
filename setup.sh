@@ -1,23 +1,5 @@
 #!/bin/bash
 
-#
-# anyenv
-#
-if [ -d $HOME/.anyenv ]; then
-    echo 'anyenv already exists'
-else
-    echo 'Installing anyenv...'
-    git clone https://github.com/riywo/anyenv $HOME/.anyenv
-fi
-
-anyenv_plugin_root=$HOME/.anyenv/plugins
-if [ -d $anyenv_plugin_root ]; then
-    echo 'anyenv update already exists'
-else
-    mkdir -p $anyenv_plugin_root
-    git clone https://github.com/znz/anyenv-update.git $anyenv_plugin_root/anyenv-update
-fi
-
 
 #
 # antigen

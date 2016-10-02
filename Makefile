@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim packages
+default: dotfiles localfiles vim neovim packages anyenv
 	@echo 'done'
 
 # dotfiles
@@ -106,6 +106,25 @@ packages:
 	sudo apt upgrade
 	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev
 endif
+
+
+# anyenv
+################################
+
+anyenv_dir     := $(HOME)/.anyenv
+anyenv_plugins := $(HOME)/.anyenv/plugins
+anyenv_update  := $(HOME)/.anyenv/plugins/anyenv-update
+
+anyenv: $(anyenv_dir) $(anyenv_update)
+
+$(anyenv_dir):
+	git clone https://github.com/riywo/anyenv $(anyenv_dir)
+
+$(anyenv_plugins):
+	mkdir -p $(anyenv_plugins)
+
+$(anyenv_update): $(anyenv_plugins)
+	git clone https://github.com/znz/anyenv-update.git $(anyenv_update)
 
 
 # utilities
