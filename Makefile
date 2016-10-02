@@ -127,6 +127,24 @@ $(anyenv_update): $(anyenv_plugins)
 	git clone https://github.com/znz/anyenv-update.git $(anyenv_update)
 
 
+# antigen (zsh plugin manager)
+################################
+
+antigen: $(HOME)/.antigen
+
+$(HOME)/.antigen:
+	git clone https://github.com/zsh-users/antigen.git $(HOME)/.antigen
+
+
+# tpm (tmux plugin manager)
+################################
+
+tpm: $(HOME)/.tmux/plugins/tpm
+
+$(HOME)/.tmux/plugins/tpm:
+	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
+
+
 # utilities
 ################################
 

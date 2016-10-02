@@ -3,7 +3,7 @@ dotfiles
 
 ## Install
 
-```
-./setup.sh
+```sh
+make
 ```
 
