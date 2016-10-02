@@ -32,11 +32,11 @@ export JAFA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 # Mac用の設定
 if uname | grep Darwin > /dev/null ; then
-    source $HOME/dotfiles/.zsh/zprofile.mac
+    source $HOME/dotfiles/.zsh/zprofile.mac.zsh
 fi
 
 # Linux用の設定
 if uname | grep Linux > /dev/null ; then
-    source $HOME/dotfiles/.zsh/zprofile.linux
+    source $HOME/dotfiles/.zsh/zprofile.linux.zsh
 fi
 
