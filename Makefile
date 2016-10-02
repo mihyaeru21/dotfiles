@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim packages anyenv antigen tpm
+default: dotfiles localfiles vim neovim packages anyenv antigen tpm python
 	@echo 'done'
 
 # dotfiles
@@ -153,4 +153,12 @@ tpm: $(HOME)/.tmux/plugins/tpm
 
 $(HOME)/.tmux/plugins/tpm:
 	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
+
+
+# python
+################################
+
+python:
+	pip install --upgrade pip
+	pip install neovim
 
