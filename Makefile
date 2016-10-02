@@ -1,4 +1,4 @@
-default: dotfiles vim neovim packages
+default: dotfiles localfiles vim neovim packages
 	@echo 'done'
 
 # dotfiles
@@ -14,9 +14,24 @@ $(dotfile_paths):
 	$(eval dest   := $@)
 	ln -s $(source) $(dest)
 
+# リンクを張る前に一応存在をチェックしておきたい
 $(dotfile_names):
 	@echo 'missing required file:' $@
 	exit 1
+
+
+# localfiles
+################################
+
+localfile_names := .zshrc.local .zprofile.local .gitconfig.local
+localfile_paths := $(addprefix $(HOME)/, $(localfile_names))
+
+localfiles: $(localfile_paths)
+
+$(localfile_paths):
+	$(eval source := $(HOME)/dotfiles/$(shell basename $@).sample)
+	$(eval dest   := $@)
+	cp $(source) $(dest)
 
 
 # Vim
@@ -38,11 +53,12 @@ $(neobundle_dir):
 # NeoVim
 ################################
 
-config_dir := $(HOME)/.config
-neovim_dir := $(HOME)/.config/nvim
-dein_dir   := $(HOME)/dotfiles/.config/nvim/bundle
+config_dir   := $(HOME)/.config
+neovim_dir   := $(HOME)/.config/nvim
+neovim_local := $(HOME)/.config/nvim/_local.vim
+dein_dir     := $(HOME)/dotfiles/.config/nvim/bundle
 
-neovim: $(config_dir) $(neovim_dir) $(dein_dir)
+neovim: $(config_dir) $(neovim_dir) $(neovim_local) $(dein_dir)
 
 $(config_dir):
 	mkdir $(config_dir)
@@ -54,6 +70,8 @@ $(dein_dir):
 	mkdir $(dein_dir)
 	git clone https://github.com/Shougo/dein.vim $(dein_dir)/repos/github.com/Shougo/dein.vim
 
+$(neovim_local):
+	cp $(neovim_local).sample $(neovim_local)
 
 # packages
 ################################

@@ -1,19 +1,6 @@
 #!/bin/bash
 
 #
-# copy local files
-#
-LOCAL_FILES=(.zshrc.local .zprofile.local .gitconfig.local .config/nvim/_local.vim)
-for local_file in ${LOCAL_FILES[@]}; do
-    if [ -f $HOME/$local_file ]; then
-        echo $HOME/$local_file 'already exists'
-    else
-        cp $HOME/dotfiles/"${local_file}.sample" $HOME/$local_file
-        echo "copy ${local_file} to home directory"
-    fi
-done
-
-#
 # anyenv
 #
 if [ -d $HOME/.anyenv ]; then
