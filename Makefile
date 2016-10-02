@@ -63,6 +63,7 @@ $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim:
 $(HOME)/.config/nvim/_local.vim:
 	cp $(HOME)/.config/nvim/_local.vim.sample $(HOME)/.config/nvim/_local.vim
 
+
 # packages
 ################################
 
@@ -84,16 +85,19 @@ packages: /usr/local/bin/brew
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 endif
 
+# TODO: 現状はubuntu 16.04前提...
 ifdef is_ubuntu
-packages:
-	# for NeoVim
-	# TODO: 毎回実行したくない
-	sudo apt install software-properties-common
-	sudo add-apt-repository ppa:neovim-ppa/unstable
-	
+packages: /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list
 	sudo apt update
 	sudo apt upgrade
 	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev
+
+/usr/bin/add-apt-repository:
+	sudo apt install software-properties-common
+
+# ここにファイルができるはず
+/etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list: /usr/bin/add-apt-repository
+	sudo add-apt-repository ppa:neovim-ppa/unstable
 endif
 
 
