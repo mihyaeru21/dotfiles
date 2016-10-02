@@ -109,7 +109,7 @@ env_paths := $(addprefix $(HOME)/.anyenv/envs/, $(envs))
 
 python_version := 3.5.2
 perl_version   := 5.24.0
-ruby_version   := 2.3.0
+ruby_version   := 2.3.1
 node_version   := v4.6.0
 
 env_versions     := $(python_version) $(perl_version) $(ruby_version) $(node_version)
