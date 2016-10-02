@@ -2,3 +2,6 @@
 
 alias ls="ls -xFG"
 
+# Go
+export GOROOT=/usr/local/opt/go/libexec
+

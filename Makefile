@@ -4,7 +4,7 @@ default: dotfiles vim neovim packages
 # dotfiles
 ################################
 
-dot_file_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .bin .rubocop.yml
+dot_file_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml
 dot_file_paths := $(addprefix $(HOME)/, $(dot_file_names))
 
 dotfiles: $(dot_file_names) $(dot_file_paths)

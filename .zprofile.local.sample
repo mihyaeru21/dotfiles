@@ -1,17 +1,2 @@
-# 環境ごとの設定
-
-# Mac用
-
-# /usr/local/sbin が既にPATHにある場合は何もしない
-if ! echo $PATH | grep -q '/usr/local/sbin'; then
-    export PATH=/usr/local/bin:/usr/local/sbin:$PATH  # /usr/local/bin を優先
-fi
-
-# Go
-export GOROOT=/usr/local/opt/go/libexec
-
-
-
-# Linux用
-# 今のところ無し
+# 個別の環境用の設定
 
