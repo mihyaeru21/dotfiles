@@ -37,41 +37,31 @@ $(localfile_paths):
 # Vim
 ################################
 
-vim_backup_dir := $(HOME)/.vim_backup
-neobundle_dir  := $(HOME)/dotfiles/.vim/bundle
+vim: $(HOME)/.vim_backup $(HOME)/dotfiles/.vim/bundle/neobundle.vim
 
-vim: $(vim_backup_dir) $(neobundle_dir)
+$(HOME)/.vim_backup:
+	mkdir $(HOME)/.vim_backup
 
-$(vim_backup_dir):
-	mkdir $(vim_backup_dir)
-
-$(neobundle_dir):
-	mkdir $(neobundle_dir)
-	git clone git://github.com/Shougo/neobundle.vim $(neobundle_dir)/neobundle.vim
+$(HOME)/dotfiles/.vim/bundle/neobundle.vim:
+	mkdir $(HOME)/dotfiles/.vim/bundle
+	git clone git://github.com/Shougo/neobundle.vim $(HOME)/dotfiles/.vim/bundle/neobundle.vim
 
 
 # NeoVim
 ################################
 
-config_dir   := $(HOME)/.config
-neovim_dir   := $(HOME)/.config/nvim
-neovim_local := $(HOME)/.config/nvim/_local.vim
-dein_dir     := $(HOME)/dotfiles/.config/nvim/bundle
+neovim: $(HOME)/.config/nvim $(HOME)/.config/nvim/_local.vim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
-neovim: $(config_dir) $(neovim_dir) $(neovim_local) $(dein_dir)
+$(HOME)/.config/nvim:
+	mkdir -p $(HOME)/.config
+	ln -s $(HOME)/dotfiles/.config/nvim $(HOME)/.config/nvim
 
-$(config_dir):
-	mkdir $(config_dir)
+$(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim:
+	mkdir $(HOME)/.config/nvim/bundle
+	git clone https://github.com/Shougo/dein.vim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
-$(neovim_dir):
-	ln -s $(HOME)/dotfiles/.config/nvim $(neovim_dir)
-
-$(dein_dir):
-	mkdir $(dein_dir)
-	git clone https://github.com/Shougo/dein.vim $(dein_dir)/repos/github.com/Shougo/dein.vim
-
-$(neovim_local):
-	cp $(neovim_local).sample $(neovim_local)
+$(HOME)/.config/nvim/_local.vim:
+	cp $(HOME)/.config/nvim/_local.vim.sample $(HOME)/.config/nvim/_local.vim
 
 # packages
 ################################
@@ -80,9 +70,7 @@ is_mac    := ${shell uname    | grep Darwin}
 is_ubuntu := ${shell uname -a | grep Ubuntu}
 
 ifdef is_mac
-celler_dir := /usr/local/Cellar
-
-packages: $(celler_dir)
+packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
 	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack
@@ -92,13 +80,14 @@ packages: $(celler_dir)
 	brew install rogual/neovim-dot-app/neovim-dot-app --HEAD
 	brew linkapps macvim neovim-dot-app
 
-$(celler_dir):
+/usr/local/bin/brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 endif
 
 ifdef is_ubuntu
 packages:
 	# for NeoVim
+	# TODO: 毎回実行したくない
 	sudo apt install software-properties-common
 	sudo add-apt-repository ppa:neovim-ppa/unstable
 	
@@ -111,20 +100,16 @@ endif
 # anyenv
 ################################
 
-anyenv_dir     := $(HOME)/.anyenv
-anyenv_plugins := $(HOME)/.anyenv/plugins
-anyenv_update  := $(HOME)/.anyenv/plugins/anyenv-update
+anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update
 
-anyenv: $(anyenv_dir) $(anyenv_update)
+$(HOME)/.anyenv:
+	git clone https://github.com/riywo/anyenv $(HOME)/.anyenv
 
-$(anyenv_dir):
-	git clone https://github.com/riywo/anyenv $(anyenv_dir)
+$(HOME)/.anyenv/plugins:
+	mkdir -p $(HOME)/.anyenv/plugins
 
-$(anyenv_plugins):
-	mkdir -p $(anyenv_plugins)
-
-$(anyenv_update): $(anyenv_plugins)
-	git clone https://github.com/znz/anyenv-update.git $(anyenv_update)
+$(HOME)/.anyenv/plugins/anyenv-update: $(HOME)/.anyenv/plugins
+	git clone https://github.com/znz/anyenv-update.git $(HOME)/.anyenv/plugins/anyenv-update
 
 
 # antigen (zsh plugin manager)
@@ -143,12 +128,4 @@ tpm: $(HOME)/.tmux/plugins/tpm
 
 $(HOME)/.tmux/plugins/tpm:
 	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
-
-
-# utilities
-################################
-
-clean:
-	rm $(dotfile_paths)
-	rm $(neovim_dir)
 
