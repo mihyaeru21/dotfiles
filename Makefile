@@ -104,7 +104,10 @@ endif
 # anyenv
 ################################
 
-anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update
+envs := pyenv plenv rbenv ndenv crenv
+env_paths := $(addprefix $(HOME)/.anyenv/envs/, $(envs))
+
+anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update $(env_paths)
 
 $(HOME)/.anyenv:
 	git clone https://github.com/riywo/anyenv $(HOME)/.anyenv
@@ -114,6 +117,10 @@ $(HOME)/.anyenv/plugins:
 
 $(HOME)/.anyenv/plugins/anyenv-update: $(HOME)/.anyenv/plugins
 	git clone https://github.com/znz/anyenv-update.git $(HOME)/.anyenv/plugins/anyenv-update
+
+$(env_paths):
+	$(eval env := $(shell basename $@))
+	exec $(SHELL) -l ./setup/install-$(env).sh
 
 
 # antigen (zsh plugin manager)
