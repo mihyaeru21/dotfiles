@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim packages anyenv antigen tpm python
+default: dotfiles localfiles vim neovim antigen tpm packages anyenv python
 	@echo 'done'
 
 # dotfiles
@@ -82,7 +82,7 @@ packages: /usr/local/bin/brew
 	brew linkapps macvim neovim-dot-app
 
 /usr/local/bin/brew:
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 endif
 
 # TODO: 現状はubuntu 16.04前提...
