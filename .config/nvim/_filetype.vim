@@ -1,6 +1,7 @@
 augroup filetypedetect
     autocmd! BufNewFile,BufRead *.coffee  setfiletype coffee
     autocmd! BufNewFile,BufRead *.gp      setfiletype gnuplot
+    autocmd! BufNewFile,BufRead *.jsx     setfiletype javascript.jsx
     autocmd! BufNewFile,BufRead *.json    setfiletype json5
     autocmd! BufNewFile,BufRead *.md      setfiletype markdown
     autocmd! BufNewFile,BufRead *.psgi    setfiletype perl

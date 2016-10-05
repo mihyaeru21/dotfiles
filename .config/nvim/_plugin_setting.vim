@@ -95,3 +95,11 @@ elseif executable('ag')
     let g:unite_source_grep_recursive_opt = ''
 endif
 
+
+"----------------------------------------
+" vim-jsx
+"----------------------------------------
+
+" @から始まるプラグマでは読み込まない
+let g:jsx_pragma_required = 0
+
