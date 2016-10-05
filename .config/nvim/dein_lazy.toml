@@ -94,8 +94,8 @@ repo = 'othree/es.next.syntax.vim'
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'mxw/vim-jsx'
-on_ft = ['javascript']
+repo = 'MaxMEllon/vim-jsx-pretty'
+on_ft = ['javascript.jsx']
 
 [[plugins]]
 repo  = 'kchmck/vim-coffee-script'
