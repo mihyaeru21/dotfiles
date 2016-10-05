@@ -79,6 +79,7 @@ packages: /usr/local/bin/brew
 	brew install macvim --with-lua --with-luajit
 	brew install neovim/neovim/neovim --HEAD
 	brew install rogual/neovim-dot-app/neovim-dot-app --HEAD
+	brew install tkengo/highway/highway
 	brew linkapps macvim neovim-dot-app
 
 /usr/local/bin/brew:

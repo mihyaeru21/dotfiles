@@ -38,7 +38,7 @@ nnoremap [unite]o :<C-u>Unite outline -start-insert -auto-preview<CR>
 nnoremap [unite]M :<C-u>Unite mark -start-insert<CR>
 nnoremap [unite]r :<C-u>UniteResume -start-insert<CR>
 nnoremap [unite]f :<C-u>Unite file_rec/git -start-insert<CR>
-nnoremap [unite]a :<C-u>Unite grep:. -start-insert -auto-preview<CR>
+nnoremap [unite]g :<C-u>Unite grep:. -start-insert -auto-preview<CR>
 
 
 "----------------------------------------
