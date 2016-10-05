@@ -38,10 +38,6 @@ repo  = 'VimClojure'
 on_ft = ['clojure']
 
 [[plugins]]
-repo  = 'kchmck/vim-coffee-script'
-on_ft = ['coffee']
-
-[[plugins]]
 repo  = 'zah/nim.vim'
 on_ft = ['nim']
 
@@ -52,10 +48,6 @@ on_ft = ['crystal']
 [[plugins]]
 repo  = 'udalov/kotlin-vim'
 on_ft = ['kotlin']
-
-[[plugins]]
-repo  = 'pangloss/vim-javascript'
-on_ft = ['javascript']
 
 [[plugins]]
 repo  = 'fatih/vim-go'
@@ -93,3 +85,18 @@ on_ft = ['haskell']
 repo = 'ujihisa/unite-haskellimport'
 on_ft = ['haskell']
 
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = ['javascript']
+
+[[plugins]]
+repo  = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
