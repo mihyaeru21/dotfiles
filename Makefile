@@ -74,7 +74,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace
+	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop
 	brew install vim --with-lua --with-luajit
 	brew install macvim --with-lua --with-luajit
 	brew install neovim/neovim/neovim
@@ -91,7 +91,7 @@ ifdef is_ubuntu
 packages: /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list
 	sudo apt update
 	sudo apt upgrade
-	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev
+	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig htop neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev
 
 /usr/bin/add-apt-repository:
 	sudo apt install software-properties-common
