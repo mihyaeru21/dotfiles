@@ -29,6 +29,10 @@ repo = 'Shougo/unite-outline'
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
+repo    = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['scrooloose/nerdtree']
+
+[[plugins]]
 repo = 'othree/eregex.vim'
 
 [[plugins]]
