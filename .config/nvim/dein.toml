@@ -26,6 +26,9 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/unite-outline'
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
