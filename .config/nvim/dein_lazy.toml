@@ -100,3 +100,9 @@ on_ft = ['javascript.jsx']
 [[plugins]]
 repo  = 'kchmck/vim-coffee-script'
 on_ft = ['coffee']
+
+[[plugins]]
+repo    = 'AndrewRadev/vim-eco'
+on_ft   = ['eco']
+depends = ['vim-coffee-script']
+
