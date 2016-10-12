@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+    <appdef>
+        <appname>iTerm2</appname>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+    <appdef>
+        <appname>MacVim</appname>
+        <equal>org.vim.MacVim</equal>
+    </appdef>
+    <appdef>
+        <appname>Quiver</appname>
+        <equal>com.happenapps.Quiver</equal>
+    </appdef>
+    <item>
+        <name>Leave Insert Mode with EISUU (vim keybind apps)</name>
+        <identifier>private.vim_keybind_apps_esc_with_eisuu</identifier>
+        <only>iTerm2,TERMINAL,MacVim,Quiver</only>
+        <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
+        <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, VK_CONTROL, KeyCode::BRACKET_LEFT, VK_CONTROL, KeyCode::JIS_EISUU</autogen>
+    </item>
+</root>
