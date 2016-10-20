@@ -79,7 +79,7 @@ let g:quickrun_config = {
 
 
 "----------------------------------------
-" Unite
+" Unite/Denite
 "----------------------------------------
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case  = 1
@@ -95,6 +95,9 @@ elseif executable('ag')
     let g:unite_source_grep_recursive_opt = ''
 endif
 
+" 行移動のマッピングをEmacs的にする
+call denite#custom#map('_', "\<C-n>", 'move_to_next_line')
+call denite#custom#map('_', "\<C-p>", 'move_to_prev_line')
 
 "----------------------------------------
 " vim-jsx
