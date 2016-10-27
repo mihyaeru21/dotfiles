@@ -3,5 +3,7 @@
 --sort=yes
 --tag-relative
 --langmap=Perl:+.t
---exclude=*.min..js
+--exclude=*.js
+--exclude=node_modules
+--exclude=vendor
 --c++-kinds=+l
