@@ -31,7 +31,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 "----------------------------------------
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
-nnoremap [unite]b :<C-u>Unite buffer -start-insert<CR>
+nnoremap [unite]b :<C-u>Denite buffer<CR>
 nnoremap [unite]m :<C-u>Denite file_mru<CR>
 nnoremap [unite]l :<C-u>Unite line -start-insert -auto-preview<CR>
 nnoremap [unite]o :<C-u>Unite outline -start-insert -auto-preview<CR>
