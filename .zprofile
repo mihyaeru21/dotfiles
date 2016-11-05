@@ -24,6 +24,8 @@ fi
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
+export PATH="$PATH:$HOME/.multirust/toolchains/stable/cargo/bin"
+
 # Haskell
 export PATH="$PATH:$HOME/.local/bin"
 

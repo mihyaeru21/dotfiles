@@ -52,6 +52,11 @@ autocmd! BufWritePost * Neomake
 "----------------------------------------
 let g:deoplete#enable_smart_case = 1
 
+if !exists('g:deoplete#sources')
+    let g:deoplete#sources = {}
+endif
+" let g:deoplete#omni#input_patterns.rust = '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
+let g:deoplete#sources.rust = ['buffer', 'tag', 'racer']
 
 "----------------------------------------
 " quickrun
@@ -105,4 +110,17 @@ call denite#custom#map('_', "\<C-p>", 'move_to_prev_line')
 
 " @から始まるプラグマでは読み込まない
 let g:jsx_pragma_required = 0
+
+
+"----------------------------------------
+" Rust
+"----------------------------------------
+" rust.vim
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = 'rustfmt'
+
+" vim-racer
+set hidden
+let g:racer_cmd = '/Users/mihyaeru/.multirust/toolchains/stable/cargo/bin/racer'
+let $RUST_SRC_PATH="$HOME/.multirust/toolchains/stable/src/1.12.0"
 

@@ -106,3 +106,11 @@ repo    = 'AndrewRadev/vim-eco'
 on_ft   = ['eco']
 depends = ['vim-coffee-script']
 
+[[plugins]]
+repo  = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo  = 'phildawes/racer'
+on_ft = ['rust']
+
