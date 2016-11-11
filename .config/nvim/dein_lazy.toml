@@ -22,7 +22,7 @@ on_ft = ['perl']
 
 [[plugins]]
 repo  = 'mattn/emmet-vim'
-on_ft = ['html', 'erb', 'eco']
+on_ft = ['html', 'eruby', 'eco']
 
 [[plugins]]
 repo    = 'kannokanno/previm'
