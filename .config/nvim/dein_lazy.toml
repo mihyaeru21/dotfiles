@@ -111,6 +111,6 @@ repo  = 'rust-lang/rust.vim'
 on_ft = ['rust']
 
 [[plugins]]
-repo  = 'phildawes/racer'
+repo  = 'racer-rust/vim-racer'
 on_ft = ['rust']
 

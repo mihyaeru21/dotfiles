@@ -22,6 +22,7 @@ set shiftround     " >とかを使った時にきれいな位置に合わせる
 set wildmenu       " タブ補完の候補をステータスバーに表示
 set wildmode=full  " 補完のしかた？
 set history=1000
+set hidden
 
 set showcmd
 set showmode

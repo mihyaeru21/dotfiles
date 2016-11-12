@@ -24,7 +24,12 @@ fi
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
-export PATH="$PATH:$HOME/.multirust/toolchains/stable/cargo/bin"
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+# ここが読み込まれた時点でのtoolchainの向き先になってしまうけど、しばらくはtoolchainは変えることは無さそうだから許容
+# これがリリースされるまでの間のみ必要: https://github.com/phildawes/racer/pull/598
+rust_sysroot=`rustc --print sysroot`
+export RUST_SRC_PATH="$rust_sysroot/lib/rustlib/src/rust/src"
 
 # Haskell
 export PATH="$PATH:$HOME/.local/bin"
