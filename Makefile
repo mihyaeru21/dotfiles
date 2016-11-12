@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim antigen tpm packages anyenv python
+default: dotfiles localfiles vim neovim antigen tpm packages anyenv python rust
 	@echo 'done'
 
 # dotfiles
@@ -74,7 +74,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop multirust
+	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop
 	brew install vim --with-lua --with-luajit
 	brew install macvim --with-lua --with-luajit
 	brew install neovim/neovim/neovim
@@ -162,4 +162,17 @@ $(HOME)/.tmux/plugins/tpm:
 python:
 	pip install --upgrade pip
 	pip install neovim
+
+
+# rust
+################################
+
+rustup := $(HOME)/.cargo/bin/rustup
+
+rust: $(rustup)
+	cargo install rustfmt
+	cargo install racer
+
+$(rustup):
+	curl https://sh.rustup.rs -sSf | sh
 
