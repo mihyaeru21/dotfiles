@@ -47,3 +47,8 @@ if uname | grep Linux > /dev/null ; then
     source $HOME/dotfiles/.zsh/zprofile.linux.zsh
 fi
 
+# El Capitan以上ではやっておくとようさそう感
+# https://github.com/servo/servo/ より
+export OPENSSL_INCLUDE_DIR="$(brew --prefix openssl)/include"
+export OPENSSL_LIB_DIR="$(brew --prefix openssl)/lib"
+
