@@ -1,0 +1,16 @@
+
+# ==== Emojis ====
+# ✏️  :pencil2: Writing docs
+# 🐛  :bug: Fix bugs
+# ❤  :heart: Fix bugs
+# 👍  :+1: Feature improvements
+# ✨  :sparkles: Additional partial feature
+# 🎉  :tada: Grand major features added to celebrate
+# ♻️  :recycle :Refactoring
+# 🚿  :shower: Removal of obsolete functions or features.
+# 💚  :green_heart: Modification and improvement of testing and CI
+# 👕  :shirt: Fixing of errors found by Lint.
+# 🚀  :rocket: Performance improvement
+# 🆙  :up: Updates, such as dependent package
+# 🔒  :lock: Limit of the range of new features
+# 👮  :cop: Security-related improvements

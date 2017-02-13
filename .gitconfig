@@ -43,3 +43,5 @@
 [ghq]
     root = ~/.ghq
     root = ~/.go/src
+[commit]
+    template = ~/.gitcommittemplate
