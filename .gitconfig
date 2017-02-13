@@ -29,6 +29,7 @@
     logp  = log -p
     logpg = "log -p --grep=$1"
     logs  = log --stat
+    diffs = "!git diff --color | diff-so-fancy"
     jiralog = log --date=short --no-merges --pretty=format:"|%h|%an|%ad|%s|"
     modified      = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD"
     modified-perl = "!git modified | egrep '\\.(t|p([lm]|sgi))$'"

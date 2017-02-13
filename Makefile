@@ -74,7 +74,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop
+	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy
 	brew install vim --with-lua --with-luajit
 	brew install macvim --with-lua --with-luajit
 	brew install neovim/neovim/neovim
