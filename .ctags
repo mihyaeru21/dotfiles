@@ -7,3 +7,4 @@
 --exclude=node_modules
 --exclude=vendor
 --c++-kinds=+l
+-f .git/tags

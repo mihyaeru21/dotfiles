@@ -3,6 +3,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set textwidth=0
+set tags+=.git/tags " tagsを.git/tagsからも読む
 
 set autoindent
 set smartindent

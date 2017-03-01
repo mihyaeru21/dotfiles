@@ -24,6 +24,7 @@ set shiftround " >とかを使った時にきれいな位置に合わせる
 set wildmenu   " タブ補完の候補をステータスバーに表示
 set wildmode=full  " 補完のしかた？
 set history=1000
+set tags+=.git/tags " tagsを.git/tagsからも読む
 
 " スワップファイルとバックアップのディレクトリ
 set backupdir=~/.vim_backup

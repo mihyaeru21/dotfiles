@@ -1,42 +1,18 @@
-# Vim
-*~
-.*~
+# dotfiles
 .vim/bundle/
 .config/nvim/bundle/
 .config/nvim/_local.vim
 
-# TeX
-*.dvi
-*.aux
+# Vim
+*~
+.*~
 
 # Mac
 .DS_Store
 
-# Xcode
-build/*
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
-xcuserdata
-*.moved-aside
-
 # AppCode
 .idea
 
-# CocoaPods
-Pods/*
-
-# ctags file
-tags
-
 # temporary files
-,*
 ,/
 
