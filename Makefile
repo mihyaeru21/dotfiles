@@ -4,7 +4,7 @@ default: dotfiles localfiles vim neovim antigen tpm packages anyenv python rust
 # dotfiles
 ################################
 
-dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml .pryrc .csscomb.cson .gitcommittemplate
+dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml .pryrc .csscomb.cson .gitcommittemplate .ideavimrc
 dotfile_paths := $(addprefix $(HOME)/, $(dotfile_names))
 
 dotfiles: $(dotfile_names) $(dotfile_paths)
