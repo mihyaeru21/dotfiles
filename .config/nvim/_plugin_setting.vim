@@ -34,7 +34,7 @@ let g:go_highlight_build_sonstraints = 1
 " NERDTree
 "----------------------------------------
 " meta: Unityの管理ファイル
-let NERDTreeIgnore     = ['\.pyc$', '\.meta$', '^.DS_Store$']
+let NERDTreeIgnore     = ['\.o$', '\.pyc$', '\.meta$', '^.DS_Store$']
 let NERDTreeShowHidden = 1
 
 
