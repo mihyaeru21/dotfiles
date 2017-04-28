@@ -80,6 +80,7 @@ packages: /usr/local/bin/brew
 	brew install neovim/neovim/neovim
 	brew install rogual/neovim-dot-app/neovim-dot-app --HEAD
 	brew install tkengo/highway/highway
+	brew install sanemat/font/ricty
 	brew linkapps macvim neovim-dot-app
 
 /usr/local/bin/brew:
