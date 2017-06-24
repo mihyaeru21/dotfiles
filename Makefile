@@ -74,7 +74,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq
+	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3
 	brew install vim --with-lua --with-luajit
 	brew install macvim --with-lua --with-luajit
 	brew install neovim/neovim/neovim
@@ -92,7 +92,7 @@ ifdef is_ubuntu
 packages: /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list
 	sudo apt update
 	sudo apt upgrade
-	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig htop neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev
+	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig htop neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev python3
 
 /usr/bin/add-apt-repository:
 	sudo apt install software-properties-common
@@ -106,15 +106,14 @@ endif
 # anyenv
 ################################
 
-envs := pyenv plenv rbenv ndenv
+envs := plenv rbenv ndenv
 env_paths := $(addprefix $(HOME)/.anyenv/envs/, $(envs))
 
-python_version := 3.5.2
 perl_version   := 5.24.0
 ruby_version   := 2.3.1
 node_version   := v4.6.0
 
-env_versions     := $(python_version) $(perl_version) $(ruby_version) $(node_version)
+env_versions     := $(perl_version) $(ruby_version) $(node_version)
 env_version_dirs := $(join $(addsuffix /versions/, $(env_paths)),$(env_versions))
 
 anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update $(env_paths) $(env_version_dirs)
@@ -161,8 +160,8 @@ $(HOME)/.tmux/plugins/tpm:
 ################################
 
 python:
-	pip install --upgrade pip
-	pip install neovim
+	pip3 install --upgrade pip
+	pip3 install neovim
 
 
 # rust
