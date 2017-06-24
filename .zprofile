@@ -1,6 +1,8 @@
 # 環境ごとの設定ファイルを読み込む
 [ -f ~/.zprofile.local ] && source ~/.zprofile.local
 
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 # いろいろ入れておくところ
 export PATH="$PATH:$HOME/dotfiles/.bin"
 
