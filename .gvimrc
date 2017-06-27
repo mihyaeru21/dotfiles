@@ -15,3 +15,4 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 " ベルを鳴らさない
 set visualbell t_vb=
 
+colorscheme desert
