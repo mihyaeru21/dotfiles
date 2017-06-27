@@ -75,13 +75,10 @@ packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
 	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3
-	brew install vim --with-lua --with-luajit
-	brew install macvim --with-lua --with-luajit
+	brew install vim --with-luajit
 	brew install neovim/neovim/neovim
-	brew install rogual/neovim-dot-app/neovim-dot-app --HEAD
 	brew install tkengo/highway/highway
 	brew install sanemat/font/ricty
-	brew linkapps macvim neovim-dot-app
 
 /usr/local/bin/brew:
 	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
