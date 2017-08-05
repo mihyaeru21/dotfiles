@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim antigen tpm packages anyenv python rust fish karabiner
+default: dotfiles localfiles vim neovim tpm packages python rust fish karabiner
 	@echo 'done'
 
 # dotfiles
@@ -98,50 +98,6 @@ packages: /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list
 endif
 
 
-# anyenv
-################################
-
-envs := plenv rbenv ndenv
-env_paths := $(addprefix $(HOME)/.anyenv/envs/, $(envs))
-
-perl_version   := 5.24.0
-ruby_version   := 2.3.1
-node_version   := v4.6.0
-
-env_versions     := $(perl_version) $(ruby_version) $(node_version)
-env_version_dirs := $(join $(addsuffix /versions/, $(env_paths)),$(env_versions))
-
-anyenv: $(HOME)/.anyenv $(HOME)/.anyenv/plugins/anyenv-update $(env_paths) $(env_version_dirs)
-
-$(HOME)/.anyenv:
-	git clone https://github.com/riywo/anyenv $(HOME)/.anyenv
-
-$(HOME)/.anyenv/plugins:
-	mkdir -p $(HOME)/.anyenv/plugins
-
-$(HOME)/.anyenv/plugins/anyenv-update: $(HOME)/.anyenv/plugins
-	git clone https://github.com/znz/anyenv-update.git $(HOME)/.anyenv/plugins/anyenv-update
-
-$(env_paths):
-	$(eval env := $(shell basename $@))
-	anyenv install $(env)
-
-$(env_version_dirs):
-	$(eval env     := $(shell echo $@ | perl -pe 's!^.*/envs/(\w+)/versions/.*$$!$$1!g'))
-	$(eval version := $(shell basename $@))
-	$(env) install $(version)
-	$(env) global $(version)
-
-
-# antigen (zsh plugin manager)
-################################
-
-antigen: $(HOME)/.antigen
-
-$(HOME)/.antigen:
-	git clone https://github.com/zsh-users/antigen.git $(HOME)/.antigen
-
-
 # tpm (tmux plugin manager)
 ################################
 
@@ -165,8 +121,8 @@ python:
 rustup := $(HOME)/.cargo/bin/rustup
 
 rust: $(rustup)
-	cargo install rustfmt
-	cargo install racer
+	cargo install -f rustfmt
+	cargo install -f racer
 
 $(rustup):
 	curl https://sh.rustup.rs -sSf | sh
