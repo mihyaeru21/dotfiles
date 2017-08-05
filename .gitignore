@@ -1,7 +1,11 @@
 # dotfiles
-.vim/bundle/
-.config/nvim/bundle/
-.config/nvim/_local.vim
+/.vim/bundle/
+/.config/nvim/bundle/
+/.config/nvim/_local.vim
+/.config/fish/fishd.*
+/.config/fish/completions/fisher.fish
+/.config/fish/functions/fisher.fish
+/fisher/
 
 # Vim
 *~
