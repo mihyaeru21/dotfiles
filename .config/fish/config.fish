@@ -23,18 +23,15 @@ set fish_greeting ""
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
 
-# FIXME: これいらんな移行完了後に消すぞ
-set -x PATH /usr/local/bin /usr/local/sbin $PATH
-
 # Rust
-set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH $PATH $HOME/.cargo/bin
 
 # Go
 set -x GOPATH $HOME/go
-set -x PATH $GOPATH/bin $PATH
+set -x PATH $PATH $GOPATH/bin
 
 # Haskell
-set -x PATH $HOME/.local/bin $PATH
+set -x PATH $PATH $HOME/.local/bin
 
 # Javaのデフォルトの文字コードを設定する
 set -x JAFA_TOOL_OPTIONS -Dfile.encoding=UTF-8
