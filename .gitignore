@@ -5,7 +5,8 @@
 /.config/fish/fishd.*
 /.config/fish/completions/fisher.fish
 /.config/fish/functions/fisher.fish
-/fisher/
+/fisher/*
+!/fisher/fishfile
 
 # Vim
 *~
