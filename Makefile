@@ -73,7 +73,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 rbenv nodenv neovim
+	brew install cmake automake tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 rbenv nodenv neovim gibo
 	brew install vim --with-luajit
 	brew install tkengo/highway/highway
 	brew install sanemat/font/ricty
