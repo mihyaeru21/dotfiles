@@ -114,3 +114,7 @@ on_ft = ['rust']
 repo  = 'racer-rust/vim-racer'
 on_ft = ['rust']
 
+[[plugins]]
+repo  = 'dag/vim-fish'
+on_ft = ['fish']
+

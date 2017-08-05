@@ -13,4 +13,5 @@ autocmd BufNewFile,BufRead *.swift    setfiletype swift
 autocmd BufNewFile,BufRead *.tex      setfiletype tex
 autocmd BufNewFile,BufRead *.tx       setfiletype xslate
 autocmd BufNewFile,BufRead *.rs       setfiletype rust
+autocmd BufNewFile,BufRead *.fish     setfiletype fish
 
