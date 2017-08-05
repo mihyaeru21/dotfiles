@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim antigen tpm packages anyenv python rust fish
+default: dotfiles localfiles vim neovim antigen tpm packages anyenv python rust fish karabiner
 	@echo 'done'
 
 # dotfiles
@@ -183,6 +183,15 @@ $(HOME)/.config/fish: $(HOME)/.config
 
 $(HOME)/.config/fish/functions/fisher.fish:
 	curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+
+
+# karabiner
+################################
+
+karabiner: $(HOME)/.config/karabiner
+
+$(HOME)/.config/karabiner: $(HOME)/.config
+	ln -s $(HOME)/dotfiles/.config/karabiner $(HOME)/.config/karabiner
 
 
 # general
