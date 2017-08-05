@@ -1,4 +1,5 @@
 function fish_prompt
+    set prev_status $status
     set user (whoami)
     set host (prompt_hostname)
     set dir (prompt_pwd)
@@ -19,7 +20,7 @@ function fish_prompt
     set_color yellow
     echo -n "[$dt]"
 
-    if test $status -eq 0
+    if test $prev_status -eq 0
         set_color green
         echo -n "(っ `-' c) "
     else
