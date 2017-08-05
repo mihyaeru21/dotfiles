@@ -1,0 +1,1 @@
+/Users/mihyaeru/.config/fisherman/get/completions/get.fish

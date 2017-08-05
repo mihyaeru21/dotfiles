@@ -13,9 +13,6 @@ export LC_TELEPHONE="ja_JP.UTF-8"
 export LC_MEASUREMENT="ja_JP.UTF-8"
 export LC_IDENTIFICATION="ja_JP.UTF-8"
 
-# fishermanでインストールするディレクトリを変更
-set -U fish_path ~/dotfiles/fisher
-
 # ログイン時に出てくるメッセージを表示させない
 set fish_greeting ""
 
