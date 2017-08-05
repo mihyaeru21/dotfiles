@@ -19,38 +19,42 @@ set -U fish_path ~/dotfiles/fisher
 # ログイン時に出てくるメッセージを表示させない
 set fish_greeting ""
 
-# xxenv
-status --is-interactive; and source (rbenv init -|psub)
-status --is-interactive; and source (nodenv init -|psub)
+if status --is-interactive
+    # xxenv
+    source (rbenv init -|psub)
+    source (nodenv init -|psub)
 
-# Rust
-set -x PATH $PATH $HOME/.cargo/bin
+    # Rust
+    set -x PATH $PATH $HOME/.cargo/bin
 
-# Go
-set -x GOPATH $HOME/go
-set -x PATH $PATH $GOPATH/bin
+    # Go
+    set -x GOPATH $HOME/go
+    set -x PATH $PATH $GOPATH/bin
 
-# Haskell
-set -x PATH $PATH $HOME/.local/bin
+    # Haskell
+    set -x PATH $PATH $HOME/.local/bin
 
-# Javaのデフォルトの文字コードを設定する
-set -x JAFA_TOOL_OPTIONS -Dfile.encoding=UTF-8
+    # Javaのデフォルトの文字コードを設定する
+    set -x JAFA_TOOL_OPTIONS -Dfile.encoding=UTF-8
 
-# いろいろ入れておくところ
-set -x PATH $PATH $HOME/dotfiles/.bin
+    # いろいろ入れておくところ
+    set -x PATH $PATH $HOME/dotfiles/.bin
+end
 
 # OSごとの設定
 switch (uname)
 case Darwin
-    # Android系
-    set -x ANDROID_HOME $HOME/Library/Android/sdk
-    set -x PATH $PATH $ANDROID_HOME/tools
-    set -x PATH $PATH $ANDROID_HOME/platform-tools
+    if status --is-interactive
+        # Android系
+        set -x ANDROID_HOME $HOME/Library/Android/sdk
+        set -x PATH $PATH $ANDROID_HOME/tools
+        set -x PATH $PATH $ANDROID_HOME/platform-tools
 
-    # El Capitan以上ではやっておくとようさそう感
-    # https://github.com/servo/servo/ より
-    set -x OPENSSL_INCLUDE_DIR "(brew --prefix openssl)/include"
-    set -x OPENSSL_LIB_DIR "(brew --prefix openssl)/lib"
+        # El Capitan以上ではやっておくとようさそう感
+        # https://github.com/servo/servo/ より
+        set -x OPENSSL_INCLUDE_DIR "(brew --prefix openssl)/include"
+        set -x OPENSSL_LIB_DIR "(brew --prefix openssl)/lib"
+    end
 
     alias ls="ls -xFG"
     alias owata="notify-me ｵﾜﾀ '＼(^o^)／'"
