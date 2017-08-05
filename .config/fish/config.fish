@@ -16,6 +16,9 @@ export LC_IDENTIFICATION="ja_JP.UTF-8"
 # fishermanでインストールするディレクトリを変更
 set -U fish_path ~/dotfiles/fisher
 
+# ログイン時に出てくるメッセージを表示させない
+set fish_greeting ""
+
 # # 環境ごとの設定ファイルを読み込む
 # [ -f ~/.zprofile.local ] && source ~/.zprofile.local
 
