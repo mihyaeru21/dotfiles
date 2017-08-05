@@ -20,15 +20,6 @@ export LC_TELEPHONE="ja_JP.UTF-8"
 export LC_MEASUREMENT="ja_JP.UTF-8"
 export LC_IDENTIFICATION="ja_JP.UTF-8"
 
-
-# FIXME: プロンプトは後でいじる
-# setopt prompt_subst
-# source $HOME/dotfiles/.zsh/prompt-git-current-branch.zsh
-# source $HOME/dotfiles/.zsh/anyenv-program-version.zsh
-# PROMPT='%F{cyan}[%n@%m:%~]%f`anyenv_versions_local_only``get_vcs_info_msg`
-# %F{yellow}[%D %*]%f%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
-
-alias e="exit"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -al"
@@ -51,6 +42,32 @@ alias st-point_up_2="skintone.pl point_up_2 | pbcopy"
 # 自分のグローバルIPを確認する
 alias global-ip='curl globalip.me'
 alias gip='global-ip'
+
+# promptに表示するgit部分のスタイル
+set blue (set_color blue)
+set yellow (set_color yellow)
+set green (set_color green)
+set red (set_color red)
+set __fish_git_prompt_show_informative_status 'yes'
+set __fish_git_prompt_char_upstream_prefix ''
+set __fish_git_prompt_char_upstream_ahead '↑'
+set __fish_git_prompt_char_upstream_behind '↓'
+set __fish_git_prompt_char_stateseparator '|'
+set __fish_git_prompt_char_dirtystate 'm'
+set __fish_git_prompt_char_stagedstate 'a'
+set __fish_git_prompt_char_untrackedfiles 'u'
+set __fish_git_prompt_char_invalidstate 'x'
+set __fish_git_prompt_char_cleanstate '✔'
+set __fish_git_prompt_color_branch blue
+set __fish_git_prompt_color_upstream_ahead green
+set __fish_git_prompt_color_upstream_behind red
+set __fish_git_prompt_color_dirtystate red
+set __fish_git_prompt_color_stagedstate green
+set __fish_git_prompt_color_untrackedfiles yellow
+set __fish_git_prompt_color_cleanstate green
+
+
+
 
 switch (uname)
 case Darwin
