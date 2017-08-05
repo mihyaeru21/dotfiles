@@ -8,6 +8,8 @@
 /.config/karabiner/assets/
 /fisher/*
 !/fisher/fishfile
+/local/fish.fish
+/local/gitconfig
 
 # Vim
 *~

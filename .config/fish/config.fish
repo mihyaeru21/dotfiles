@@ -19,9 +19,6 @@ set -U fish_path ~/dotfiles/fisher
 # ログイン時に出てくるメッセージを表示させない
 set fish_greeting ""
 
-# # 環境ごとの設定ファイルを読み込む
-# [ -f ~/.zprofile.local ] && source ~/.zprofile.local
-
 # xxenv
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
@@ -63,4 +60,7 @@ case Darwin
 case Linux
     alias ls="ls -xF --color=auto"
 end
+
+# 環境ごとの設定
+test -f $HOME/dotfiles/local/fish.fish; and source $HOME/dotfiles/local/fish.fish
 

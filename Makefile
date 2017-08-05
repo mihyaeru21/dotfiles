@@ -4,7 +4,7 @@ default: dotfiles localfiles vim neovim antigen tpm packages anyenv python rust 
 # dotfiles
 ################################
 
-dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .zsh .zshrc .zprofile .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml .pryrc .csscomb.cson .gitcommittemplate .ideavimrc
+dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml .pryrc .csscomb.cson .gitcommittemplate .ideavimrc
 dotfile_paths := $(addprefix $(HOME)/, $(dotfile_names))
 
 dotfiles: $(dotfile_names) $(dotfile_paths)
@@ -23,13 +23,13 @@ $(dotfile_names):
 # localfiles
 ################################
 
-localfile_names := .zshrc.local .zprofile.local .gitconfig.local
-localfile_paths := $(addprefix $(HOME)/, $(localfile_names))
+localfile_names := gitconfig fish.fish
+localfile_paths := $(addprefix $(HOME)/dotfiles/local/, $(localfile_names))
 
 localfiles: $(localfile_paths)
 
 $(localfile_paths):
-	$(eval source := $(HOME)/dotfiles/$(shell basename $@).sample)
+	$(eval source := $@.sample)
 	$(eval dest   := $@)
 	cp $(source) $(dest)
 
@@ -73,9 +73,8 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake tmux zsh git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3
+	brew install cmake automake tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 rbenv nodenv neovim
 	brew install vim --with-luajit
-	brew install neovim/neovim/neovim
 	brew install tkengo/highway/highway
 	brew install sanemat/font/ricty
 
@@ -88,7 +87,7 @@ ifdef is_ubuntu
 packages: /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list
 	sudo apt update
 	sudo apt upgrade
-	sudo apt install -y language-pack-ja-base make cmake automake tmux zsh git tig htop neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev python3 fish
+	sudo apt install -y language-pack-ja-base make cmake automake tmux git tig htop neovim vim-gnome exuberant-ctags curl wget dstat silversearcher-ag tree unzip jq build-essential haskell-stack llvm luajit pkg-config libbz2-dev liblua5.2-dev liblzma-dev libncurses5-dev libpcre3-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev python3 fish fzf
 
 /usr/bin/add-apt-repository:
 	sudo apt install software-properties-common
