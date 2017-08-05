@@ -73,15 +73,9 @@ set -x PATH /usr/local/bin /usr/local/sbin $PATH
 # いろいろ入れておくところ
 set -x PATH $PATH $HOME/dotfiles/.bin
 
-# # anyenv
-# # tmuxを噛ませた時にshimsがおかしくなるから手動で設定しないといけない
-# if [ -d "$HOME/.anyenv" ] ; then
-#     set -x PATH "$HOME/.anyenv/bin:$PATH"
-#     for env_name in `ls $HOME/.anyenv/envs` ; do
-#         set -x PATH "$HOME/.anyenv/envs/$env_name/shims:$PATH"
-#     done
-#     eval "$(anyenv init - zsh)"
-# fi
+# xxenv
+status --is-interactive; and source (rbenv init -|psub)
+status --is-interactive; and source (nodenv init -|psub)
 
 # Go
 set -x GOPATH $HOME/go
