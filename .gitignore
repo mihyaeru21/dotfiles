@@ -3,13 +3,24 @@
 /.config/nvim/bundle/
 /.config/nvim/_local.vim
 /.config/fish/fishd.*
-/.config/fish/completions/fisher.fish
-/.config/fish/functions/fisher.fish
 /.config/karabiner/assets/
-/fisher/*
-!/fisher/fishfile
 /local/fish.fish
 /local/gitconfig
+
+# fisherで入れたやつを気合で弾いていく
+# TODO: どうにかしたい...
+/.config/fish/completions/fisher.fish
+/.config/fish/functions/fisher.fish
+/.config/fish/functions/fish_user_key_bindings.fish
+/.config/fish/completions/get.fish
+/.config/fish/conf.d/z.fish
+/.config/fish/functions/__*
+/.config/fish/functions/await.fish
+/.config/fish/functions/get.fish
+/.config/fish/functions/getopts.fish
+/.config/fish/functions/last_job_id.fish
+/.config/fish/functions/z.awk
+/.config/fish/functions/zadd.awk
 
 # Vim
 *~

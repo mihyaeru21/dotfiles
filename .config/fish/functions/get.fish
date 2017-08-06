@@ -1,1 +1,0 @@
-/Users/mihyaeru/.config/fisherman/get/functions/get.fish
