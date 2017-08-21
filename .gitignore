@@ -21,6 +21,7 @@
 /.config/fish/functions/last_job_id.fish
 /.config/fish/functions/z.awk
 /.config/fish/functions/zadd.awk
+/.config/fish/completions/ghq.fish
 
 # Vim
 *~
