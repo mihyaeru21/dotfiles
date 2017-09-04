@@ -16,3 +16,8 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 set visualbell t_vb=
 
 colorscheme desert
+
+" これをやっておかないと日本語入力が厳しい
+" http://loumo.jp/wp/archive/20160914120009/
+set imdisable
+
