@@ -16,6 +16,9 @@ export LC_IDENTIFICATION="ja_JP.UTF-8"
 # ログイン時に出てくるメッセージを表示させない
 set fish_greeting ""
 
+# fzfでマウスを無効に
+set -x FZF_DEFAULT_OPTS --no-mouse
+
 if status --is-interactive
     # xxenv
     source (rbenv init -|psub)
