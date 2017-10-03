@@ -20,9 +20,13 @@ set fish_greeting ""
 set -x FZF_DEFAULT_OPTS --no-mouse
 
 if status --is-interactive
+    # for plenv
+    set -x PATH $PATH $HOME/.plenv/bin
+
     # xxenv
     source (rbenv init -|psub)
     source (nodenv init -|psub)
+    source (plenv init -|psub)
 
     # Rust
     set -x PATH $PATH $HOME/.cargo/bin
