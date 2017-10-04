@@ -43,6 +43,7 @@ if status --is-interactive
 
     # いろいろ入れておくところ
     set -x PATH $PATH $HOME/dotfiles/.bin
+    set -x PATH $PATH $HOME/bin
 end
 
 # OSごとの設定
