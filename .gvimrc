@@ -15,7 +15,7 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 " ベルを鳴らさない
 set visualbell t_vb=
 
-colorscheme desert
+colorscheme jellybeans
 
 " これをやっておかないと日本語入力が厳しい
 " http://loumo.jp/wp/archive/20160914120009/
