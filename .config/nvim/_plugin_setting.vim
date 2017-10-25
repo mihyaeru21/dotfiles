@@ -83,25 +83,21 @@ let g:quickrun_config = {
 
 
 "----------------------------------------
-" Unite/Denite
+" Denite
 "----------------------------------------
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case  = 1
 
-" unite grep に hw か ag を使う
-if executable('hw')
-    let g:unite_source_grep_command       = 'hw'
-    let g:unite_source_grep_default_opts  = '--no-group --no-color'
-    let g:unite_source_grep_recursive_opt = ''
-elseif executable('ag')
-    let g:unite_source_grep_command       = 'ag'
-    let g:unite_source_grep_default_opts  = '--nogroup --nocolor --column'
-    let g:unite_source_grep_recursive_opt = ''
+" denite grep に ag を使う
+if executable('ag')
+    call denite#custom#var('grep', 'command', ['ag'])
+    call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', [])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'final_opts', [])
 endif
 
-" 行移動のマッピングをEmacs的にする
-call denite#custom#map('_', "\<C-n>", 'move_to_next_line')
-call denite#custom#map('_', "\<C-p>", 'move_to_prev_line')
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 
 "----------------------------------------
 " vim-jsx
