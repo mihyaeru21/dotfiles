@@ -37,7 +37,7 @@
     delete-merged = "!git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d"
     remove-merged = "!git delete-merged"
     clean-branch  = "!git fetch --all --prune && git delete-merged"
-    pr            = "!f(){ git fetch $1 pull/$2/head:$1-$2; git checkout $1-$2; };f"
+    pr            = "!f(){ git fetch $1 pull/$2/head:$1/$2 && git checkout $1/$2; };f"
 [push]
 	default = simple
 [github]
