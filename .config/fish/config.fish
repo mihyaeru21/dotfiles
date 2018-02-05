@@ -27,6 +27,7 @@ if status --is-interactive
     source (rbenv init -|psub)
     source (nodenv init -|psub)
     source (plenv init -|psub)
+    source (goenv init -|psub)
 
     # Rust
     set -x PATH $PATH $HOME/.cargo/bin
