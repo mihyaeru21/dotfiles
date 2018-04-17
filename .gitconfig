@@ -38,6 +38,7 @@
     remove-merged = "!git delete-merged"
     clean-branch  = "!git fetch --all --prune && git delete-merged"
     pull-pr       = "!f(){ git fetch $1 pull/$2/head:$1/$2 && git checkout $1/$2; };f"
+    push-origin   = push origin --set-upstream HEAD
 [push]
 	default = simple
 [github]
