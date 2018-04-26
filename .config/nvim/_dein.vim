@@ -1,9 +1,6 @@
-if &compatible
-  set nocompatible
-endif
-
 set runtimepath^=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 let s:dein_dir = expand('~/.config/nvim/bundle')
+
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
@@ -13,8 +10,6 @@ if dein#load_state(s:dein_dir)
 
   call dein#end()
 endif
-
-filetype plugin indent on
 
 if dein#check_install()
   call dein#install()
