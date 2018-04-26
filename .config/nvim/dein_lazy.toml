@@ -3,11 +3,6 @@ repo             = 'Shougo/deoplete.nvim'
 on_event         = 'InsertEnter'
 hook_post_source = 'call deoplete#enable()'
 
-# 非同期シンタックスチェック
-[[plugins]]
-repo = 'neomake/neomake'
-on_ft = ['ruby', 'perl', 'python', 'javascript', 'haskell', 'rust', 'go']
-
 [[plugins]]
 repo  = 'vim-perl/vim-perl'
 on_ft = ['perl']

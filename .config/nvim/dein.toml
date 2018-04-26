@@ -62,3 +62,6 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'ekalinin/Dockerfile.vim'
 
+[[plugins]]
+repo = 'w0rp/ale'
+

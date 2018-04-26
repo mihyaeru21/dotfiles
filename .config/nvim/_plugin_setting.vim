@@ -39,15 +39,6 @@ let NERDTreeShowHidden = 1
 
 
 "----------------------------------------
-" Neomake
-"----------------------------------------
-let g:neomake_open_list          = 0  " 0:なし, 1:開く, 2:リストは開くけどカーソルは元の位置のまま
-let g:neomake_list_height        = 5  " 今は表示しないけど表示するなら5行にしたい
-let g:neomake_echo_current_error = 1
-autocmd! BufWritePost * Neomake
-
-
-"----------------------------------------
 " deoplete
 "----------------------------------------
 let g:deoplete#enable_smart_case = 1
