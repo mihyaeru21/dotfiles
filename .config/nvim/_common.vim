@@ -40,4 +40,6 @@ set listchars=tab:>-,trail:_,extends:>,precedes:<
 " 邪魔だから無効にする
 set mouse=
 
+set inccommand=split
+
 colorscheme jellybeans
