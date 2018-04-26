@@ -1,9 +1,9 @@
 # dotfiles
 /.vim/bundle/
 /.config/nvim/bundle/
-/.config/nvim/_local.vim
 /.config/fish/fishd.*
 /.config/karabiner/assets/
+/local/nvim.vim
 /local/fish.fish
 /local/gitconfig
 
