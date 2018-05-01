@@ -23,7 +23,7 @@ $(dotfile_names):
 # localfiles
 ################################
 
-localfile_names := gitconfig fish.fish
+localfile_names := gitconfig fish.fish nvim.vim
 localfile_paths := $(addprefix $(HOME)/dotfiles/local/, $(localfile_names))
 
 localfiles: $(localfile_paths)
@@ -50,7 +50,7 @@ $(HOME)/dotfiles/.vim/bundle/neobundle.vim:
 # NeoVim
 ################################
 
-neovim: $(HOME)/.config/nvim $(HOME)/.config/nvim/_local.vim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
+neovim: $(HOME)/.config/nvim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
 $(HOME)/.config/nvim: $(HOME)/.config
 	ln -s $(HOME)/dotfiles/.config/nvim $(HOME)/.config/nvim
@@ -58,9 +58,6 @@ $(HOME)/.config/nvim: $(HOME)/.config
 $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim:
 	mkdir $(HOME)/.config/nvim/bundle
 	git clone https://github.com/Shougo/dein.vim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
-
-$(HOME)/.config/nvim/_local.vim:
-	cp $(HOME)/.config/nvim/_local.vim.sample $(HOME)/.config/nvim/_local.vim
 
 
 # packages
