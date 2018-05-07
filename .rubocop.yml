@@ -1,2 +1,26 @@
+Layout/TrailingBlankLines:
+  EnforcedStyle: final_blank_line
+
+Metrics/AbcSize:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 200
+
+Metrics/LineLength:
+  Max: 200
+
 Style/AsciiComments:
   Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
