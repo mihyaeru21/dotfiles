@@ -30,8 +30,9 @@
 # Mac
 .DS_Store
 
-# AppCode
+# editors
 .idea
+.vscode
 
 # temporary files
 ,/
