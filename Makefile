@@ -4,7 +4,7 @@ default: dotfiles localfiles vim neovim tpm packages python rust fish karabiner
 # dotfiles
 ################################
 
-dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml .pryrc .csscomb.cson .gitcommittemplate .ideavimrc
+dotfile_names := .gitconfig .gitignore .gvimrc .tmux.conf .vim .vimrc .ctags .slate .perltidyrc .proverc .snippet .rubocop.yml .pryrc .csscomb.cson .gitcommittemplate .ideavimrc .prettierrc.yaml
 dotfile_paths := $(addprefix $(HOME)/, $(dotfile_names))
 
 dotfiles: $(dotfile_names) $(dotfile_paths)
