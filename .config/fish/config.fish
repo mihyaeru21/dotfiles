@@ -16,6 +16,8 @@ set -x LC_IDENTIFICATION ja_JP.UTF-8
 # ログイン時に出てくるメッセージを表示させない
 set fish_greeting ""
 
+set -x EDITOR nvim
+
 # fzfでマウスを無効に
 set -x FZF_DEFAULT_OPTS --no-mouse
 
