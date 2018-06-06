@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim tpm packages python rust fish karabiner
+default: dotfiles localfiles vim neovim tpm packages python rust fish karabiner alacritty
 	@echo 'done'
 
 # dotfiles
@@ -144,6 +144,15 @@ karabiner: $(HOME)/.config/karabiner
 
 $(HOME)/.config/karabiner: $(HOME)/.config
 	ln -s $(HOME)/dotfiles/.config/karabiner $(HOME)/.config/karabiner
+
+
+# alacritty
+################################
+
+alacritty: $(HOME)/.config/alacritty
+
+$(HOME)/.config/alacritty: $(HOME)/.config
+	ln -s $(HOME)/dotfiles/.config/alacritty $(HOME)/.config/alacritty
 
 
 # general
