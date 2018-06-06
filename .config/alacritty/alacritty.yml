@@ -17,15 +17,15 @@ window:
   # Window dimensions in character columns and lines
   # (changes require restart)
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 160
+    lines: 60
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
@@ -41,24 +41,24 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Menlo
+    family: Cica
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # The bold font face
   bold:
-    family: Menlo
+    family: Cica
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style: Bold
 
   # The italic font face
   italic:
-    family: Menlo
+    family: Cica
     # Style can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -89,46 +89,46 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xeaeaea'
+    background: '0x171717'
+    foreground: '0xe4e4e4'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
+    text: '0xffffff'
+    cursor: '0xffb473'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xd54e53'
-    green:   '0xb9ca4a'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
-    white:   '0xffffff'
+    black:   '0xa3a3a3'
+    red:     '0xea8986'
+    green:   '0xa4c38c'
+    yellow:  '0xffc68d'
+    blue:    '0xa7cae3'
+    magenta: '0xe8cefb'
+    cyan:    '0x00a7a0'
+    white:   '0xe4e4e4'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
+    black:   '0xc9c9c9'
+    red:     '0xffb2b0'
+    green:   '0xc8e3b9'
+    yellow:  '0xffe2af'
+    blue:    '0xbee0f8'
+    magenta: '0xfce3ff'
+    cyan:    '0x0cbeb7'
     white:   '0xffffff'
 
   # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+  #dim:
+  #  black:   '0x333333'
+  #  red:     '0xf2777a'
+  #  green:   '0x99cc99'
+  #  yellow:  '0xffcc66'
+  #  blue:    '0x6699cc'
+  #  magenta: '0xcc99cc'
+  #  cyan:    '0x66cccc'
+  #  white:   '0xdddddd'
 
 
 # Visual Bell
@@ -200,7 +200,7 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-dynamic_title: true
+dynamic_title: false
 
 hide_cursor_when_typing: false
 
