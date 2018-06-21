@@ -28,7 +28,8 @@
                                             "com.jetbrains.rubymine",
                                             "com.jetbrains.rubymine-EAP",
                                             "com.jetbrains.AppCode",
-                                            "com.google.android.studio"
+                                            "com.google.android.studio",
+                                            "io.alacritty"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
