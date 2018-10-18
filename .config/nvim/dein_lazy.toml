@@ -29,10 +29,6 @@ repo  = 'Keithbsmiley/swift.vim'
 on_ft = ['swift']
 
 [[plugins]]
-repo  = 'VimClojure'
-on_ft = ['clojure']
-
-[[plugins]]
 repo  = 'zah/nim.vim'
 on_ft = ['nim']
 
