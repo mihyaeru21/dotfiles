@@ -1,4 +1,4 @@
-default: dotfiles localfiles vim neovim tpm packages python rust fish karabiner alacritty
+default: dotfiles localfiles vim neovim tpm packages rust fish karabiner alacritty
 	@echo 'done'
 
 # dotfiles
@@ -70,7 +70,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake autoconf tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 rbenv nodenv neovim gibo imagemagick postgresql redis libtool hub goenv
+	brew install cmake automake autoconf tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 neovim gibo imagemagick postgresql redis libtool hub rbenv nodenv goenv git-secrets
 	brew install vim --with-luajit
 	brew install tkengo/highway/highway
 	brew install sanemat/font/ricty
@@ -104,22 +104,12 @@ $(HOME)/.tmux/plugins/tpm:
 	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
 
 
-# python
-################################
-
-python:
-	pip3 install --upgrade pip
-	pip3 install neovim
-
-
 # rust
 ################################
 
 rustup := $(HOME)/.cargo/bin/rustup
 
 rust: $(rustup)
-	cargo install -f rustfmt
-	cargo install -f racer
 
 $(rustup):
 	curl https://sh.rustup.rs -sSf | sh
