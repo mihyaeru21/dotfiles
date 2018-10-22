@@ -70,7 +70,7 @@ ifdef is_mac
 packages: /usr/local/bin/brew
 	brew update
 	brew upgrade
-	brew install cmake automake autoconf tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 neovim gibo imagemagick postgresql redis libtool hub rbenv nodenv goenv git-secrets protobuf colordiff
+	brew install cmake automake autoconf tmux git tig ctags curl wget the_silver_searcher tree jq haskell-stack heroku awscli llvm lua luajit go sqlite msgpack reattach-to-user-namespace htop diff-so-fancy nkf nasm fish fzf peco ghq python3 neovim gibo imagemagick postgresql redis libtool hub rbenv nodenv goenv git-secrets protobuf colordiff watch
 	brew install vim --with-luajit
 	brew install tkengo/highway/highway
 	brew install sanemat/font/ricty
