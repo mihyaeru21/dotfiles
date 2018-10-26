@@ -37,9 +37,10 @@
     delete-merged = "!git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d"
     remove-merged = "!git delete-merged"
     clean-branch  = "!git fetch --all --prune && git delete-merged"
-    pull-pr       = "!f(){ git fetch $1 pull/$2/head:$1/$2 && git checkout $1/$2; };f"
     push-origin   = push origin --set-upstream HEAD
     untracked     = ls-files --others --exclude-standard
+    pull-pr       = "!f(){ git fetch upstream refs/pull/$1/merge:pr/$1 && git checkout pr/$1; };f"
+    delete-pr     = "!git branch | grep '^\\s*pr/' | xargs git branch -D"
 [push]
 	default = simple
 [github]
