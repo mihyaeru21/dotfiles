@@ -41,6 +41,7 @@
     untracked     = ls-files --others --exclude-standard
     pull-pr       = "!f(){ git fetch upstream refs/pull/$1/merge:pr/$1 && git checkout pr/$1; };f"
     delete-pr     = "!git branch | grep '^\\s*pr/' | xargs git branch -D"
+    current-branch = rev-parse --abbrev-ref HEAD
 [push]
 	default = simple
 [github]
