@@ -36,7 +36,7 @@ nnoremap [unite]m :<C-u>Denite file_mru<CR>
 nnoremap [unite]l :<C-u>Denite line<CR>
 nnoremap [unite]o :<C-u>Denite outline<CR>
 nnoremap [unite]r :<C-u>Denite -resume<CR>
-nnoremap [unite]f :<C-u>Denite file_rec<CR>
+nnoremap [unite]f :<C-u>Denite file/rec<CR>
 nnoremap [unite]g :<C-u>Denite grep<CR>
 
 

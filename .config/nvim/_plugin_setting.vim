@@ -77,14 +77,13 @@ let g:quickrun_config = {
 " Denite
 "----------------------------------------
 
-" denite grep に ag を使う
-if executable('ag')
-    call denite#custom#var('grep', 'command', ['ag'])
-    call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+if executable('rg')
+    call denite#custom#var('grep', 'command', ['rg', '--threads', '4'])
     call denite#custom#var('grep', 'recursive_opts', [])
-    call denite#custom#var('grep', 'pattern_opt', [])
-    call denite#custom#var('grep', 'separator', ['--'])
     call denite#custom#var('grep', 'final_opts', [])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+    call denite#custom#var('file/rec', 'command', ['rg', '--files', '--hidden', '--glob', '!.git'])
 endif
 
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
