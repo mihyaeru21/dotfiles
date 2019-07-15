@@ -20,6 +20,10 @@ repo  = 'mattn/emmet-vim'
 on_ft = ['html', 'eruby', 'eco']
 
 [[plugins]]
+repo    = 'tyru/open-browser.vim'
+on_ft   = ['markdown']
+
+[[plugins]]
 repo    = 'kannokanno/previm'
 on_ft   = ['markdown']
 depends = ['open-browser.vim']
@@ -99,10 +103,6 @@ depends = ['vim-coffee-script']
 
 [[plugins]]
 repo  = 'rust-lang/rust.vim'
-on_ft = ['rust']
-
-[[plugins]]
-repo  = 'racer-rust/vim-racer'
 on_ft = ['rust']
 
 [[plugins]]

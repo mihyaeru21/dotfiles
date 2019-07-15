@@ -2,16 +2,10 @@
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
+repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/unite-outline'
-
-[[plugins]]
-repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -42,26 +36,15 @@ repo = 'tpope/vim-fugitive'
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
-repo = 'thinca/vim-ref'
-
-[[plugins]]
-repo = 'szw/vim-tags'
-
-[[plugins]]
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'ekalinin/Dockerfile.vim'
-
-[[plugins]]
 repo = 'w0rp/ale'
+
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# build = 'call coc#util#install()'
 
