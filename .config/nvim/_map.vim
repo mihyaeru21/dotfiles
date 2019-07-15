@@ -27,17 +27,17 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "----------------------------------------
-" Unite/Denite
+" Denite
 "----------------------------------------
-nnoremap [unite] <Nop>
-nmap <Space>u [unite]
-nnoremap [unite]b :<C-u>Denite buffer<CR>
-nnoremap [unite]m :<C-u>Denite file_mru<CR>
-nnoremap [unite]l :<C-u>Denite line<CR>
-nnoremap [unite]o :<C-u>Denite outline<CR>
-nnoremap [unite]r :<C-u>Denite -resume<CR>
-nnoremap [unite]f :<C-u>Denite file/rec<CR>
-nnoremap [unite]g :<C-u>Denite grep<CR>
+nnoremap [denite] <Nop>
+nmap <Space>u [denite]
+nnoremap [denite]b :<C-u>Denite buffer<CR>
+nnoremap [denite]m :<C-u>Denite file_mru<CR>
+nnoremap [denite]l :<C-u>Denite line<CR>
+nnoremap [denite]o :<C-u>Denite outline<CR>
+nnoremap [denite]r :<C-u>Denite -resume<CR>
+nnoremap [denite]f :<C-u>Denite file/rec<CR>
+nnoremap [denite]g :<C-u>Denite grep<CR>
 
 
 "----------------------------------------
