@@ -1,18 +1,18 @@
 [include]
     path = ~/dotfiles/local/gitconfig
 [color]
-	ui = true
+    ui = true
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore
-	quotepath = false
-	pager = less
+    editor = nvim
+    excludesfile = ~/.gitignore
+    quotepath = false
+    pager = less
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [alias]
     s    = status
     st   = status
@@ -43,14 +43,14 @@
     delete-pr     = "!git branch | grep '^\\s*pr/' | xargs git branch -D"
     current-branch = rev-parse --abbrev-ref HEAD
 [push]
-	default = simple
+    default = simple
 [github]
-	user = mihyaeru21
+    user = mihyaeru21
 [ghq]
     root = ~/.ghq
     root = ~/.go/src
 [commit]
     template = ~/.gitcommittemplate
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
