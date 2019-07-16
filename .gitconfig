@@ -36,7 +36,7 @@
     check-perl    = "!git modified-perl | xargs -n1 -P4 perl -wc"
     delete-merged = "!git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d"
     remove-merged = "!git delete-merged"
-    clean-branch  = "!git fetch --all --prune && git delete-merged"
+    clean-branch  = "!git fetch --all --prune && git delete-merged && git delete-pr"
     push-origin   = push origin --set-upstream HEAD
     untracked     = ls-files --others --exclude-standard
     pull-pr       = "!f(){ git fetch upstream refs/pull/$1/merge:pr/$1 && git checkout pr/$1; };f"
