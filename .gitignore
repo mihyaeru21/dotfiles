@@ -40,3 +40,6 @@
 # temporary files
 ,/
 
+# direnv
+.envrc
+

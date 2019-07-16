@@ -31,6 +31,9 @@ if status --is-interactive
     source (plenv init -|psub)
     source (goenv init -|psub)
 
+    # direnv
+    direnv hook fish | source
+
     # Rust
     set -x PATH $PATH $HOME/.cargo/bin
 
