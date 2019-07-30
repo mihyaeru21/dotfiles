@@ -1,7 +1,7 @@
 # dotfiles
 /.vim/bundle/
 /.config/nvim/bundle/
-/.config/fish/fishd.*
+/.config/fish/fish_variables
 /.config/karabiner/assets/
 /local/nvim.vim
 /local/fish.fish
