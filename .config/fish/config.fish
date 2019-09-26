@@ -22,14 +22,9 @@ set -x EDITOR nvim
 set -x FZF_DEFAULT_OPTS --no-mouse
 
 if status --is-interactive
-    # for plenv
-    set -x PATH $PATH $HOME/.plenv/bin
-
-    # xxenv
-    source (rbenv init -|psub)
-    source (nodenv init -|psub)
-    source (plenv init -|psub)
-    source (goenv init -|psub)
+    # anyenv
+    set -x PATH $PATH $HOME/.anyenv/bin
+    anyenv init -fish | source
 
     # direnv
     direnv hook fish | source
