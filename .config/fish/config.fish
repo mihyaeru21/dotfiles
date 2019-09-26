@@ -1,17 +1,4 @@
-set -x LANG ja_JP.UTF-8
-set -x JLESSCHARSET japanese
-set -x LC_CTYPE ja_JP.UTF-8
-set -x LC_NUMERIC ja_JP.UTF-8
-set -x LC_TIME ja_JP.UTF-8
-set -x LC_COLLATE ja_JP.UTF-8
-set -x LC_MONETARY ja_JP.UTF-8
-set -x LC_MESSAGES ja_JP.UTF-8
-set -x LC_PAPER ja_JP.UTF-8
-set -x LC_NAME ja_JP.UTF-8
-set -x LC_ADDRESS ja_JP.UTF-8
-set -x LC_TELEPHONE ja_JP.UTF-8
-set -x LC_MEASUREMENT ja_JP.UTF-8
-set -x LC_IDENTIFICATION ja_JP.UTF-8
+set -x LANG en_US.UTF-8
 
 # ログイン時に出てくるメッセージを表示させない
 set fish_greeting ""
