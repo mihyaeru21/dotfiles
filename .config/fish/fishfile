@@ -1,7 +1,4 @@
-fisherman/await
-fisherman/fzf
-fisherman/get
-fisherman/getopts
 decors/fish-ghq
-fisherman/last_job_id
+fisherman/fzf
+fisherman/getopts
 fisherman/z
