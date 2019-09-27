@@ -47,8 +47,7 @@
 [github]
     user = mihyaeru21
 [ghq]
-    root = ~/.ghq
-    root = ~/.go/src
+    root = ~/ghq
 [commit]
     template = ~/.gitcommittemplate
 [pager]
