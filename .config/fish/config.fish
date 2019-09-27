@@ -11,7 +11,7 @@ set -x FZF_DEFAULT_OPTS --no-mouse
 if status --is-interactive
     # anyenv
     set -x PATH $PATH $HOME/.anyenv/bin
-    anyenv init -fish | source
+    anyenv init - fish | source
 
     # direnv
     direnv hook fish | source
