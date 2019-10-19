@@ -42,4 +42,5 @@ set mouse=
 
 set inccommand=split
 
+set termguicolors
 colorscheme jellybeans
