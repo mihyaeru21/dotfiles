@@ -53,6 +53,7 @@ case Darwin
     alias owata="notify-me ｵﾜﾀ '＼(^o^)／'"
 case Linux
     alias ls="ls -xF --color=auto"
+    alias pbcopy='xsel --clipboard --input'
 end
 
 # 環境ごとの設定
