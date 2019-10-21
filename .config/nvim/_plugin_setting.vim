@@ -46,7 +46,7 @@ let g:deoplete#enable_smart_case = 1
 if !exists('g:deoplete#sources')
     let g:deoplete#sources = {}
 endif
-let g:deoplete#sources.rust = ['buffer', 'tag', 'racer']
+
 
 "----------------------------------------
 " quickrun
@@ -115,4 +115,14 @@ let g:jsx_pragma_required = 0
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
 let g:rust_fold = 1
+
+
+"----------------------------------------
+" LanguageClient-neovim
+"----------------------------------------
+
+let g:LanguageClient_serverCommands = {
+\   'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+\   'python': ['~/.local/bin/pyls'],
+\}
 

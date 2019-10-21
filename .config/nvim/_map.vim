@@ -66,11 +66,6 @@ nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 
 
-"----------------------------------------
-" incsearch
-"----------------------------------------
-" 標準の /, ?, g/ を置き換える
-" map /  <Plug>(incsearch-forward)
-" map ?  <Plug>(incsearch-backward)
-" map g/ <Plug>(incsearch-stay)
+autocmd FileType rust,ruby,python nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+autocmd FileType rust,ruby,python nnoremap <buffer> <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
 
