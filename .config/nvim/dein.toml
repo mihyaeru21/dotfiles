@@ -49,3 +49,7 @@ repo  = 'autozimu/LanguageClient-neovim'
 rev   = 'next'
 build = 'bash install.sh'
 
+[[plugins]]
+repo  = 'neoclide/denite-git'
+depends = ['Shougo/denite.nvim']
+

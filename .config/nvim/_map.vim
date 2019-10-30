@@ -43,6 +43,7 @@ nnoremap [denite]pf :<C-u>Denite file/rec -auto-action=preview<CR>
 nnoremap [denite]pg :<C-u>Denite grep -auto-action=preview<CR>
 nnoremap [denite]pwg :<C-u>DeniteCursorWord grep -auto-action=preview<CR>
 nnoremap [denite]wpg :<C-u>DeniteCursorWord grep -auto-action=preview<CR>
+nnoremap [denite]v :<C-u>Denite gitstatus<CR>
 
 
 "----------------------------------------
