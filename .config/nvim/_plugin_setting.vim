@@ -123,6 +123,7 @@ let g:rust_fold = 1
 
 let g:LanguageClient_serverCommands = {
 \   'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+\   'ruby': ['~/.anyenv/envs/rbenv/shims/solargraph', 'stdio'],
 \   'python': ['~/.local/bin/pyls'],
 \}
 
