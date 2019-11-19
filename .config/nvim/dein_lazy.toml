@@ -4,10 +4,6 @@ on_event         = 'InsertEnter'
 hook_post_source = 'call deoplete#enable()'
 
 [[plugins]]
-repo  = 'vim-perl/vim-perl'
-on_ft = ['perl']
-
-[[plugins]]
 repo  = 'y-uuki/perl-local-lib-path.vim'
 on_ft = ['perl']
 
@@ -29,68 +25,8 @@ on_ft   = ['markdown']
 depends = ['open-browser.vim']
 
 [[plugins]]
-repo  = 'Keithbsmiley/swift.vim'
-on_ft = ['swift']
-
-[[plugins]]
-repo  = 'zah/nim.vim'
-on_ft = ['nim']
-
-[[plugins]]
-repo  = 'rhysd/vim-crystal'
-on_ft = ['crystal']
-
-[[plugins]]
-repo  = 'udalov/kotlin-vim'
-on_ft = ['kotlin']
-
-[[plugins]]
-repo  = 'fatih/vim-go'
-on_ft = ['go']
-
-[[plugins]]
-repo  = 'cespare/vim-toml'
-on_ft = ['toml']
-
-[[plugins]]
-repo  = 'OrangeT/vim-csharp'
-on_ft = ['cs', 'csi', 'csx']
-
-[[plugins]]
 repo = 'taka84u9/vim-ref-ri'
 on_ft = ['ruby']
-
-[[plugins]]
-repo = 'kana/vim-filetype-haskell'
-on_ft = ['haskell']
-
-[[plugins]]
-repo = 'eagletmt/ghcmod-vim'
-on_ft = ['haskell']
-
-[[plugins]]
-repo = 'ujihisa/neco-ghc'
-on_ft = ['haskell']
-
-[[plugins]]
-repo = 'ujihisa/ref-hoogle'
-on_ft = ['haskell']
-
-[[plugins]]
-repo = 'ujihisa/unite-haskellimport'
-on_ft = ['haskell']
-
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript']
-
-[[plugins]]
-repo = 'othree/es.next.syntax.vim'
-on_ft = ['javascript']
-
-[[plugins]]
-repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = ['javascript.jsx']
 
 [[plugins]]
 repo  = 'kchmck/vim-coffee-script'
@@ -100,12 +36,4 @@ on_ft = ['coffee']
 repo    = 'AndrewRadev/vim-eco'
 on_ft   = ['eco']
 depends = ['vim-coffee-script']
-
-[[plugins]]
-repo  = 'rust-lang/rust.vim'
-on_ft = ['rust']
-
-[[plugins]]
-repo  = 'dag/vim-fish'
-on_ft = ['fish']
 

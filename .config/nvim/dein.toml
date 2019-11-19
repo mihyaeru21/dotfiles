@@ -2,6 +2,9 @@
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
