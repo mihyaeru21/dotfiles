@@ -42,9 +42,6 @@ repo = 'tpope/vim-commentary'
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
-repo = 'tyru/open-browser.vim'
-
-[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
