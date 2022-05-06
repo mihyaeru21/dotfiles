@@ -3,16 +3,26 @@
 # asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
 
-# リンク
-dot_files=()
-for dot_file in $dot_files; do
-    echo $dot_file
+# .hoge の sym link
+for dotfile_path in `find . -maxdepth 1 -name '.*' | sed 's/\.\///' | grep -v '^\.$' | grep -vE '^\.(git|config)$' | sort`; do
+    ln -s $HOME/dotfiles/$dotfile_path $HOME/$dotfile_path
+done
+
+# .config/hoge の sym link
+mkdir -p $HOME/.config
+for config_path in `find .config -maxdepth 1 | sed 's/\.\///' | grep -v '^\.config$' | sort`; do
+    ln -s $HOME/dotfiles/$config_path $HOME/$config_path
+done
+
+# local files
+for localfile_path in `find local -name '*.sample'`; do
+    cp $localfile_path `echo $localfile_path | sed /\.sample//`
 done
 
 # asdf で使っているやつを全部インストールする
 . $HOME/.asdf/asdf.sh
 for plugin in `cat .tool-versions | cut -d ' ' -f 1`; do
-  asdf plugin add $plugin
+    asdf plugin add $plugin
 done
 asdf install
 
@@ -29,4 +39,7 @@ npm install --global diff-so-fancy
 # vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
+
+# neovim
+git clone https://github.com/Shougo/dein.vim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
