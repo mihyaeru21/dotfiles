@@ -1,7 +1,7 @@
 # zsh が動く環境向けの設定をやっていく
 
 # asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.10.0
 
 # .hoge の sym link
 for dotfile_path in `find . -maxdepth 1 -name '.*' | sed 's/\.\///' | grep -v '^\.$' | grep -vE '^\.(git|config)$' | sort`; do
@@ -16,7 +16,7 @@ done
 
 # local files
 for localfile_path in `find local -name '*.sample'`; do
-    cp $localfile_path `echo $localfile_path | sed /\.sample//`
+    cp $localfile_path `echo $localfile_path | sed 's/\.sample//'`
 done
 
 # asdf で使っているやつを全部インストールする
@@ -37,9 +37,9 @@ cargo install ripgrep
 npm install --global diff-so-fancy
 
 # vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
 
 # neovim
-git clone https://github.com/Shougo/dein.vim $(HOME)/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
+git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
