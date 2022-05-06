@@ -4,6 +4,6 @@ dotfiles
 ## Install
 
 ```sh
-make
+./setup/ubuntu.bash
 ```
 
