@@ -1,30 +1,13 @@
-# dotfiles
-/.vim/bundle/
-/.config/nvim/bundle/
-/.config/fish/fish_variables
-/.config/karabiner/assets/
-/local/nvim.vim
-/local/fish.fish
-/local/gitconfig
-
-# fish
-/.config/fish/completions/*
-/.config/fish/conf.d/*
-/.config/fish/functions/*
-/.config/fish/fishd.*
-
-# fish でも自分で作ったやつは git 管理対象
-!/.config/fish/conf.d/alias.fish
-!/.config/fish/conf.d/prompt_style.fish
-!/.config/fish/functions/fish_prompt.fish
-!/.config/fish/functions/notify-me.fish
-
 # Vim
+/.vim/autoload/plug.vim
+/.vim/plugged/
+/.config/nvim/bundle/
 *~
 .*~
 
 # Mac
 .DS_Store
+/.config/karabiner/assets/
 
 # editors
 .idea
@@ -38,4 +21,8 @@
 
 # tmux
 /tmux-client-*.log
+
+# local settings
+/local/nvim.vim
+/local/gitconfig
 
