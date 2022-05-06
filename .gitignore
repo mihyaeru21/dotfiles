@@ -19,10 +19,15 @@
 # direnv
 .envrc
 
+# zsh
+/zsh/history
+
 # tmux
 /tmux-client-*.log
 
 # local settings
 /local/nvim.vim
 /local/gitconfig
+/local/zsh.zsh
+
 
