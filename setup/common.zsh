@@ -43,3 +43,6 @@ vim +'PlugInstall --sync' +qa
 # neovim
 git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
+# zsh
+git clone https://github.com/zplug/zplug $HOME/dotfiles/zsh/zplug
+
