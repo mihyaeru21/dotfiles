@@ -6,6 +6,9 @@ export EDITOR=nvim
 . $HOME/.asdf/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 
+# direnv
+. "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
 # Rust
 . $HOME/.cargo/env
 
