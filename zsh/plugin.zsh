@@ -17,10 +17,8 @@ zplug 'joshskidmore/zsh-fzf-history-search'
 # ^g に ghq fzf を割り当てる
 zplug 'subaru-shoji/zsh-fzf-ghq'
 
-# テーマたち
-zplug 'dracula/zsh', as:theme
-# zplug 'mafredri/zsh-async', use:'async.zsh'
-# zplug 'sindresorhus/pure', use:'pure.zsh', as:theme
+# プロンプトで git の情報を得る gitprompt が入る
+zplug 'woefe/git-prompt.zsh'
 
 # 未インストールのプラグインがあるかチェックする
 if ! zplug check --verbose; then
