@@ -6,7 +6,7 @@ dotfiles
 ホストから .ssh のリンクを貼るために WSL の設定を追加して再起動する。
 
 ```sh
-echo <<EOS | sudo tee -a /etc/wsl.conf
+cat <<EOS | sudo tee -a /etc/wsl.conf
 [automount]
 options = "metadata"
 EOS
