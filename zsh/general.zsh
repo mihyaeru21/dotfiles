@@ -2,12 +2,8 @@ export LANG=en_US.UTF-8 # ja_JP だと地味に日本語になって逆にわか
 export LESSCHARSET=UTF-8
 export EDITOR=nvim
 
-# asdf
-. $HOME/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-
 # direnv
-. "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+. $HOME/.config/asdf-direnv/zshrc
 
 # Rust
 . $HOME/.cargo/env

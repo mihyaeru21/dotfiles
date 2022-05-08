@@ -1,3 +1,4 @@
+. $HOME/dotfiles/zsh/init.zsh
 . $HOME/dotfiles/zsh/plugin.zsh
 . $HOME/dotfiles/zsh/general.zsh
 . $HOME/dotfiles/zsh/alias.zsh
