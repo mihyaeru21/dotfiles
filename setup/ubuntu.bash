@@ -1,5 +1,8 @@
 #!/bin/bash -ex
 
+# sudo でパスワードを不要にする(必要ならあとで visudo して消す)
+echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
+
 # デフォルトは nano になっているので vim に変える
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
