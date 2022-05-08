@@ -52,4 +52,5 @@ git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/bundle/repos/git
 
 # zsh
 git clone https://github.com/zplug/zplug $HOME/dotfiles/zsh/zplug
+chsh -s /usr/bin/zsh
 
