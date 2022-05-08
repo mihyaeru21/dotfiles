@@ -1,3 +1,5 @@
+#!/usr/bin/zsh -ex
+
 # zsh が動く環境向けの設定をやっていく
 
 # asdf
