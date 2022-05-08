@@ -30,10 +30,11 @@ asdf install
 
 # direnv は別途設定が必要
 asdf direnv setup --shell zsh --version $(cat .tool-versions | grep direnv | cut -d ' ' -f 2)
-sed -in '/asdf-direnv\/zshrc/d' $HOME/dotfiles/.zshrc # general.zsh に記述済みのやつが追加されてしまうので削除
+sed -i -n '/asdf-direnv\/zshrc/d' $HOME/dotfiles/.zshrc # general.zsh に記述済みのやつが追加されてしまうので削除
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+rm $HOME/.zshenv # zshrc に記述済みのやつが追加されてしまうので削除
 
 # rust tools
 source $HOME/.cargo/env
