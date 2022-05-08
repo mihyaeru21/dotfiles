@@ -2,7 +2,6 @@
 
 call plug#begin()
 Plug 'nanotech/jellybeans.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -44,7 +43,7 @@ let &directory = &backupdir
 syntax on
 set t_Co=256
 set background=dark
-colorscheme dracula
+colorscheme jellybeans
 
 set showcmd
 set showmode

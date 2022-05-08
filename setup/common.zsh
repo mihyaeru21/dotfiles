@@ -48,7 +48,8 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubuserconte
 vim +'PlugInstall --sync' +qa
 
 # neovim
-git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
+curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim --headless +PlugInstall +qall
 
 # zsh
 git clone https://github.com/zplug/zplug $HOME/dotfiles/zsh/zplug
