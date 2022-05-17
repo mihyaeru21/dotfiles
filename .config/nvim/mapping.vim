@@ -27,37 +27,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "----------------------------------------
-" Denite
-"----------------------------------------
-nnoremap [denite] <Nop>
-nmap <Space>u [denite]
-nnoremap [denite]b :<C-u>Denite buffer<CR>
-nnoremap [denite]m :<C-u>Denite file_mru<CR>
-nnoremap [denite]l :<C-u>Denite line<CR>
-nnoremap [denite]o :<C-u>Denite outline<CR>
-nnoremap [denite]r :<C-u>Denite -resume<CR>
-nnoremap [denite]f :<C-u>Denite file/rec<CR>
-nnoremap [denite]g :<C-u>Denite grep<CR>
-nnoremap [denite]wg :<C-u>DeniteCursorWord grep<CR>
-nnoremap [denite]pf :<C-u>Denite file/rec -auto-action=preview<CR>
-nnoremap [denite]pg :<C-u>Denite grep -auto-action=preview<CR>
-nnoremap [denite]pwg :<C-u>DeniteCursorWord grep -auto-action=preview<CR>
-nnoremap [denite]wpg :<C-u>DeniteCursorWord grep -auto-action=preview<CR>
-nnoremap [denite]v :<C-u>Denite gitstatus<CR>
-
-
-"----------------------------------------
 " NERDTree
 "----------------------------------------
 nnoremap <Space>n :NERDTreeToggle<CR>
-
-
-"----------------------------------------
-" NeoSnippet
-"----------------------------------------
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 
 
 "----------------------------------------

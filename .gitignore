@@ -1,7 +1,6 @@
 # Vim
 /.vim/autoload/plug.vim
 /.vim/plugged/
-/.config/nvim/bundle/
 *~
 .*~
 
