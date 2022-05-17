@@ -1,4 +1,5 @@
 call plug#begin()
+
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/eregex.vim'
 Plug 'tpope/vim-fugitive'
@@ -12,10 +13,16 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim' " depends: [plenary.nvim, nvim-treesitter]
+
 Plug 'tyru/open-browser.vim', { 'for': 'markdown' }
 Plug 'kannokanno/previm', { 'for': 'markdown' } " depends: open-browser.vim
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee', 'eco'] }
 Plug 'AndrewRadev/vim-eco', { 'for': 'eco' } " depends: vim-coffee-script
+
 call plug#end()
 
 
