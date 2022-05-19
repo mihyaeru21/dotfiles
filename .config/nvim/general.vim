@@ -30,7 +30,7 @@ set showmode
 set showmatch
 set number
 set scrolloff=0
-set nocursorline " これをsyntaxと一緒に有効にするとカーソル移動が激重になる場合がある
+set cursorline " これをsyntaxと一緒に有効にするとカーソル移動が激重になる場合がある
 set cmdheight=2
 set ambiwidth=double
 set laststatus=2
