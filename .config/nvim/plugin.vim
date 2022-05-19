@@ -2,6 +2,7 @@ call plug#begin()
 
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/eregex.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv' " depends: vim-fugitive
 Plug 'thinca/vim-quickrun'
