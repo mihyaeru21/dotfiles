@@ -19,12 +19,53 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim' " depends: [plenary.nvim, nvim-treesitter]
 
+" 補完
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/nvim-cmp' " depends: vim-vsnip
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+
 Plug 'tyru/open-browser.vim', { 'for': 'markdown' }
 Plug 'kannokanno/previm', { 'for': 'markdown' } " depends: open-browser.vim
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee', 'eco'] }
 Plug 'AndrewRadev/vim-eco', { 'for': 'eco' } " depends: vim-coffee-script
 
 call plug#end()
+
+
+"----------------------------------------
+" nvim-cmp
+"----------------------------------------
+set completeopt=menu,menuone,noselect
+
+lua <<EOF
+  local cmp = require'cmp'
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+      end,
+    },
+    window = {
+      -- completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+      -- { name = 'nvim_lsp' },
+      }, {
+        { name = 'vsnip' },
+        { name = 'buffer' },
+        { name = 'path' },
+      })
+  })
+EOF
 
 
 "----------------------------------------
