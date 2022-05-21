@@ -24,6 +24,7 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
 
   use {
     'AndrewRadev/vim-eco',
@@ -57,5 +58,13 @@ cmp.setup({
       { name = 'buffer' },
       { name = 'path' },
     })
+})
+
+-- 検索時に buffer から補完する
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' },
+  },
 })
 
