@@ -1,4 +1,5 @@
 source ~/dotfiles/.config/nvim/plugin.vim
+lua require('plugin')
 source ~/dotfiles/.config/nvim/general.vim
 source ~/dotfiles/.config/nvim/mapping.vim
 
