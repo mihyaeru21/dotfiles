@@ -25,6 +25,7 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use 'ray-x/cmp-treesitter'
 
   use {
     'AndrewRadev/vim-eco',
@@ -60,6 +61,7 @@ cmp.setup({
     -- { name = 'nvim_lsp' },
     }, {
       { name = 'vsnip' },
+      { name = 'treesitter' },
       { name = 'buffer' },
       { name = 'path' },
     })
