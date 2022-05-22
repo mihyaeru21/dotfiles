@@ -25,7 +25,13 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'ray-x/cmp-treesitter'
+
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
 
   use {
     'AndrewRadev/vim-eco',
@@ -58,13 +64,14 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    -- { name = 'nvim_lsp' },
-    }, {
-      { name = 'vsnip' },
-      { name = 'treesitter' },
-      { name = 'buffer' },
-      { name = 'path' },
-    })
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
+  }, {
+    { name = 'vsnip' },
+    { name = 'treesitter' },
+    { name = 'buffer' },
+    { name = 'path' },
+  })
 })
 
 -- 検索時に buffer から補完する
@@ -134,4 +141,20 @@ require'nvim-treesitter.configs'.setup {
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
 
+
+------------------------------------------
+-- lsp
+------------------------------------------
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+require("nvim-lsp-installer").setup {}
+local lspconfig = require("lspconfig")
+lspconfig.sumneko_lua.setup {
+  capabilities = capabilities,
+}
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities,
+}
 
