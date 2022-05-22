@@ -83,3 +83,53 @@ cmp.setup.cmdline(':', {
   })
 })
 
+
+------------------------------------------
+-- nvim-treesitter
+------------------------------------------
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "dockerfile",
+    "go",
+    "hcl",
+    "html",
+    "java",
+    "javascript",
+    "json",
+    "lua",
+    "make",
+    "perl",
+    "python",
+    "ruby",
+    "rust",
+    "scss",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml",
+  },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true,
+  },
+}
+
+-- fold
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
+
+
