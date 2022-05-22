@@ -33,6 +33,11 @@ require('packer').startup(function()
   }
 end)
 
+
+------------------------------------------
+-- nvim-cmp
+------------------------------------------
+
 local cmp = require'cmp'
 
 cmp.setup({
@@ -66,5 +71,15 @@ cmp.setup.cmdline('/', {
   sources = {
     { name = 'buffer' },
   },
+})
+
+-- コマンドを補完する
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+  }, {
+    { name = 'cmdline' },
+  })
 })
 
