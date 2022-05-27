@@ -4,6 +4,7 @@ export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # direnv が有効になっている場所では表示する
+# 少し重くなるから今は使ってない
 _prompt_direnv() {
     if direnv status | grep 'Found.*allowed.*true' > /dev/null ; then
         echo -n '%F{yellow}[direnv]%f'
@@ -13,7 +14,7 @@ _prompt_direnv() {
 # プロンプト
 setopt prompt_subst
 PROMPT='%F{cyan}[%n@%m:%~]%f$(gitprompt)
-$(_prompt_direnv)%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
+%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 RPROMPT='%F{yellow}[%D %*]%f'
 
 # gitprompt のカスタマイズ https://github.com/woefe/git-prompt.zsh#appearance
