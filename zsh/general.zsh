@@ -37,13 +37,6 @@ SAVEHIST=300000
 setopt hist_ignore_dups  # 重複を無視
 setopt share_history     # 履歴共有
 
-#入力途中の履歴補完
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey '^P' history-beginning-search-backward-end
-bindkey '^N' history-beginning-search-forward-end
-
 # キーバインドを vi モードにする
 bindkey -v
 
