@@ -1,4 +1,4 @@
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   EnforcedStyle: final_blank_line
 
 Metrics/AbcSize:
