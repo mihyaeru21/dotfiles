@@ -164,6 +164,7 @@ local lspconfig = require("lspconfig")
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
+    autostart = lsp ~= 'solargraph', -- ruby だけ自動で開始しない
   }
 end
 
