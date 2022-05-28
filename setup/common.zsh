@@ -54,3 +54,11 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share
 git clone https://github.com/zplug/zplug $HOME/dotfiles/zsh/zplug
 chsh -s /usr/bin/zsh
 
+# tmux-mem-cpu-load
+git clone --depth 1 https://github.com/thewtex/tmux-mem-cpu-load.git /tmp/tmux-mem-cpu-load
+pushd /tmp/tmux-mem-cpu-load
+cmake .
+make
+sudo make install
+popd
+
