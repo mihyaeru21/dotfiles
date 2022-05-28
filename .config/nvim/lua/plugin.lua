@@ -1,4 +1,4 @@
-require('packer').startup(function()
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'othree/eregex.vim'
@@ -166,4 +166,15 @@ for _, lsp in pairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- https://neovim.discourse.group/t/how-to-suppress-warning-undefined-global-vim/1882
+lspconfig.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
+    },
+  },
+}
 
