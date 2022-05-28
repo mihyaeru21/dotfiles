@@ -40,6 +40,8 @@ require('packer').startup(function()
   }
 end)
 
+-- TODO: どれかがインストールされていない場合ここ以降は実行しないようにしたい
+
 
 ------------------------------------------
 -- nvim-cmp
@@ -145,16 +147,23 @@ vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
 ------------------------------------------
 -- lsp
 ------------------------------------------
+local servers = {
+  "rust_analyzer",
+  "sumneko_lua",
+  "tsserver",
+  "vimls",
+  "solargraph",
+}
+
+require("nvim-lsp-installer").setup { ensure_installed = servers }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-require("nvim-lsp-installer").setup {}
 local lspconfig = require("lspconfig")
-lspconfig.sumneko_lua.setup {
-  capabilities = capabilities,
-}
-lspconfig.rust_analyzer.setup {
-  capabilities = capabilities,
-}
+for _, lsp in pairs(servers) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities,
+  }
+end
 
