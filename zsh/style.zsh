@@ -39,7 +39,7 @@ zle -N zle-keymap-select
 # プロンプト
 setopt prompt_subst
 PROMPT='%F{cyan}[%n@%m$(_prompt_ssh):%~]%f$(gitprompt)
-$(_prompt_vi_mode)%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
+$(_prompt_vi_mode)%(?!%F{green}!%F{red})[%?]%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 RPROMPT='%F{yellow}[%D %*]%f'
 
 # gitprompt のカスタマイズ https://github.com/woefe/git-prompt.zsh#appearance
