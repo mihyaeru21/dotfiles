@@ -37,10 +37,11 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 # プロンプト
+# 特殊な値はここを参照: https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 setopt prompt_subst
 PROMPT='%F{cyan}[%n@%m$(_prompt_ssh):%~]%f$(gitprompt)
 $(_prompt_vi_mode)%(?!%F{green}!%F{red})[%?]%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
-RPROMPT='%F{yellow}[%D %*]%f'
+RPROMPT='%F{yellow}[%D{%Y-%m-%d %H:%M:%S}]%f'
 
 # gitprompt のカスタマイズ https://github.com/woefe/git-prompt.zsh#appearance
 ZSH_THEME_GIT_PROMPT_PREFIX="("
