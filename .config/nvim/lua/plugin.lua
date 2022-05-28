@@ -32,6 +32,7 @@ require('packer').startup(function(use)
   -- lsp
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
+  use 'j-hui/fidget.nvim'
 
   use {
     'AndrewRadev/vim-eco',
@@ -178,4 +179,6 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
+
+require("fidget").setup{}
 
