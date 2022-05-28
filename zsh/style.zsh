@@ -23,10 +23,10 @@ _prompt_vi_mode() {
     esac
 }
 
-# keymap が変わったときにプロンプトをリセットする
-zle-keymap-select() {
-    zle reset-prompt
-}
+# init と keymap が変わったときにプロンプトをリセットする
+zle-line-init() { zle reset-prompt }
+zle-keymap-select() { zle reset-prompt }
+zle -N zle-line-init
 zle -N zle-keymap-select
 
 # プロンプト
