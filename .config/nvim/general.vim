@@ -44,3 +44,11 @@ set inccommand=split
 
 set termguicolors
 colorscheme jellybeans
+
+" yank した部分を一時的にハイライトする
+" https://jdhao.github.io/2020/05/22/highlight_yank_region_nvim/
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
+augroup END
+
