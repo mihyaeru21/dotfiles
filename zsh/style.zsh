@@ -23,6 +23,13 @@ _prompt_vi_mode() {
     esac
 }
 
+# ssh 経由の場合にその旨を表示する
+_prompt_ssh() {
+    if [ -n "$SSH_CONNECTION" ]; then
+        echo -n '%F{magenta}(ssh)%f'
+    fi
+}
+
 # init と keymap が変わったときにプロンプトをリセットする
 zle-line-init() { zle reset-prompt }
 zle-keymap-select() { zle reset-prompt }
@@ -31,7 +38,7 @@ zle -N zle-keymap-select
 
 # プロンプト
 setopt prompt_subst
-PROMPT='%F{cyan}[%n@%m:%~]%f$(gitprompt)
+PROMPT='%F{cyan}[%n@%m$(_prompt_ssh):%~]%f$(gitprompt)
 $(_prompt_vi_mode)%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 RPROMPT='%F{yellow}[%D %*]%f'
 
