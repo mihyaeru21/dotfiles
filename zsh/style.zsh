@@ -11,10 +11,28 @@ _prompt_direnv() {
     fi
 }
 
+# 現在の vi モードをプロンプトに表示する
+_prompt_vi_mode() {
+    case $KEYMAP in
+        vicmd)
+            echo -n '%F{yellow}[N]%f'
+            ;;
+        main|viins)
+            echo -n '[I]'
+            ;;
+    esac
+}
+
+# keymap が変わったときにプロンプトをリセットする
+zle-keymap-select() {
+    zle reset-prompt
+}
+zle -N zle-keymap-select
+
 # プロンプト
 setopt prompt_subst
 PROMPT='%F{cyan}[%n@%m:%~]%f$(gitprompt)
-%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
+$(_prompt_vi_mode)%(?!%F{green}!%F{red})%(?!(っ \`-'\'' c%)!(っ '\''-\` c%))%f '
 RPROMPT='%F{yellow}[%D %*]%f'
 
 # gitprompt のカスタマイズ https://github.com/woefe/git-prompt.zsh#appearance
