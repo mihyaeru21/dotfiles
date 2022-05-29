@@ -39,6 +39,20 @@ nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 
 
-autocmd FileType rust,ruby,python nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-autocmd FileType rust,ruby,python nnoremap <buffer> <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
+"----------------------------------------
+" telescope
+"----------------------------------------
+nmap <Space>u [telescope]
+nnoremap [telescope]f :Telescope find_files<CR>
+nnoremap [telescope]m :Telescope oldfiles<CR>
+nnoremap [telescope]g :Telescope live_grep<CR>
+nnoremap [telescope]wg :Telescope grep_string<CR>
+nnoremap [telescope]t :Telescope treesitter<CR>
+nnoremap [telescope]d :Telescope diagnostics<CR>
+nnoremap [telescope]r :Telescope resume<CR>
+nnoremap [telescope]ld :Telescope lsp_definitions<CR>
+nnoremap [telescope]lr :Telescope lsp_references<CR>
+nnoremap [telescope]li :Telescope lsp_implementations<CR>
+nnoremap [telescope]lsd :Telescope lsp_document_symbols<CR>
+nnoremap [telescope]lsw :Telescope lsp_workspace_symbols<CR>
 
