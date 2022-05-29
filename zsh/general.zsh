@@ -21,6 +21,9 @@ export PATH=$PATH:$HOME/.bin
 # fzf でマウスを無効に
 export FZF_DEFAULT_OPTS=--no-mouse
 
+# ripgrep のデフォルト引数を設定するファイル
+export RIPGREP_CONFIG_PATH=$HOME/dotfiles/.ripgreprc
+
 autoload -Uz compinit && compinit # 補完
 autoload -Uz zmv                  # zmvを使えるように
 typeset -U path PATH              # pathの重複をみとめない
