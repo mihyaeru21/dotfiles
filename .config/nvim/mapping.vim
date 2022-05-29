@@ -49,6 +49,7 @@ nnoremap [telescope]g :Telescope live_grep<CR>
 nnoremap [telescope]wg :Telescope grep_string<CR>
 nnoremap [telescope]t :Telescope treesitter<CR>
 nnoremap [telescope]d :Telescope diagnostics<CR>
+nnoremap [telescope]b :Telescope buffers<CR>
 nnoremap [telescope]r :Telescope resume<CR>
 nnoremap [telescope]ld :Telescope lsp_definitions<CR>
 nnoremap [telescope]lr :Telescope lsp_references<CR>
