@@ -8,6 +8,7 @@ require('packer').startup(function(use)
   use 'thinca/vim-quickrun'
   use 'w0rp/ale'
   use 'nanotech/jellybeans.vim'
+  use 'EdenEast/nightfox.nvim'
   use 'scrooloose/nerdtree'
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'tpope/vim-surround'
@@ -160,6 +161,8 @@ require("nvim-lsp-installer").setup { ensure_installed = servers }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+-- TODO: キーマップ
 
 local lspconfig = require("lspconfig")
 for _, lsp in pairs(servers) do
