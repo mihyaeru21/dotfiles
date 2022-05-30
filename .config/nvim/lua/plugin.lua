@@ -18,6 +18,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -189,14 +190,13 @@ require("fidget").setup{}
 ------------------------------------------
 -- misc
 ------------------------------------------
-require('neogit').setup{}
-require('gitsigns').setup{
-  signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '|', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '|', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-  },
-}
 
+-- git
+require('neogit').setup{}
+require('gitsigns').setup{}
+
+-- indent
+require("indent_blankline").setup {
+  show_current_context = true,
+  show_current_context_start = true,
+}
