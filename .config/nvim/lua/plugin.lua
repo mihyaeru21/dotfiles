@@ -2,9 +2,6 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'othree/eregex.vim'
-  use 'airblade/vim-gitgutter'
-  use 'tpope/vim-fugitive'
-  use 'gregsexton/gitv' -- depends: vim-fugitive
   use 'thinca/vim-quickrun'
   use 'w0rp/ale'
   use 'nanotech/jellybeans.vim'
@@ -17,7 +14,10 @@ require('packer').startup(function(use)
   use 'junegunn/vim-easy-align'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim' -- depends: [plenary.nvim, nvim-treesitter]
+  use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use 'lewis6991/gitsigns.nvim'
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -184,4 +184,19 @@ lspconfig.sumneko_lua.setup {
 }
 
 require("fidget").setup{}
+
+
+------------------------------------------
+-- misc
+------------------------------------------
+require('neogit').setup{}
+require('gitsigns').setup{
+  signs = {
+    add          = {hl = 'GitSignsAdd'   , text = '|', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = '|', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+  },
+}
 
