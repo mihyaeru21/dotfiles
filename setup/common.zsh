@@ -38,7 +38,8 @@ rm $HOME/.zshenv # zshrc に記述済みのやつが追加されてしまうの�
 
 # rust tools
 source $HOME/.cargo/env
-cargo install ripgrep fd-find cross cargo-update bat exa hexyl procs gobang
+cargo install ripgrep fd-find cross cargo-update bat exa hexyl procs git-delta
+cargo install --version 0.1.0-alpha.5 gobang
 
 # node tools
 npm install --global diff-so-fancy
