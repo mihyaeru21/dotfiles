@@ -30,6 +30,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'ray-x/cmp-treesitter'
+  use 'onsails/lspkind.nvim' -- アイコン表示
 
   -- lsp
   use 'neovim/nvim-lspconfig'
@@ -51,6 +52,7 @@ end)
 ------------------------------------------
 
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -76,7 +78,16 @@ cmp.setup({
     { name = 'treesitter' },
     { name = 'buffer' },
     { name = 'path' },
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      maxwidth = 50,
+      before = function (_, vim_item)
+        return vim_item
+      end
+    })
+  },
 })
 
 -- 検索時に buffer から補完する
