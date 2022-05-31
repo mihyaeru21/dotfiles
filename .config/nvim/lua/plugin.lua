@@ -3,7 +3,7 @@ require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'othree/eregex.vim'
   use 'thinca/vim-quickrun'
-  use 'w0rp/ale'
+  -- use 'w0rp/ale'
   use 'nanotech/jellybeans.vim'
   use 'EdenEast/nightfox.nvim'
   use 'scrooloose/nerdtree'
@@ -19,6 +19,7 @@ require('packer').startup(function(use)
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -165,6 +166,7 @@ local servers = {
   "rust_analyzer",
   "sumneko_lua",
   "tsserver",
+  "eslint",
   "vimls",
   "solargraph",
 }
@@ -195,6 +197,11 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+  -- js/ts の formatter は null-ls に任せる(これをやっておかないといちいち formatter を選択する必要がある)
+  if client.name == 'tsserver' then
+    client.resolved_capabilities.document_formatting = false
+  end
 end
 
 local lspconfig = require("lspconfig")
@@ -217,8 +224,24 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
+-- LSP 起動時のステータス表示
 require("fidget").setup{}
 
+-- もろもろを LSP と統合するやつ
+local null_ls = require("null-ls");
+null_ls.setup({
+  -- debounce = 250, -- デフォルト 250 が重いときはここをいじる
+  sources = {
+    -- null_ls.builtins.diagnostics.cspell, -- 重いからいったんやめる
+    -- eslint は null-ls で動かすと重いので lsp server のやつを使う
+    null_ls.builtins.diagnostics.rubocop,
+    null_ls.builtins.formatting.prettier.with {
+      prefer_local = "node_modules/.bin",
+    },
+    null_ls.builtins.formatting.perltidy,
+    null_ls.builtins.formatting.rubocop,
+  },
+})
 
 ------------------------------------------
 -- misc
