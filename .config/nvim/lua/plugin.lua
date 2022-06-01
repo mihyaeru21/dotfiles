@@ -1,3 +1,5 @@
+local util = require('util')
+
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -173,17 +175,6 @@ vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
 ------------------------------------------
 -- lsp
 ------------------------------------------
-local servers = {
-  "rust_analyzer",
-  "sumneko_lua",
-  "tsserver",
-  "eslint",
-  "vimls",
-  "solargraph",
-}
-
-require("nvim-lsp-installer").setup { ensure_installed = servers }
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
@@ -214,25 +205,38 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local lspconfig = require("lspconfig")
-for _, lsp in pairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    autostart = lsp ~= 'solargraph', -- ruby だけ自動で開始しない
-  }
-end
-
--- https://neovim.discourse.group/t/how-to-suppress-warning-undefined-global-vim/1882
-lspconfig.sumneko_lua.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' },
+local server_configs = {
+  rust_analyzer = {},
+  sumneko_lua = {
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { 'vim' },
+        },
       },
     },
   },
+  tsserver = {},
+  eslint = {},
+  vimls = {},
+  solargraph = {
+    autostart = false,
+  },
 }
+
+require('nvim-lsp-installer').setup { ensure_installed = util.get_keys(server_configs) }
+
+local lspconfig = require("lspconfig")
+for lsp, conf in pairs(server_configs) do
+  local config = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+  for k, v in pairs(conf) do
+    config[k] = v
+  end
+  lspconfig[lsp].setup(config)
+end
 
 -- LSP 起動時のステータス表示
 require("fidget").setup {}
