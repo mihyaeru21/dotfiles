@@ -27,12 +27,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "----------------------------------------
-" NERDTree
-"----------------------------------------
-nnoremap <Space>n :NERDTreeToggle<CR>
-
-
-"----------------------------------------
 " quickrun
 "----------------------------------------
 nnoremap <Space>r :<C-u>QuickRun -mode n<CR>
@@ -59,5 +53,6 @@ nnoremap [telescope]lsw :Telescope lsp_workspace_symbols<CR>
 
 
 nnoremap <Space>g :Neogit<CR>
+nnoremap <Space>n :Neotree toggle<CR>
 
 

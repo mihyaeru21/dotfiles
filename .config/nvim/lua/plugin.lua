@@ -6,8 +6,6 @@ require('packer').startup(function(use)
   -- use 'w0rp/ale'
   use 'nanotech/jellybeans.vim'
   use 'EdenEast/nightfox.nvim'
-  use 'scrooloose/nerdtree'
-  use 'Xuyuanp/nerdtree-git-plugin'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-commentary'
@@ -19,7 +17,15 @@ require('packer').startup(function(use)
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    }
+  }
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -37,6 +43,7 @@ require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use 'j-hui/fidget.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   use {
     'AndrewRadev/vim-eco',
@@ -255,4 +262,31 @@ require('gitsigns').setup {}
 require("indent_blankline").setup {
   show_current_context = true,
   show_current_context_start = true,
+}
+
+-- neo-tree
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
+require('neo-tree').setup {
+  filesystem = {
+    filtered_items = {
+      hide_dotfiles = false,
+      hide_gitignored = false,
+      hide_by_pattern = {
+        '.git',
+        '*.DS_Store',
+        '*.pyc',
+        '*.meta',
+        '*.o',
+        'thumbs.db',
+      },
+    },
+  },
+  window = {
+    mappings = {
+      ['o'] = 'open',
+      ['s'] = 'open_split',
+      ['v'] = 'open_vsplit',
+    }
+  },
 }
