@@ -44,6 +44,7 @@ require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   use 'j-hui/fidget.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'simrat39/rust-tools.nvim'
 
   use {
     'AndrewRadev/vim-eco',
@@ -254,6 +255,8 @@ null_ls.setup({
     },
   },
 })
+
+require('rust-tools').setup {}
 
 ------------------------------------------
 -- misc
