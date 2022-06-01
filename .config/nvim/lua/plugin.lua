@@ -241,12 +241,17 @@ null_ls.setup({
   sources = {
     -- null_ls.builtins.diagnostics.cspell, -- 重いからいったんやめる
     -- eslint は null-ls で動かすと重いので lsp server のやつを使う
-    null_ls.builtins.diagnostics.rubocop,
     null_ls.builtins.formatting.prettier.with {
       prefer_local = "node_modules/.bin",
     },
-    null_ls.builtins.formatting.perltidy,
-    null_ls.builtins.formatting.rubocop,
+    null_ls.builtins.diagnostics.rubocop.with {
+      command = 'bundle',
+      args = { 'exec', 'rubocop', '-f', 'json', '--stdin', '$FILENAME' },
+    },
+    null_ls.builtins.formatting.rubocop.with {
+      command = 'bundle',
+      args = { 'exec', 'rubocop', '--auto-correct', '-f', 'quiet', '--stderr', '--stdin', '$FILENAME' },
+    },
   },
 })
 
