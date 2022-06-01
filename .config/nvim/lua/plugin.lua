@@ -40,8 +40,8 @@ require('packer').startup(function(use)
 
   use {
     'AndrewRadev/vim-eco',
-    ft = {'eco'},
-    requires = {{'kchmck/vim-coffee-script'}},
+    ft = { 'eco' },
+    requires = { { 'kchmck/vim-coffee-script' } },
   }
 end)
 
@@ -52,7 +52,7 @@ end)
 -- nvim-cmp
 ------------------------------------------
 
-local cmp = require'cmp'
+local cmp = require 'cmp'
 local lspkind = require('lspkind')
 
 cmp.setup({
@@ -84,7 +84,7 @@ cmp.setup({
     format = lspkind.cmp_format({
       mode = 'symbol_text',
       maxwidth = 50,
-      before = function (_, vim_item)
+      before = function(_, vim_item)
         return vim_item
       end
     })
@@ -114,7 +114,7 @@ cmp.setup.cmdline(':', {
 -- nvim-treesitter
 ------------------------------------------
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "dockerfile",
     "go",
@@ -176,7 +176,7 @@ require("nvim-lsp-installer").setup { ensure_installed = servers }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -225,7 +225,7 @@ lspconfig.sumneko_lua.setup {
 }
 
 -- LSP 起動時のステータス表示
-require("fidget").setup{}
+require("fidget").setup {}
 
 -- もろもろを LSP と統合するやつ
 local null_ls = require("null-ls");
@@ -248,8 +248,8 @@ null_ls.setup({
 ------------------------------------------
 
 -- git
-require('neogit').setup{}
-require('gitsigns').setup{}
+require('neogit').setup {}
+require('gitsigns').setup {}
 
 -- indent
 require("indent_blankline").setup {
