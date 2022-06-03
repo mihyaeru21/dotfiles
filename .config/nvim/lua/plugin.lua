@@ -269,7 +269,13 @@ require('rust-tools').setup {}
 ------------------------------------------
 
 -- git
-require('neogit').setup {}
+require('neogit').setup {
+  mappings = {
+    status = {
+      ['o'] = 'Toggle',
+    },
+  },
+}
 require('gitsigns').setup {}
 
 -- indent
