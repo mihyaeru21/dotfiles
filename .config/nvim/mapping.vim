@@ -54,5 +54,10 @@ nnoremap [telescope]lsw :Telescope lsp_workspace_symbols<CR>
 
 nnoremap <Space>g :Neogit<CR>
 nnoremap <Space>n :Neotree toggle<CR>
+nnoremap <Space>j :Neotree toggle buffers<CR>
+nnoremap <Space>m :Neotree toggle git_status<CR>
 
+
+" 行番号、git 表示、インデント表示、スクロールバーを一気に toggle
+" するやつを用意しておく
 

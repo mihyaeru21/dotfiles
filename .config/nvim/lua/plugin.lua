@@ -289,6 +289,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 require('neo-tree').setup {
   filesystem = {
+    follow_current_file = true,
     filtered_items = {
       hide_dotfiles = false,
       hide_gitignored = false,
@@ -302,10 +303,13 @@ require('neo-tree').setup {
       },
     },
   },
+  buffers = {
+    follow_current_file = true,
+  },
   window = {
     mappings = {
       ['o'] = 'open',
-      ['v'] = 'open_split',
+      ['i'] = 'open_split',
       ['s'] = 'open_vsplit',
     }
   },
