@@ -200,7 +200,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', kmopts)
 
   -- js/ts の formatter は null-ls に任せる(これをやっておかないといちいち formatter を選択する必要がある)
-  if client.name == 'tsserver' then
+  if client.name == 'tsserver' or client.name == 'solargraph' then
     client.resolved_capabilities.document_formatting = false
   end
 end
