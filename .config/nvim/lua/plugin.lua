@@ -226,6 +226,7 @@ local server_configs = {
 }
 
 require('nvim-lsp-installer').setup { ensure_installed = util.get_keys(server_configs) }
+require('rust-tools').setup {} -- lspconfig より先に実行しないと on_attach とかが反映されない
 
 local lspconfig = require("lspconfig")
 for lsp, conf in pairs(server_configs) do
@@ -262,8 +263,6 @@ null_ls.setup({
     },
   },
 })
-
-require('rust-tools').setup {}
 
 ------------------------------------------
 -- misc
