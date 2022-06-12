@@ -30,4 +30,6 @@
 /local/gitconfig
 /local/zsh.zsh
 
+# ccls
+.ccls-cache
 

@@ -206,6 +206,7 @@ local on_attach = function(client, bufnr)
 end
 
 local server_configs = {
+  ccls = {},
   rust_analyzer = {},
   sumneko_lua = {
     settings = {
