@@ -9,6 +9,8 @@ alias uuuuu="cd ../../../../../"
 alias uuuuuu="cd ../../../../../../"
 alias b="cd -"
 alias be="bundle exec"
+alias norg="gron --ungron"
+alias ungron="gron --ungron"
 
 # 自分のグローバルIPを確認する
 alias global-ip='curl globalip.me'

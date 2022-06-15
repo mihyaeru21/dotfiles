@@ -41,6 +41,9 @@ source $HOME/.cargo/env
 cargo install ripgrep fd-find cross cargo-update bat exa hexyl procs git-delta
 cargo install --version 0.1.0-alpha.5 gobang
 
+# go tools
+go install github.com/goldeneggg/lsec2/cmd/lsec2@latest
+go install github.com/tomnomnom/gron@latest
 
 # vim
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
