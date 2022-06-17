@@ -34,7 +34,7 @@
     modified      = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD"
     modified-perl = "!git modified | egrep '\\.(t|p([lm]|sgi))$'"
     check-perl    = "!git modified-perl | xargs -n1 -P4 perl -wc"
-    delete-merged = "!git branch --merged | egrep -v '\\*|\\+|develop|master' | xargs git branch -d"
+    delete-merged = "!git branch --merged | egrep -v '\\*|\\+|develop|master|main' | xargs git branch -d"
     remove-merged = "!git delete-merged"
     clean-branch  = "!git fetch --all --prune && git delete-merged; git delete-pr"
     push-origin   = push origin --set-upstream HEAD
@@ -55,8 +55,6 @@
 [delta]
     navigate = true
     light = false
-[merge]
-    conflictstyle = diff3
 [diff]
     colorMoved = default
 
