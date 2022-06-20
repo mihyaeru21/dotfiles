@@ -11,3 +11,4 @@ python 3.10.4
 ruby 3.1.1
 saml2aws 2.35.0
 sops 3.7.2
+terraform 1.2.3
