@@ -229,6 +229,26 @@ require('nvim-lsp-installer').setup { ensure_installed = util.get_keys(server_co
 require('rust-tools').setup {} -- lspconfig より先に実行しないと on_attach とかが反映されない
 
 local lspconfig = require("lspconfig")
+local lspconfig_config = require('lspconfig.configs')
+
+if not lspconfig_config.ruby_lsp then
+  lspconfig_config.ruby_lsp = {
+    default_config = {
+      cmd = { 'bundle', 'exec', 'ruby-lsp' },
+      init_options = {
+        enabledFeatures = { 'formatting', 'codeActions' },
+      },
+      filetypes = { 'ruby' },
+      root_dir = require('lspconfig.util').root_pattern('Gemfile', '.git'),
+    },
+  }
+end
+
+-- lspconfig.ruby_lsp.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- }
+
 for lsp, conf in pairs(server_configs) do
   local config = {
     on_attach = on_attach,
