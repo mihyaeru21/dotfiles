@@ -45,6 +45,9 @@ cargo install --version 0.1.0-alpha.5 gobang
 go install github.com/goldeneggg/lsec2/cmd/lsec2@latest
 go install github.com/tomnomnom/gron@latest
 
+# python tools
+pip3 install tmuxp
+
 # vim
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
