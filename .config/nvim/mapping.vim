@@ -61,3 +61,5 @@ nnoremap <Space>m :Neotree toggle git_status<CR>
 " 行番号、git 表示、インデント表示、スクロールバーを一気に toggle
 " するやつを用意しておく
 
+nnoremap <Space>b :Gitsigns blame_line<CR>
+
