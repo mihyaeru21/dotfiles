@@ -1,11 +1,8 @@
-local util = require('util')
-
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'othree/eregex.vim'
   use 'thinca/vim-quickrun'
-  -- use 'w0rp/ale'
   use 'nanotech/jellybeans.vim'
   use 'EdenEast/nightfox.nvim'
   use 'tpope/vim-surround'
@@ -58,8 +55,6 @@ require('packer').startup(function(use)
 end)
 
 -- TODO: どれかがインストールされていない場合ここ以降は実行しないようにしたい
-
-local kmopts = { noremap = true, silent = true }
 
 ------------------------------------------
 -- nvim-cmp
@@ -175,16 +170,54 @@ vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
 ------------------------------------------
 -- lsp
 ------------------------------------------
+
+require('rust-tools').setup {} -- lspconfig より先に実行しないと on_attach とかが反映されない
+local lspconfig = require("lspconfig")
+local nlspsettings = require("nlspsettings")
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+  capabilities = capabilities,
+})
 
+require('nvim-lsp-installer').setup {
+  -- ruby のやつはこれで入れると bundle がそっちを見てしまうので入れない
+  ensure_installed = {
+    'ccls',
+    'eslint',
+    'jsonls',
+    -- 'ruby_ls',
+    'rust_analyzer',
+    -- 'sorbet',
+    'sumneko_lua',
+    'tsserver',
+    'vimls',
+    'yamlls',
+  },
+}
+
+-- root_dir に Gemfile がある場合は bundle exec する
+lspconfig.util.on_setup = lspconfig.util.add_hook_before(lspconfig.util.on_setup, function(config)
+  if config.name == 'ruby_ls' or config.name == 'sorbet' then
+    local current_buf = lspconfig.util.path.sanitize(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()))
+    local root_dir = lspconfig.util.root_pattern('Gemfile')(current_buf)
+    if not root_dir then return end -- root_dir があるのは Gemfile がある場合のみ
+    -- TODO: さらに gemfile 内に該当の gem があるかも見る
+    -- TODO: さらに bundle exec しないパターンでグローバルなコマンドがなければ autostart を false にする
+
+    config.cmd = vim.list_extend({ 'bundle', 'exec' }, config.cmd)
+  end
+end)
+
+local kmopts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', kmopts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', kmopts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', kmopts)
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', kmopts)
 vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', kmopts)
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', kmopts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', kmopts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', kmopts)
@@ -198,67 +231,75 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', kmopts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', kmopts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', kmopts)
-
-  -- js/ts, ruby の formatter は null-ls に任せる(これをやっておかないといちいち formatter を選択する必要がある)
-  if client.name == 'tsserver' or client.name == 'solargraph' then
-    client.server_capabilities.documentFormattingProvider = false
-  end
 end
 
-local server_configs = {
-  ccls = {},
-  rust_analyzer = {},
-  sumneko_lua = {
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = { 'vim' },
-        },
+for _, server in ipairs({
+  'ccls',
+  'eslint',
+  'jsonls',
+  -- 'ruby_ls',
+  'rust_analyzer',
+  'sorbet',
+  -- 'sumneko_lua',
+  -- 'tsserver',
+  'vimls',
+  'yamlls',
+}) do
+  lspconfig[server].setup { on_attach = on_attach }
+end
+
+lspconfig.ruby_ls.setup {
+  -- ruby-lsp 3.0 から diagnostics が textDocument/diagnostic を使うように変更された
+  -- Neovim はそれに対応いていないので手動で対応させる
+  on_attach = function (client, bufnr)
+    on_attach(client, bufnr)
+
+    local callback = function()
+      local params = vim.lsp.util.make_text_document_params(bufnr)
+
+      client.request(
+        'textDocument/diagnostic',
+        { textDocument = params },
+        function(err, result)
+          if err then return end
+
+          vim.lsp.diagnostic.on_publish_diagnostics(
+            nil,
+            vim.tbl_extend('keep', params, { diagnostics = result.items }),
+            { client_id = client.id }
+          )
+        end
+      )
+    end
+
+    callback() -- call on attach
+
+    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePre', 'BufReadPost', 'InsertLeave', 'TextChanged' }, {
+      buffer = bufnr,
+      callback = callback,
+    })
+  end,
+}
+
+lspconfig.sumneko_lua.setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
       },
     },
-  },
-  tsserver = {},
-  eslint = {},
-  vimls = {},
-  solargraph = {
-    autostart = false,
   },
 }
 
-require('nvim-lsp-installer').setup { ensure_installed = util.get_keys(server_configs) }
-require('rust-tools').setup {} -- lspconfig より先に実行しないと on_attach とかが反映されない
+lspconfig.tsserver.setup {
+  on_attach = function (client, bufnr)
+    on_attach(client, bufnr)
 
-local lspconfig = require("lspconfig")
-local lspconfig_config = require('lspconfig.configs')
-
-if not lspconfig_config.ruby_lsp then
-  lspconfig_config.ruby_lsp = {
-    default_config = {
-      cmd = { 'bundle', 'exec', 'ruby-lsp' },
-      init_options = {
-        enabledFeatures = { 'formatting', 'codeActions' },
-      },
-      filetypes = { 'ruby' },
-      root_dir = require('lspconfig.util').root_pattern('Gemfile', '.git'),
-    },
-  }
-end
-
--- lspconfig.ruby_lsp.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
-for lsp, conf in pairs(server_configs) do
-  local config = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-  for k, v in pairs(conf) do
-    config[k] = v
-  end
-  lspconfig[lsp].setup(config)
-end
+    -- これは on_attach ではなく capabilities でやれば良さそうな気もする
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+}
 
 -- LSP 起動時のステータス表示
 require("fidget").setup {}
@@ -272,14 +313,6 @@ null_ls.setup({
     -- eslint は null-ls で動かすと重いので lsp server のやつを使う
     null_ls.builtins.formatting.prettier.with {
       prefer_local = "node_modules/.bin",
-    },
-    null_ls.builtins.diagnostics.rubocop.with {
-      command = 'bundle',
-      args = { 'exec', 'rubocop', '-f', 'json', '--stdin', '$FILENAME' },
-    },
-    null_ls.builtins.formatting.rubocop.with {
-      command = 'bundle',
-      args = { 'exec', 'rubocop', '--auto-correct', '-f', 'quiet', '--stderr', '--stdin', '$FILENAME' },
     },
   },
 })
