@@ -1,3 +1,5 @@
+local util = require('util')
+
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -173,7 +175,6 @@ vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
 
 require('rust-tools').setup {} -- lspconfig より先に実行しないと on_attach とかが反映されない
 local lspconfig = require("lspconfig")
-local nlspsettings = require("nlspsettings")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -197,16 +198,36 @@ require('nvim-lsp-installer').setup {
   },
 }
 
+local ruby_configs = {
+  ruby_ls = {
+    gem = 'ruby-lsp',
+  },
+  sorbet = {
+    gem = 'sorbet',
+  },
+}
+
 -- root_dir に Gemfile がある場合は bundle exec する
 lspconfig.util.on_setup = lspconfig.util.add_hook_before(lspconfig.util.on_setup, function(config)
-  if config.name == 'ruby_ls' or config.name == 'sorbet' then
-    local current_buf = lspconfig.util.path.sanitize(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()))
-    local root_dir = lspconfig.util.root_pattern('Gemfile')(current_buf)
-    if not root_dir then return end -- root_dir があるのは Gemfile がある場合のみ
-    -- TODO: さらに gemfile 内に該当の gem があるかも見る
-    -- TODO: さらに bundle exec しないパターンでグローバルなコマンドがなければ autostart を false にする
+  local conf = ruby_configs[config.name]
+  if not conf then return end
 
-    config.cmd = vim.list_extend({ 'bundle', 'exec' }, config.cmd)
+  local current_buf = lspconfig.util.path.sanitize(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()))
+  local root_dir = lspconfig.util.root_pattern('Gemfile.lock')(current_buf)
+
+  -- Gemfile.lock がありコマンドを提供する gem が含まれている場合は bundle exec で実行する
+  if root_dir then
+    local path = lspconfig.util.path.sanitize(lspconfig.util.path.join(root_dir, 'Gemfile.lock'))
+    local gem_line = ' ' .. conf.gem .. ' ('
+    if util.contain_str_in_line(path, gem_line) then
+      config.cmd = vim.list_extend({ 'bundle', 'exec' }, config.cmd)
+      return
+    end
+  end
+
+  -- グローバルにコマンドがないと起動しようとしてもエラーが出るだけなので autostart を false にしておく
+  if vim.fn.executable(config.cmd[1]) == 0 then
+    config.autostart = false
   end
 end)
 
