@@ -4,3 +4,7 @@
 # そうすると .git まで含まれてしまうので明示的に除外する
 --glob=!.git/*
 
+# sorbet のやつが出てくるのが邪魔
+--glob=!sorbet/rbi/gems
+--glob=!sorbet/rbi/dsl
+
