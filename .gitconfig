@@ -43,6 +43,7 @@
     pull-pr-o     = "!f(){ git fetch origin refs/pull/$1/merge:pr/$1 && git checkout pr/$1; };f"
     delete-pr     = "!git branch | grep '^\\s*pr/' | xargs git branch -D"
     current-branch = rev-parse --abbrev-ref HEAD
+    show-pr = "!f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
 [push]
     default = simple
 [github]
