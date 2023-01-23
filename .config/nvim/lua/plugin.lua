@@ -214,8 +214,11 @@ lspconfig.util.on_setup = lspconfig.util.add_hook_before(lspconfig.util.on_setup
   local conf = ruby_configs[config.name]
   if not conf then return end
 
-  local current_buf = lspconfig.util.path.sanitize(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()))
-  local root_dir = lspconfig.util.root_pattern('Gemfile.lock')(current_buf)
+  local current = vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
+  if #current == 0 then
+    current = vim.fn.getcwd()
+  end
+  local root_dir = lspconfig.util.root_pattern('Gemfile.lock')(lspconfig.util.path.sanitize(current))
 
   -- Gemfile.lock がありコマンドを提供する gem が含まれている場合は bundle exec で実行する
   if root_dir then
