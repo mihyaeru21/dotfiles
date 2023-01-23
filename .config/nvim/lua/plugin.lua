@@ -187,6 +187,8 @@ require('nvim-lsp-installer').setup {
   ensure_installed = {
     'ccls',
     'eslint',
+    -- 'flow',
+    'gopls',
     'jsonls',
     -- 'ruby_ls',
     'rust_analyzer',
@@ -256,7 +258,9 @@ end
 
 for _, server in ipairs({
   'ccls',
-  'eslint',
+  -- 'eslint',
+  'flow',
+  'gopls',
   'jsonls',
   -- 'ruby_ls',
   'rust_analyzer',
@@ -268,6 +272,12 @@ for _, server in ipairs({
 }) do
   lspconfig[server].setup { on_attach = on_attach }
 end
+
+lspconfig.eslint.setup {
+  on_attach = on_attach,
+  -- 元の実装だと .eslintrc と tsconfig が別のディレクトリにあるパターンでうまく動かないので、その環境で動くようにする
+  root_dir = lspconfig.util.root_pattern('package.json', '.git'),
+}
 
 lspconfig.ruby_ls.setup {
   -- ruby-lsp 3.0 から diagnostics が textDocument/diagnostic を使うように変更された
@@ -320,6 +330,12 @@ lspconfig.tsserver.setup {
     -- これは on_attach ではなく capabilities でやれば良さそうな気もする
     client.server_capabilities.documentFormattingProvider = false
   end,
+  filetypes = {
+    -- 元の実装だと javascript 系も含まれているが、そちらは flow で見るので含めない
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+  },
 }
 
 -- LSP 起動時のステータス表示
