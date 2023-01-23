@@ -13,3 +13,4 @@ ruby 3.2.0
 saml2aws 2.35.0
 sops 3.7.3
 terraform 1.2.3
+yq 4.30.8
