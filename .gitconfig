@@ -17,12 +17,12 @@
     s    = status
     st   = status
     a    = add
-    br   = branch
     co   = checkout
     ci   = commit
     wt   = whatchanged --stat
     ck   = "!git --no-pager diff --diff-filter=ACMRX --name-only --no-color HEAD | egrep '\\.(t|p([lm]|sgi))$' | xargs -n 1 -P2 perl -wc"
-    f    = fetch
+    sw   = switch
+    rs   = restore
     logpr = log --graph --decorate
     logo  = log --oneline
     logog = "log --oneline --grep=$1"
