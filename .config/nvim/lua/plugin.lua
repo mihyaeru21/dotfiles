@@ -27,6 +27,7 @@ require('packer').startup(function(use)
   }
   use 'kevinhwang91/nvim-hlslens'
   use { 'petertriho/nvim-scrollbar', requires = 'kevinhwang91/nvim-hlslens' }
+  use 'ojroques/nvim-osc52'
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -386,3 +387,8 @@ vim.api.nvim_set_keymap('n', '<space>l', ':noh<CR>', kmopts)
 -- nvim-scrollbar
 require('scrollbar').setup {}
 require('scrollbar.handlers.search').setup {}
+
+-- nvim-osc52
+vim.keymap.set('n', '<space>c', require('osc52').copy_operator, {expr = true})
+vim.keymap.set('n', '<space>cc', '<space>c_', {remap = true})
+vim.keymap.set('x', '<space>c', require('osc52').copy_visual)
