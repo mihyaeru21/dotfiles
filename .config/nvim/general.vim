@@ -33,7 +33,7 @@ set scrolloff=0
 set cursorline " これをsyntaxと一緒に有効にするとカーソル移動が激重になる場合がある
 set cmdheight=2
 set ambiwidth=single " 一部の記号が小さくなるが罫線が半角になることで全体的に表示崩れが減る
-set laststatus=2
+set laststatus=3
 set statusline=[%n]%m%r%f\ %=\ %w%y[%{&fenc}:%{&ff}][%l/%L,%c]
 set list
 set listchars=tab:>-,trail:_,extends:>,precedes:<
