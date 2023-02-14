@@ -194,7 +194,6 @@ require("mason-lspconfig").setup {
     'gopls',
     'jsonls',
     'rust_analyzer',
-    -- 'sumneko_lua',
     'tsserver',
     'vimls',
     'yamlls',
@@ -229,10 +228,10 @@ for _, server in ipairs({
   'flow',
   'gopls',
   'jsonls',
+  -- 'lua_ls',
   -- 'ruby_ls',
   'rust_analyzer',
   'sorbet',
-  -- 'sumneko_lua',
   -- 'tsserver',
   'vimls',
   'yamlls',
@@ -279,16 +278,16 @@ lspconfig.ruby_ls.setup {
   end,
 }
 
--- lspconfig.sumneko_lua.setup {
---   on_attach = on_attach,
---   settings = {
---     Lua = {
---       diagnostics = {
---         globals = { 'vim' }
---       },
---     },
---   },
--- }
+lspconfig.lua_ls.setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      },
+    },
+  },
+}
 
 lspconfig.tsserver.setup {
   on_attach = function(client, bufnr)
