@@ -28,6 +28,7 @@ require('packer').startup(function(use)
   use 'kevinhwang91/nvim-hlslens'
   use { 'petertriho/nvim-scrollbar', requires = 'kevinhwang91/nvim-hlslens' }
   use 'ojroques/nvim-osc52'
+  use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -385,6 +386,26 @@ require('scrollbar').setup {}
 require('scrollbar.handlers.search').setup {}
 
 -- nvim-osc52
-vim.keymap.set('n', '<space>c', require('osc52').copy_operator, {expr = true})
-vim.keymap.set('n', '<space>cc', '<space>c_', {remap = true})
+vim.keymap.set('n', '<space>c', require('osc52').copy_operator, { expr = true })
+vim.keymap.set('n', '<space>cc', '<space>c_', { remap = true })
 vim.keymap.set('x', '<space>c', require('osc52').copy_visual)
+
+-- lualine
+require('lualine').setup {
+  options = {
+    globalstatus = true,
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = {
+      {
+        'filename',
+        path = 1,
+      },
+    },
+    lualine_x = { 'searchcount', 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
+  },
+}
