@@ -43,7 +43,8 @@ require('packer').startup(function(use)
 
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'j-hui/fidget.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'simrat39/rust-tools.nvim'
@@ -185,18 +186,15 @@ lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_c
   capabilities = capabilities,
 })
 
-require('nvim-lsp-installer').setup {
-  -- ruby のやつはこれで入れると bundle がそっちを見てしまうので入れない
+require("mason").setup()
+require("mason-lspconfig").setup {
+  -- ruby, flow はパッケージマネージャ経由で入れたいのでここでは入れない
   ensure_installed = {
-    'ccls',
     'eslint',
-    -- 'flow',
     'gopls',
     'jsonls',
-    -- 'ruby_ls',
     'rust_analyzer',
-    -- 'sorbet',
-    'sumneko_lua',
+    -- 'sumneko_lua',
     'tsserver',
     'vimls',
     'yamlls',
@@ -227,7 +225,6 @@ local on_attach = function(_, bufnr)
 end
 
 for _, server in ipairs({
-  'ccls',
   -- 'eslint',
   'flow',
   'gopls',
@@ -282,16 +279,16 @@ lspconfig.ruby_ls.setup {
   end,
 }
 
-lspconfig.sumneko_lua.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      },
-    },
-  },
-}
+-- lspconfig.sumneko_lua.setup {
+--   on_attach = on_attach,
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = { 'vim' }
+--       },
+--     },
+--   },
+-- }
 
 lspconfig.tsserver.setup {
   on_attach = function(client, bufnr)

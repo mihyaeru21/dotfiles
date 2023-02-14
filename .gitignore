@@ -1,6 +1,7 @@
 # Vim
 /.vim/autoload/plug.vim
 /.vim/plugged/
+/.config/nvim/plugin/packer_compiled.lua
 *~
 .*~
 
