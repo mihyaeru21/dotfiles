@@ -51,6 +51,7 @@ require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'simrat39/rust-tools.nvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
+  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use {
     'AndrewRadev/vim-eco',
@@ -321,6 +322,12 @@ null_ls.setup({
     },
   },
 })
+
+require("flutter-tools").setup {
+  lsp = {
+    on_attach = on_attach,
+  },
+}
 
 ------------------------------------------
 -- misc
