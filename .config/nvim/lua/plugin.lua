@@ -13,7 +13,7 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
   use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
-  use 'nvim-telescope/telescope-ui-select.nvim'
+  use 'stevearc/dressing.nvim'
   use 'lewis6991/gitsigns.nvim'
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -437,10 +437,7 @@ require('telescope').setup {
     },
     sorting_strategy = 'ascending',
   },
-  extensions = {
-    ['ui-select'] = {
-      require('telescope.themes').get_dropdown {},
-    },
-  },
 }
-require('telescope').load_extension('ui-select')
+
+-- dressing
+require('dressing').setup {}
