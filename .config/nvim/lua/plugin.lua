@@ -8,6 +8,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-commentary'
+  use 'tpope/vim-abolish'
   use 'junegunn/vim-easy-align'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
