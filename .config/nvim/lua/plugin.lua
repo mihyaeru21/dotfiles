@@ -131,6 +131,7 @@ cmp.setup.cmdline(':', {
 
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
+    "dart",
     "dockerfile",
     "go",
     "hcl",
@@ -438,6 +439,7 @@ require('telescope').setup {
     sorting_strategy = 'ascending',
   },
 }
+require("telescope").load_extension("flutter")
 
 -- dressing
 require('dressing').setup {}

@@ -50,6 +50,7 @@ nnoremap [telescope]lr :Telescope lsp_references<CR>
 nnoremap [telescope]li :Telescope lsp_implementations<CR>
 nnoremap [telescope]lsd :Telescope lsp_document_symbols<CR>
 nnoremap [telescope]lsw :Telescope lsp_workspace_symbols<CR>
+nnoremap [telescope]af :Telescope flutter commands<CR>
 
 
 nnoremap <Space>g :Neogit<CR>
