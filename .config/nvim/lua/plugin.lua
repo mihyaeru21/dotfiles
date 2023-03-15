@@ -13,6 +13,7 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
   use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use 'nvim-telescope/telescope-live-grep-args.nvim'
   use 'stevearc/dressing.nvim'
   use 'lewis6991/gitsigns.nvim'
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
@@ -449,7 +450,8 @@ require('telescope').setup {
     sorting_strategy = 'ascending',
   },
 }
-require("telescope").load_extension("flutter")
+require('telescope').load_extension('flutter')
+require('telescope').load_extension('live_grep_args')
 
 -- dressing
 require('dressing').setup {}

@@ -39,7 +39,7 @@ vnoremap <Space>r :<C-u>QuickRun -mode n<CR>
 nmap <Space>u [telescope]
 nnoremap [telescope]f :Telescope find_files<CR>
 nnoremap [telescope]m :Telescope oldfiles<CR>
-nnoremap [telescope]g :Telescope live_grep<CR>
+nnoremap [telescope]g :Telescope live_grep_args<CR>
 nnoremap [telescope]wg :Telescope grep_string<CR>
 nnoremap [telescope]t :Telescope treesitter<CR>
 nnoremap [telescope]d :Telescope diagnostics<CR>
