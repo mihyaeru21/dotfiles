@@ -4,6 +4,7 @@ fzf 0.30.0
 ghq 1.2.1
 github-cli 2.10.1
 golang 1.18.1
+jq 1.6
 neovim 0.8.3
 nodejs 18.1.0
 peco 0.5.10
