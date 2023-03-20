@@ -43,7 +43,6 @@ set mouse=
 set inccommand=split
 
 set termguicolors
-colorscheme nightfox
 
 " yank した部分を一時的にハイライトする
 " https://jdhao.github.io/2020/05/22/highlight_yank_region_nvim/

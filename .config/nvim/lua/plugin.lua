@@ -406,6 +406,15 @@ vim.keymap.set('n', '<space>cf', function()
   osc52.copy(vim.fn.expand('%:.'))
 end)
 
+-- nightfox
+local groups = {
+  all = {
+    VertSplit = { bg = 'bg0' }, -- デフォルトは細くて見づらい
+  },
+}
+require('nightfox').setup { groups = groups }
+vim.cmd('colorscheme nightfox') -- lualine の前に呼び出しておく
+
 -- lualine
 require('lualine').setup {
   options = {
