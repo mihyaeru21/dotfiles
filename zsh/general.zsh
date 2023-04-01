@@ -18,6 +18,9 @@ export JAFA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 # なんか入れておく場所
 export PATH=$PATH:$HOME/.bin
 
+# たまに要求される
+export PATH=$PATH:$HOME/.local/bin
+
 # fzf でマウスを無効に
 export FZF_DEFAULT_OPTS=--no-mouse
 
