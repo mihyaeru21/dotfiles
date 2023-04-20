@@ -145,6 +145,7 @@ require 'nvim-treesitter.configs'.setup {
     "lua",
     "make",
     "perl",
+    "proto",
     "python",
     "ruby",
     "rust",
