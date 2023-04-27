@@ -55,6 +55,8 @@ require('packer').startup(function(use)
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
+  use 'github/copilot.vim'
+
   use {
     'AndrewRadev/vim-eco',
     ft = { 'eco' },
