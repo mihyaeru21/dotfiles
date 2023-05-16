@@ -11,7 +11,7 @@ nodejs 18.16.0
 peco 0.5.10
 perl 5.35.11
 python 3.10.4
-ruby 3.2.0
+ruby 3.2.2
 saml2aws 2.35.0
 sops 3.7.3
 terraform 1.2.3
