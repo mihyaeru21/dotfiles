@@ -267,6 +267,7 @@ lspconfig.ruby_ls.setup {
         { textDocument = params },
         function(err, result)
           if err then return end
+          if result == nil then return end
 
           vim.lsp.diagnostic.on_publish_diagnostics(
             nil,
