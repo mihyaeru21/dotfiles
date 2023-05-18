@@ -76,7 +76,7 @@ local lspkind = require('lspkind')
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   window = {
@@ -134,27 +134,27 @@ cmp.setup.cmdline(':', {
 
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
-    "dart",
-    "dockerfile",
-    "go",
-    "hcl",
-    "html",
-    "java",
-    "javascript",
-    "json",
-    "lua",
-    "make",
-    "perl",
-    "proto",
-    "python",
-    "ruby",
-    "rust",
-    "scss",
-    "toml",
-    "tsx",
-    "typescript",
-    "vim",
-    "yaml",
+    'dart',
+    'dockerfile',
+    'go',
+    'hcl',
+    'html',
+    'java',
+    'javascript',
+    'json',
+    'lua',
+    'make',
+    'perl',
+    'proto',
+    'python',
+    'ruby',
+    'rust',
+    'scss',
+    'toml',
+    'tsx',
+    'typescript',
+    'vim',
+    'yaml',
   },
   highlight = {
     enable = true,
@@ -163,10 +163,10 @@ require 'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
+      init_selection = 'gnn',
+      node_incremental = 'grn',
+      scope_incremental = 'grc',
+      node_decremental = 'grm',
     },
   },
   indent = {
@@ -191,12 +191,12 @@ require('lspconfig-bundler').setup()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
   capabilities = capabilities,
 })
 
-require("mason").setup()
-require("mason-lspconfig").setup {
+require('mason').setup()
+require('mason-lspconfig').setup {
   -- ruby, flow はパッケージマネージャ経由で入れたいのでここでは入れない
   ensure_installed = {
     'eslint',
@@ -315,22 +315,22 @@ lspconfig.tsserver.setup {
 }
 
 -- LSP 起動時のステータス表示
-require("fidget").setup {}
+require('fidget').setup {}
 
 -- もろもろを LSP と統合するやつ
-local null_ls = require("null-ls");
+local null_ls = require('null-ls');
 null_ls.setup({
   -- debounce = 250, -- デフォルト 250 が重いときはここをいじる
   sources = {
     -- null_ls.builtins.diagnostics.cspell, -- 重いからいったんやめる
     -- eslint は null-ls で動かすと重いので lsp server のやつを使う
     null_ls.builtins.formatting.prettier.with {
-      prefer_local = "node_modules/.bin",
+      prefer_local = 'node_modules/.bin',
     },
   },
 })
 
-require("flutter-tools").setup {
+require('flutter-tools').setup {
   flutter_lookup_cmd = 'asdf where flutter',
   lsp = {
     on_attach = on_attach,
@@ -352,7 +352,7 @@ require('neogit').setup {
 require('gitsigns').setup {}
 
 -- indent
-require("indent_blankline").setup {
+require('indent_blankline').setup {
   show_current_context = true,
   show_current_context_start = true,
 }
