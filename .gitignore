@@ -34,3 +34,6 @@
 # ccls
 .ccls-cache
 
+# WSL
+*:Zone.Identifier
+
