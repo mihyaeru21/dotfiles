@@ -49,7 +49,7 @@ require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use 'j-hui/fidget.nvim'
+  use { 'j-hui/fidget.nvim', tag = 'legacy' } -- 大幅に書き直すらしいので tag を固定するのを推奨していた
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'simrat39/rust-tools.nvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
