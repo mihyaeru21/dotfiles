@@ -16,7 +16,7 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope-live-grep-args.nvim'
   use 'stevearc/dressing.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'lukas-reineke/indent-blankline.nvim'
   use {
@@ -32,6 +32,13 @@ require('packer').startup(function(use)
   use { 'petertriho/nvim-scrollbar', requires = 'kevinhwang91/nvim-hlslens' }
   use 'ojroques/nvim-osc52'
   use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  use {
+    'folke/noice.nvim',
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    },
+  }
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -49,7 +56,6 @@ require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use { 'j-hui/fidget.nvim', tag = 'legacy' } -- 大幅に書き直すらしいので tag を固定するのを推奨していた
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'simrat39/rust-tools.nvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
@@ -314,9 +320,6 @@ lspconfig.tsserver.setup {
   },
 }
 
--- LSP 起動時のステータス表示
-require('fidget').setup {}
-
 -- もろもろを LSP と統合するやつ
 local null_ls = require('null-ls');
 null_ls.setup({
@@ -348,6 +351,7 @@ require('neogit').setup {
       ['o'] = 'Toggle',
     },
   },
+  disable_commit_confirmation = true,
 }
 require('gitsigns').setup {}
 
@@ -459,3 +463,21 @@ require('telescope').load_extension('live_grep_args')
 
 -- dressing
 require('dressing').setup {}
+
+-- noice (suggested options)
+require('noice').setup {
+  lsp = {
+    override = {
+      ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+      ['vim.lsp.util.stylize_markdown'] = true,
+      ['cmp.entry.get_documentation'] = true,
+    },
+  },
+  presets = {
+    bottom_search = true,
+    command_palette = true,
+    long_message_to_split = true,
+    inc_rename = false,
+    lsp_doc_border = false,
+  },
+}
