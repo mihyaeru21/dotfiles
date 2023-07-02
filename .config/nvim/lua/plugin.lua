@@ -59,6 +59,7 @@ require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'simrat39/rust-tools.nvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
+  use { 'mihyaeru21/nvim-ruby-lsp', requires = 'neovim/nvim-lspconfig' }
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use 'github/copilot.vim'
@@ -193,7 +194,8 @@ local lspconfig = require('lspconfig')
 
 -- lspconfig の setup より先に実行しないと反映されない
 require('rust-tools').setup {}
-require('lspconfig-bundler').setup()
+require('lspconfig-bundler').setup {}
+require('ruby-lsp').setup { vscode = true }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -261,37 +263,10 @@ lspconfig.eslint.setup {
 }
 
 lspconfig.ruby_ls.setup {
-  -- ruby-lsp 3.0 から diagnostics が textDocument/diagnostic を使うように変更された
-  -- Neovim はそれに対応いていないので手動で対応させる
-  on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
-
-    local callback = function()
-      local params = vim.lsp.util.make_text_document_params(bufnr)
-
-      client.request(
-        'textDocument/diagnostic',
-        { textDocument = params },
-        function(err, result)
-          if err then return end
-          if result == nil then return end
-
-          vim.lsp.diagnostic.on_publish_diagnostics(
-            nil,
-            vim.tbl_extend('keep', params, { diagnostics = result.items }),
-            { client_id = client.id }
-          )
-        end
-      )
-    end
-
-    callback() -- call on attach
-
-    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePre', 'BufReadPost', 'InsertLeave', 'TextChanged' }, {
-      buffer = bufnr,
-      callback = callback,
-    })
-  end,
+  on_attach = on_attach,
+  init_options = {
+    formatter = 'syntax_tree',
+  },
 }
 
 lspconfig.lua_ls.setup {
