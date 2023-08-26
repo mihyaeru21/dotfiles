@@ -21,7 +21,7 @@ require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use {
     'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     requires = {
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
@@ -342,7 +342,9 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 require('neo-tree').setup {
   filesystem = {
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true,
+    },
     filtered_items = {
       hide_dotfiles = false,
       hide_gitignored = false,
@@ -357,7 +359,9 @@ require('neo-tree').setup {
     },
   },
   buffers = {
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true,
+    },
   },
   window = {
     mappings = {
