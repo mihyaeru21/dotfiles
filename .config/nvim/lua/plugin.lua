@@ -188,7 +188,7 @@ local lspconfig = require('lspconfig')
 -- lspconfig の setup より先に実行しないと反映されない
 require('rust-tools').setup {}
 require('lspconfig-bundler').setup {}
-require('ruby-lsp').setup { vscode = true }
+require('ruby-lsp').setup {}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
