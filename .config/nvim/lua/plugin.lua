@@ -324,11 +324,7 @@ require('neogit').setup {
 }
 require('gitsigns').setup {}
 
--- indent
-require('indent_blankline').setup {
-  show_current_context = true,
-  show_current_context_start = true,
-}
+require('ibl').setup {}
 
 -- neo-tree
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
