@@ -11,6 +11,8 @@ export EDITOR=nvim
 # Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+# asdf-golang
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # Java のデフォルトの文字コードを設定する
 export JAFA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
