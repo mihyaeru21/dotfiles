@@ -4,7 +4,7 @@ flutter 3.7.12
 fzf 0.30.0
 ghq 1.4.1
 github-cli 2.10.1
-golang 1.18.1
+golang 1.21.4
 jq 1.6
 neovim 0.9.4
 nodejs 18.16.0
