@@ -390,7 +390,7 @@ end)
 -- nightfox
 require('nightfox').setup {
   options = {
-    transparent = true,
+    -- transparent = true,
   },
   groups = {
     all = {
