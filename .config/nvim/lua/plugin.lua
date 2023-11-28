@@ -203,6 +203,7 @@ require('mason-lspconfig').setup {
     'eslint',
     'gopls',
     'jsonls',
+    'lua_ls',
     'rust_analyzer',
     'tsserver',
     'vimls',
