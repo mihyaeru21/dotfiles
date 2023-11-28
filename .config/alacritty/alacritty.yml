@@ -197,11 +197,12 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (nightfox)
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_alacritty.yml
 colors:
   # Default colors
   primary:
-    background: '#171717'
-    foreground: '#e4e4e4'
+    background: '#192330'
+    foreground: '#cdcecf'
 
     # Bright and dim foreground colors
     #
@@ -218,9 +219,9 @@ colors:
   #
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  cursor:
+    text: CellForeground
+    cursor: '#666666'
 
   # Vi mode cursor colors
   #
@@ -294,25 +295,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#a3a3a3'
-    red:     '#ea8986'
-    green:   '#a4c38c'
-    yellow:  '#ffc68d'
-    blue:    '#a7cae3'
-    magenta: '#e8cefb'
-    cyan:    '#00a7a0'
-    white:   '#e4e4e4'
+    black:   '#393b44'
+    red:     '#c94f6d'
+    green:   '#81b29a'
+    yellow:  '#dbc074'
+    blue:    '#719cd6'
+    magenta: '#9d79d6'
+    cyan:    '#63cdcf'
+    white:   '#dfdfe0'
 
   # Bright colors
   bright:
-    black:   '#c9c9c9'
-    red:     '#ffb2b0'
-    green:   '#c8e3b9'
-    yellow:  '#ffe2af'
-    blue:    '#bee0f8'
-    magenta: '#fce3ff'
-    cyan:    '#0cbeb7'
-    white:   '#ffffff'
+    black:   '#575860'
+    red:     '#d16983'
+    green:   '#8ebaa4'
+    yellow:  '#e0c989'
+    blue:    '#86abdc'
+    magenta: '#baa1e2'
+    cyan:    '#7ad5d6'
+    white:   '#e4e4e5'
 
   # Dim colors
   #
@@ -336,7 +337,9 @@ colors:
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #
-  #indexed_colors: []
+  indexed_colors:
+    - { index: 16, color: '#f4a261' }
+    - { index: 17, color: '#d67ad2' }
 
   # Transparent cell backgrounds
   #
