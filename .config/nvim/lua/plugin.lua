@@ -136,6 +136,8 @@ require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     'dart',
     'dockerfile',
+    'elixir',
+    'erlang',
     'go',
     'hcl',
     'html',
@@ -200,6 +202,8 @@ require('mason').setup()
 require('mason-lspconfig').setup {
   -- ruby, flow はパッケージマネージャ経由で入れたいのでここでは入れない
   ensure_installed = {
+    'elixirls',
+    'elp',
     'eslint',
     'gopls',
     'jsonls',
@@ -236,6 +240,8 @@ local on_attach = function(_, bufnr)
 end
 
 for _, server in ipairs({
+  'elixirls',
+  'elp',
   -- 'eslint',
   'flow',
   'gopls',

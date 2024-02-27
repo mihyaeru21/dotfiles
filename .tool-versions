@@ -16,3 +16,5 @@ saml2aws 2.35.0
 sops 3.7.3
 terraform 1.2.3
 yq 4.30.8
+erlang 26.2.2
+elixir 1.16.1-otp-26
