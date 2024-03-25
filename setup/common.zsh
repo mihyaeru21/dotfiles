@@ -26,6 +26,7 @@ done
 for plugin in `cat .tool-versions | cut -d ' ' -f 1`; do
     asdf plugin add $plugin
 done
+asdf install jq
 asdf install
 
 # direnv は別途設定が必要
