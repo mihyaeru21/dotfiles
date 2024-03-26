@@ -70,9 +70,13 @@ bindkey -M viins '^Y'  yank
 # ssh-agent for tmux
 # https://qiita.com/sonots/items/2d7950a68da0a02ba7e4
 agent="$HOME/.ssh/agent"
-if [ -S "$SSH_AUTH_SOCK" ]; then
+if [ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]; then
+    # ローカルの Linux では systemd で起動済みな想定
+    # https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/38980986#38980986
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+elif [ -S "$SSH_AUTH_SOCK" ]; then
     case $SSH_AUTH_SOCK in
-        /tmp/*/agent.[0-9]* ) ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent && echo 'agent ok'
+        /tmp/*/agent.[0-9]* ) ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent
     esac
 elif [ -S $agent ]; then
     export SSH_AUTH_SOCK=$agent

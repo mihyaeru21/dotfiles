@@ -1,0 +1,13 @@
+[Unit]
+Description=SSH key agent
+
+[Service]
+Type=simple
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=default.target
+
+# 以下から持ってきた
+# https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/38980986#38980986
