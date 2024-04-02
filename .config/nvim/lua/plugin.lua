@@ -264,7 +264,12 @@ lspconfig.eslint.setup {
 }
 
 lspconfig.ruby_ls.setup {
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    -- sorbet の hover を郵政したいのでこちらはオフにする
+    -- TODO: hover に複数の provider がある場合にまとめて表示できるか調査
+    client.server_capabilities.hoverProvider = false
+    on_attach(client, bufnr)
+  end,
   init_options = {
     formatter = 'syntax_tree',
   },
