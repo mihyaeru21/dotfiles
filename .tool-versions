@@ -1,5 +1,7 @@
 awscli 2.15.38
 direnv 2.34.0
+elixir 1.16.2-otp-26
+erlang 26.2.4
 flutter 3.19.5-stable
 fzf 0.50.0
 ghq 1.6.1
@@ -16,5 +18,3 @@ saml2aws 2.36.15
 sops 3.8.1
 terraform 1.8.0
 yq 4.43.1
-erlang 26.2.4
-elixir 1.16.2-otp-26
