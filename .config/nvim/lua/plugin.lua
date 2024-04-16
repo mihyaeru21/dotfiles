@@ -16,7 +16,7 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope-live-grep-args.nvim'
   use 'stevearc/dressing.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 'NeogitOrg/neogit', branch = 'nightly', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'lukas-reineke/indent-blankline.nvim'
   use {
@@ -52,7 +52,6 @@ require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'simrat39/rust-tools.nvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
-  use { 'mihyaeru21/nvim-ruby-lsp', requires = 'neovim/nvim-lspconfig' }
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use 'github/copilot.vim'
@@ -190,7 +189,6 @@ local lspconfig = require('lspconfig')
 -- lspconfig の setup より先に実行しないと反映されない
 require('rust-tools').setup {}
 require('lspconfig-bundler').setup {}
-require('ruby-lsp').setup {}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -247,7 +245,7 @@ for _, server in ipairs({
   'gopls',
   'jsonls',
   -- 'lua_ls',
-  -- 'ruby_ls',
+  -- 'ruby_lsp',
   'rust_analyzer',
   'sorbet',
   -- 'tsserver',
@@ -263,7 +261,7 @@ lspconfig.eslint.setup {
   root_dir = lspconfig.util.root_pattern('package.json', '.git'),
 }
 
-lspconfig.ruby_ls.setup {
+lspconfig.ruby_lsp.setup {
   on_attach = function(client, bufnr)
     -- sorbet の hover を郵政したいのでこちらはオフにする
     -- TODO: hover に複数の provider がある場合にまとめて表示できるか調査
