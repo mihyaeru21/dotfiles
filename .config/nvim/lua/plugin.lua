@@ -32,6 +32,7 @@ require('packer').startup(function(use)
   use { 'petertriho/nvim-scrollbar', requires = 'kevinhwang91/nvim-hlslens' }
   use 'ojroques/nvim-osc52'
   use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  use 'folke/neodev.nvim'
 
   -- 補完
   use 'hrsh7th/nvim-cmp'
@@ -53,6 +54,11 @@ require('packer').startup(function(use)
   use 'simrat39/rust-tools.nvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  -- dap
+  use 'mfussenegger/nvim-dap'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' } }
 
   use 'github/copilot.vim'
 
@@ -320,6 +326,95 @@ require('flutter-tools').setup {
 }
 
 ------------------------------------------
+-- nvim-dap
+------------------------------------------
+
+require('nvim-dap-virtual-text').setup()
+require('dapui').setup()
+
+local dap = require('dap')
+local dapui = require('dapui')
+local widgets = require('dap.ui.widgets')
+
+dap.adapters.ruby = function(callback, config)
+  local executable
+  if config.bundler then
+    executable = {
+      command = 'bundle',
+      args = vim.list_extend(
+        { 'exec', 'rdbg', '-n', '--open', '--port', '${port}', '-c', '--', 'bundle', 'exec', config.command },
+        config.args),
+    }
+  else
+    executable = {
+      command = 'rdbg',
+      args = vim.list_extend({ '-n', '--open', '--port', '${port}', '-c', '--', config.command }, config.args),
+    }
+  end
+
+  callback {
+    type = 'server',
+    host = '127.0.0.1',
+    port = '${port}',
+    executable = executable,
+  }
+end
+dap.configurations.ruby = {
+  {
+    type = 'ruby',
+    name = 'debug current file',
+    request = 'attach',
+    localfs = true,
+    bundler = false,
+    command = 'ruby',
+    args = '${file}',
+    options = {
+      source_filetype = 'ruby',
+    },
+  },
+  {
+    type = 'ruby',
+    name = 'be rails: debug server',
+    request = 'attach',
+    localfs = true,
+    bundler = true,
+    command = 'rails',
+    args = 'server',
+    options = {
+      source_filetype = 'ruby',
+    },
+  },
+  {
+    type = 'ruby',
+    name = 'be rspec: debug current file',
+    request = 'attach',
+    localfs = true,
+    bundler = true,
+    command = 'rspec',
+    args = '${file}',
+    options = {
+      source_filetype = 'ruby',
+    },
+  },
+}
+
+vim.keymap.set('n', '<Space>dd', function() dapui.toggle() end)
+vim.keymap.set('n', '<Space>dc', function() dap.continue() end)
+vim.keymap.set('n', '<Space>dl', function() dap.step_over() end)
+vim.keymap.set('n', '<Space>dj', function() dap.step_into() end)
+vim.keymap.set('n', '<Space>dk', function() dap.step_out() end)
+vim.keymap.set('n', '<Space>db', function() dap.toggle_breakpoint() end)
+vim.keymap.set('n', '<Space>dq', function() dap.terminate() end)
+vim.keymap.set('n', '<Space>dk', function() dap.step_out() end)
+vim.keymap.set('n', '<Space>dr', function() dap.repl.open() end)
+vim.keymap.set('n', '<Space>dh', function() widgets.hover() end)
+vim.keymap.set('n', '<Space>dp', function() widgets.preview() end)
+vim.keymap.set('n', '<Space>dm', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Space>df', function() widgets.centered_float(widgets.frames) end)
+vim.keymap.set('n', '<Space>ds', function() widgets.centered_float(widgets.scopes) end)
+
+
+------------------------------------------
 -- misc
 ------------------------------------------
 
@@ -383,7 +478,24 @@ vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]]
 vim.api.nvim_set_keymap('n', '<space>l', ':noh<CR>', kmopts)
 
 -- nvim-scrollbar
-require('scrollbar').setup {}
+require('scrollbar').setup {
+  show_in_active_only = true,
+  hide_if_all_visible = true,
+  excluded_filetypes = {
+    'cmp_docs',
+    'cmp_menu',
+    'noice',
+    'prompt',
+    'TelescopePrompt',
+    'dap-float',
+    'dap-repl',
+    'dapui_breakpoints',
+    'dapui_console',
+    'dapui_scopes',
+    'dapui_stacks',
+    'dapui_watches',
+  },
+}
 require('scrollbar.handlers.search').setup {}
 
 -- nvim-osc52
@@ -448,3 +560,14 @@ require('telescope').load_extension('live_grep_args')
 
 -- dressing
 require('dressing').setup {}
+
+-- neodev
+require('neodev').setup({
+  library = {
+    plugins = {
+      'nvim-dap-ui',
+      -- 'neotest',
+    },
+    types = true
+  },
+})
