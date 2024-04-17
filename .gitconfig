@@ -58,6 +58,7 @@
 [delta]
     navigate = true
     light = false
+    syntax-theme = DarkNeon
 [diff]
     colorMoved = default
 [init]
