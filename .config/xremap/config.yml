@@ -6,3 +6,6 @@ keymap:
       ALT_R-f: Right
       ALT_R-a: Home
       ALT_R-g: End
+      ALT_R-r: PageUp
+      ALT_R-v: PageDown
+      ALT_R-z: Esc
