@@ -1,0 +1,8 @@
+keymap:
+  - remap:
+      ALT_R-e: Up
+      ALT_R-s: Left
+      ALT_R-d: Down
+      ALT_R-f: Right
+      ALT_R-a: Home
+      ALT_R-g: End

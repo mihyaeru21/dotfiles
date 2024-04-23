@@ -1,0 +1,9 @@
+[Unit]
+Description=Xremap
+
+[Service]
+Restart=always
+ExecStart=/usr/local/bin/xremap /home/mihyaeru/.config/xremap/config.yml
+
+[Install]
+WantedBy=default.target
