@@ -7,7 +7,6 @@ fzf 0.50.0
 ghq 1.6.1
 github-cli 2.47.0
 golang 1.22.2
-jq 1.7.1
 neovim nightly
 nodejs 20.12.2
 peco 0.5.11
