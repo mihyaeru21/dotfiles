@@ -38,7 +38,7 @@ set statusline=[%n]%m%r%f\ %=\ %w%y[%{&fenc}:%{&ff}][%l/%L,%c]
 set list
 set listchars=tab:>-,trail:_,extends:>,precedes:<
 set fillchars=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┫,vertright:┣,verthoriz:╋
-" set mouse= " dap で便利なので解禁
+set mouse= " dap で便利なので解禁...と思ったけどやっぱ邪魔なのでオフにする
 
 set inccommand=split
 
