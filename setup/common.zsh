@@ -2,31 +2,38 @@
 
 # zsh が動く環境向けの設定をやっていく
 
-# asdf
-git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.10.0
-
 # .hoge の sym link
 for dotfile_path in `find . -maxdepth 1 -name '.*' | sed 's/\.\///' | grep -v '^\.$' | grep -vE '^\.(git|config)$' | sort`; do
-    ln -s $HOME/dotfiles/$dotfile_path $HOME/$dotfile_path
+    target=$HOME/$dotfile_path
+    test -L $target || ln -s $HOME/dotfiles/$dotfile_path $target
 done
 
 # .config/hoge の sym link
 mkdir -p $HOME/.config
 for config_path in `find .config -maxdepth 1 | sed 's/\.\///' | grep -v '^\.config$' | sort`; do
-    ln -s $HOME/dotfiles/$config_path $HOME/$config_path
+    target=$HOME/$config_path
+    test -L $target || ln -s $HOME/dotfiles/$config_path $target
 done
 
 # local files
 for localfile_path in `find local -name '*.sample'`; do
-    cp $localfile_path `echo $localfile_path | sed 's/\.sample//'`
+    target=`echo $localfile_path | sed 's/\.sample//'`
+    test -e $target || cp $localfile_path $target
 done
 
+# asdf
+which asdf > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.14.0
+    . $HOME/.asdf/asdf.sh
+fi
+
 # asdf で使っているやつを全部インストールする
-. $HOME/.asdf/asdf.sh
 for plugin in `cat .tool-versions | cut -d ' ' -f 1`; do
     asdf plugin add $plugin
 done
-asdf install jq
+asdf update --all
+asdf install perl
 asdf install
 
 # direnv は別途設定が必要
@@ -34,37 +41,52 @@ asdf direnv setup --shell zsh --version $(cat .tool-versions | grep direnv | cut
 sed -i '/asdf-direnv\/zshrc/d' $HOME/dotfiles/.zshrc # general.zsh に記述済みのやつが追加されてしまうので削除
 
 # rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-rm $HOME/.zshenv # zshrc に記述済みのやつが追加されてしまうので削除
+which rustc > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    rm $HOME/.zshenv # zshrc に記述済みのやつが追加されてしまうので削除
+fi
 
 # rust tools
 source $HOME/.cargo/env
-cargo install ripgrep fd-find cross cargo-update bat exa hexyl procs git-delta
-cargo install --version 0.1.0-alpha.5 gobang
+cargo install ripgrep fd-find cross cargo-update bat exa hexyl procs git-delta du-dust
 
 # go tools
-go install github.com/goldeneggg/lsec2/cmd/lsec2@latest
 go install github.com/tomnomnom/gron@latest
 
 # python tools
 pip3 install tmuxp
 
 # vim
-curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +'PlugInstall --sync' +qa
+plug_path=$HOME/.vim/autoload/plug.vim
+if [ ! -e $plug_path ]; then
+    curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +'PlugInstall --sync' +qa
+fi
 
 # neovim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
+packer_path=$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
+if [ ! -e $packer_path ]; then
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_path
+fi
 
 # zsh
-git clone https://github.com/zplug/zplug $HOME/dotfiles/zsh/zplug
-chsh -s /usr/bin/zsh
+zplug_path=$HOME/dotfiles/zsh/zplug
+if [ ! -e $zplug_path ]; then
+    git clone https://github.com/zplug/zplug $zplug_path
+    chsh -s /usr/bin/zsh
+fi
 
 # tmux-mem-cpu-load
-git clone --depth 1 https://github.com/thewtex/tmux-mem-cpu-load.git /tmp/tmux-mem-cpu-load
-pushd /tmp/tmux-mem-cpu-load
-cmake .
-make
-sudo make install
-popd
+which tmux-mem-cpu-load > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    git clone --depth 1 https://github.com/thewtex/tmux-mem-cpu-load.git /tmp/tmux-mem-cpu-load
+    pushd /tmp/tmux-mem-cpu-load
+    cmake .
+    make
+    sudo make install
+    popd
+fi
+
+echo 'Done.'
 
