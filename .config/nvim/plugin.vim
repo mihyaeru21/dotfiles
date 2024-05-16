@@ -38,3 +38,10 @@ if has('termguicolors') && &termguicolors
     let g:jellybeans_overrides['background']['guibg'] = 'none'
 endif
 
+
+"----------------------------------------
+" copilot
+"----------------------------------------
+let g:copilot_filetypes = {
+\ 'markdown': v:false,
+\}
