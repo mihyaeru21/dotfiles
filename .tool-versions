@@ -7,7 +7,7 @@ fzf 0.50.0
 ghq 1.6.1
 github-cli 2.47.0
 golang 1.22.2
-neovim nightly
+neovim 0.10.0
 nodejs 20.12.2
 peco 0.5.11
 perl 5.38.2
