@@ -67,6 +67,18 @@ require('packer').startup(function(use)
     ft = { 'eco' },
     requires = { { 'kchmck/vim-coffee-script' } },
   }
+
+  use {
+    'kndndrj/nvim-dbee',
+    requires = { 'MunifTanjim/nui.nvim', },
+    run = function()
+      require('dbee').install()
+    end,
+    config = function()
+      require('dbee').setup()
+      vim.api.nvim_set_keymap('n', '<space>d', '<cmd>lua require("dbee").toggle()<CR>', { noremap = true, silent = true })
+    end
+  }
 end)
 
 -- TODO: どれかがインストールされていない場合ここ以降は実行しないようにしたい
