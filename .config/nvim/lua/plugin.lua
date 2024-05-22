@@ -51,7 +51,7 @@ require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'simrat39/rust-tools.nvim'
+  use 'mrcjkb/rustaceanvim'
   use { 'mihyaeru21/nvim-lspconfig-bundler', requires = 'neovim/nvim-lspconfig' }
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
@@ -205,7 +205,6 @@ vim.wo.foldexpr = vim.fn['nvim_treesitter#foldexpr']()
 local lspconfig = require('lspconfig')
 
 -- lspconfig の setup より先に実行しないと反映されない
-require('rust-tools').setup {}
 require('lspconfig-bundler').setup {}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -262,7 +261,6 @@ for _, server in ipairs({
   'jsonls',
   -- 'lua_ls',
   -- 'ruby_lsp',
-  'rust_analyzer',
   'sorbet',
   'terraformls',
   -- 'tsserver',
@@ -333,6 +331,20 @@ require('flutter-tools').setup {
   flutter_lookup_cmd = 'asdf where flutter',
   lsp = {
     on_attach = on_attach,
+  },
+}
+
+vim.g.rustaceanvim = {
+  tools = {
+  },
+  server = {
+    on_attach = on_attach,
+    default_settings = {
+      ['rust-analyzer'] = {
+      },
+    },
+  },
+  dap = {
   },
 }
 
