@@ -207,9 +207,10 @@ require 'nvim-treesitter.configs'.setup {
       node_decremental = 'grm',
     },
   },
-  indent = {
-    enable = true,
-  },
+  -- まだ experimental なのでオフにしておく(Ruby で変になる気がする)
+  -- indent = {
+  --   enable = true,
+  -- },
 }
 
 -- fold
