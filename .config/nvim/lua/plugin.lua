@@ -7,7 +7,6 @@ require('packer').startup(function(use)
   use 'EdenEast/nightfox.nvim'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-abolish'
   use 'junegunn/vim-easy-align'
   use 'kyazdani42/nvim-web-devicons'
