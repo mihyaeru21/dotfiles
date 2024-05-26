@@ -237,6 +237,7 @@ require('mason').setup()
 require('mason-lspconfig').setup {
   -- ruby, flow はパッケージマネージャ経由で入れたいのでここでは入れない
   ensure_installed = {
+    'bashls',
     'elixirls',
     'elp',
     'eslint',
@@ -273,6 +274,7 @@ local on_attach = function(_, bufnr)
 end
 
 for _, server in ipairs({
+  'bashls',
   'elixirls',
   'elp',
   -- 'eslint',
