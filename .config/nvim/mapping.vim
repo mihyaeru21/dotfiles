@@ -53,14 +53,13 @@ nnoremap [telescope]lsw :Telescope lsp_workspace_symbols<CR>
 nnoremap [telescope]af :Telescope flutter commands<CR>
 
 
-nnoremap <Space>g :Neogit<CR>
 nnoremap <Space>n :Neotree toggle<CR>
 nnoremap <Space>j :Neotree toggle buffers<CR>
 nnoremap <Space>m :Neotree toggle git_status<CR>
-
-
-" 行番号、git 表示、インデント表示、スクロールバーを一気に toggle
-" するやつを用意しておく
-
 nnoremap <Space>b :Gitsigns blame_line<CR>
+nnoremap <Space>gg :Neogit<CR>
+nnoremap <Space>gp :Gitsigns preview_hunk<CR>
+nnoremap <Space>gd :Gitsigns diffthis<CR>
+nnoremap [g :Gitsigns prev_hunk<CR>
+nnoremap ]g :Gitsigns next_hunk<CR>
 
