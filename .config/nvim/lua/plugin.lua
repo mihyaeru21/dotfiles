@@ -75,7 +75,7 @@ require('packer').startup(function(use)
     end,
     config = function()
       require('dbee').setup()
-      vim.api.nvim_set_keymap('n', '<space>d', '<cmd>lua require("dbee").toggle()<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<space>b', '<cmd>lua require("dbee").toggle()<CR>', { noremap = true, silent = true })
     end
   }
 

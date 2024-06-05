@@ -56,10 +56,10 @@ nnoremap [telescope]af :Telescope flutter commands<CR>
 nnoremap <Space>n :Neotree toggle<CR>
 nnoremap <Space>j :Neotree toggle buffers<CR>
 nnoremap <Space>m :Neotree toggle git_status<CR>
-nnoremap <Space>b :Gitsigns blame_line<CR>
 nnoremap <Space>gg :Neogit<CR>
 nnoremap <Space>gp :Gitsigns preview_hunk<CR>
 nnoremap <Space>gd :Gitsigns diffthis<CR>
+nnoremap <Space>gb :Gitsigns blame_line<CR>
 nnoremap [g :Gitsigns prev_hunk<CR>
 nnoremap ]g :Gitsigns next_hunk<CR>
 nnoremap <Space>a :AerialToggle left<CR>
