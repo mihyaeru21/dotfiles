@@ -78,6 +78,13 @@ require('packer').startup(function(use)
       vim.api.nvim_set_keymap('n', '<space>d', '<cmd>lua require("dbee").toggle()<CR>', { noremap = true, silent = true })
     end
   }
+
+  use {
+    'stevearc/aerial.nvim',
+    config = function()
+      require('aerial').setup()
+    end,
+  }
 end)
 
 -- TODO: どれかがインストールされていない場合ここ以降は実行しないようにしたい

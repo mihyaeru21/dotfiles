@@ -62,4 +62,5 @@ nnoremap <Space>gp :Gitsigns preview_hunk<CR>
 nnoremap <Space>gd :Gitsigns diffthis<CR>
 nnoremap [g :Gitsigns prev_hunk<CR>
 nnoremap ]g :Gitsigns next_hunk<CR>
+nnoremap <Space>a :AerialToggle left<CR>
 
