@@ -1,0 +1,11 @@
+{
+    "include": [
+        "default"
+    ],
+    "define": {
+        "keymap": {
+            "A-l": "set-input-mode-latin",
+            "A-j": "set-input-mode-hiragana"
+        }
+    }
+}
