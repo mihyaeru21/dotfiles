@@ -7,11 +7,11 @@
             "q": "set-input-mode-hiragana",
             "Q": "start-preedit",
             "l": "set-input-mode-latin",
-            "A-l": "set-input-mode-latin",
+            "C-;": "set-input-mode-latin",
             "L": "set-input-mode-wide-latin",
             "C-q": "set-input-mode-hiragana",
             "C-j": "set-input-mode-hiragana",
-            "A-j": "set-input-mode-hiragana"
+            "C-'": "set-input-mode-hiragana"
         }
     }
 }
