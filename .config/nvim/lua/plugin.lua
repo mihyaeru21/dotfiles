@@ -375,6 +375,7 @@ vim.g.rustaceanvim = {
     },
   },
   dap = {
+    autoload_configurations = true,
   },
 }
 
