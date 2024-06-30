@@ -15,8 +15,7 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope-live-grep-args.nvim'
   use 'stevearc/dressing.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use { 'NeogitOrg/neogit', branch = 'nightly', requires = 'nvim-lua/plenary.nvim' }
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'NeogitOrg/neogit', requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' } }
   use 'lukas-reineke/indent-blankline.nvim'
   use {
     'nvim-neo-tree/neo-tree.nvim',
@@ -474,11 +473,6 @@ vim.keymap.set('n', '<Space>ds', function() widgets.centered_float(widgets.scope
 
 -- git
 require('neogit').setup {
-  mappings = {
-    status = {
-      ['o'] = 'Toggle',
-    },
-  },
   disable_commit_confirmation = true,
 }
 require('gitsigns').setup {}
