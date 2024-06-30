@@ -363,6 +363,12 @@ require('flutter-tools').setup {
   },
 }
 
+
+vim.diagnostic.config({
+  virtual_text = false, -- virtual text が常に表示されると邪魔なのでオフにする
+  severity_sort = true, -- 深刻度の高いものを優先して表示する
+})
+
 vim.g.rustaceanvim = {
   tools = {
   },
