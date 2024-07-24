@@ -480,6 +480,11 @@ vim.keymap.set('n', '<Space>ds', function() widgets.centered_float(widgets.scope
 -- git
 require('neogit').setup {
   disable_commit_confirmation = true,
+  mappings = {
+    status = {
+      ['o'] = 'Toggle',
+    },
+  },
 }
 require('gitsigns').setup {}
 
