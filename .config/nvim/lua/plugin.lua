@@ -163,6 +163,7 @@ require 'nvim-treesitter.configs'.setup {
     'cpp',
     'css',
     'dart',
+    'diff',
     'dockerfile',
     'elixir',
     'erlang',
