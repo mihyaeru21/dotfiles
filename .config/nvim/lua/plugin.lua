@@ -28,7 +28,6 @@ require('packer').startup(function(use)
   }
   use 'kevinhwang91/nvim-hlslens'
   use { 'petertriho/nvim-scrollbar', requires = 'kevinhwang91/nvim-hlslens' }
-  use 'ojroques/nvim-osc52'
   use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons' }
   use 'folke/neodev.nvim'
 
@@ -558,14 +557,30 @@ require('scrollbar').setup {
 }
 require('scrollbar.handlers.search').setup {}
 
--- nvim-osc52
-local osc52 = require('osc52')
-vim.keymap.set('n', '<space>c', osc52.copy_operator, { expr = true })
-vim.keymap.set('n', '<space>cc', '<space>c_', { remap = true })
-vim.keymap.set('x', '<space>c', osc52.copy_visual)
+-- osc52
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+-- 選択した範囲をコピー
+vim.keymap.set('x', '<space>c', '"+y')
+-- 現在の行をコピー
+vim.keymap.set('n', '<space>cc', 'V"+y')
+-- 現在のファイルの相対パスをコピー
 vim.keymap.set('n', '<space>cf', function()
-  -- 現在のファイルの相対パスをコピー
-  osc52.copy(vim.fn.expand('%:.'))
+  local path = vim.fn.expand('%:.')
+  if path == '' then
+    return
+  end
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path)
 end)
 
 -- nightfox
