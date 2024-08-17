@@ -13,6 +13,14 @@ require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'nvim-telescope/telescope-live-grep-args.nvim'
+  use {
+    'LukasPietzschmann/telescope-tabs',
+    requires = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require('telescope').load_extension('telescope-tabs')
+      require('telescope-tabs').setup()
+    end
+  }
   use 'stevearc/dressing.nvim'
   use 'lewis6991/gitsigns.nvim'
   use { 'NeogitOrg/neogit', requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' } }

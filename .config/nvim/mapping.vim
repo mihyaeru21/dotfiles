@@ -41,7 +41,8 @@ nnoremap [telescope]f :Telescope find_files<CR>
 nnoremap [telescope]m :Telescope oldfiles<CR>
 nnoremap [telescope]g :Telescope live_grep_args<CR>
 nnoremap [telescope]wg :Telescope grep_string<CR>
-nnoremap [telescope]t :Telescope treesitter<CR>
+nnoremap [telescope]tt :Telescope telescope-tabs list_tabs<CR>
+nnoremap [telescope]ts :Telescope treesitter<CR>
 nnoremap [telescope]d :Telescope diagnostics<CR>
 nnoremap [telescope]b :Telescope buffers<CR>
 nnoremap [telescope]r :Telescope resume<CR>
