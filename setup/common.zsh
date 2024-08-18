@@ -64,12 +64,6 @@ if [ ! -e $plug_path ]; then
     vim +'PlugInstall --sync' +qa
 fi
 
-# neovim
-packer_path=$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
-if [ ! -e $packer_path ]; then
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_path
-fi
-
 # zsh
 zplug_path=$HOME/dotfiles/zsh/zplug
 if [ ! -e $zplug_path ]; then
