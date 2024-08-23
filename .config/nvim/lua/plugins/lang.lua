@@ -4,8 +4,6 @@ return {
     version = '^5',
     event = 'VeryLazy', -- 元々 lazy になっているが lspconfig を遅らせているため合わせる
     dependencies = {
-      'neovim/nvim-lspconfig',
-      'hrsh7th/cmp-nvim-lsp',
       'nvim-treesitter/nvim-treesitter',
       'mfussenegger/nvim-dap',
     },
@@ -14,10 +12,6 @@ return {
         tools = {
         },
         server = {
-          on_attach = require('config.lsp').make_on_attach(
-            require('lspconfig'),
-            require('cmp_nvim_lsp')
-          ),
           default_settings = {
             ['rust-analyzer'] = {
             },
@@ -35,18 +29,10 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
-      'neovim/nvim-lspconfig',
-      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       require('flutter-tools').setup {
         flutter_lookup_cmd = 'asdf where flutter',
-        lsp = {
-          on_attach = require('config.lsp').make_on_attach(
-            require('lspconfig'),
-            require('cmp_nvim_lsp')
-          ),
-        },
       }
 
       require('telescope').load_extension('flutter')
