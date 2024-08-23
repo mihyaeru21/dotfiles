@@ -42,11 +42,18 @@ return {
           }
         },
       }
+
+      vim.keymap.set('n', '<space>n', ':Neotree toggle<CR>', { noremap = true })
+      vim.keymap.set('n', '<space>j', ':Neotree toggle buffers<CR>', { noremap = true })
+      vim.keymap.set('n', '<space>m', ':Neotree toggle git_status<CR>', { noremap = true })
     end
   },
   {
     'stevearc/aerial.nvim',
     event = 'VeryLazy',
-    config = true,
+    config = function()
+      require('aerial').setup()
+      vim.keymap.set('n', '<space>a', ':AerialToggle left<CR>', { noremap = true })
+    end
   }
 }

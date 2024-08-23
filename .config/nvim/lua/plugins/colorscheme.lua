@@ -10,7 +10,9 @@ return {
         },
         groups = {
           all = {
-            VertSplit = { bg = 'bg0' }, -- デフォルトは細くて見づらい
+            -- これらはデフォルトは細くて見づらい
+            VertSplit = { bg = 'bg0' },
+            WinSeparator = { bg = 'bg0' },
           },
         },
       }
@@ -20,5 +22,13 @@ return {
   {
     'nanotech/jellybeans.vim',
     lazy = true,
+    config = function()
+      -- let g:jellybeans_overrides = {
+      -- \   'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+      -- \}
+      -- if has('termguicolors') && &termguicolors
+      --     let g:jellybeans_overrides['background']['guibg'] = 'none'
+      -- endif
+    end,
   },
 }

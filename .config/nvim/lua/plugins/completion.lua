@@ -53,7 +53,7 @@ return {
       })
 
       -- 検索時に buffer から補完する
-      cmp.setup.cmdline('/', {
+      cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
           { name = 'buffer' },
@@ -74,5 +74,10 @@ return {
   {
     'github/copilot.vim',
     event = 'VeryLazy',
+    config = function()
+      -- let g:copilot_filetypes = {
+      -- \ 'markdown': v:false,
+      -- \}
+    end,
   },
 }
