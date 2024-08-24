@@ -2,7 +2,7 @@ return {
   {
     'mrcjkb/rustaceanvim',
     version = '^5',
-    event = 'VeryLazy', -- 元々 lazy になっているが lspconfig を遅らせているため合わせる
+    lazy = false, -- 元々 lazy になっている
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'mfussenegger/nvim-dap',
