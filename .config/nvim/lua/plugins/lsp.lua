@@ -20,7 +20,9 @@ return {
       lspconfig.flow.setup {}
       lspconfig.gopls.setup {}
       lspconfig.jsonls.setup {}
+      lspconfig.rubocop.setup {}
       lspconfig.sorbet.setup {}
+      lspconfig.syntax_tree.setup {}
       lspconfig.terraformls.setup {}
       lspconfig.vimls.setup {}
       lspconfig.yamlls.setup {}
@@ -30,16 +32,17 @@ return {
         root_dir = lspconfig.util.root_pattern('package.json', '.git'),
       }
 
-      lspconfig.ruby_lsp.setup {
-        on_attach = function(client, _)
-          -- sorbet の hover を郵政したいのでこちらはオフにする
-          -- TODO: hover に複数の provider がある場合にまとめて表示できるか調査
-          client.server_capabilities.hoverProvider = false
-        end,
-        init_options = {
-          formatter = 'syntax_tree',
-        },
-      }
+      -- 必要になるまでコメントアウト
+      -- lspconfig.ruby_lsp.setup {
+      --   on_attach = function(client, _)
+      --     -- sorbet の hover を郵政したいのでこちらはオフにする
+      --     -- TODO: hover に複数の provider がある場合にまとめて表示できるか調査
+      --     client.server_capabilities.hoverProvider = false
+      --   end,
+      --   init_options = {
+      --     formatter = 'syntax_tree',
+      --   },
+      -- }
 
       lspconfig.lua_ls.setup {
         settings = {
