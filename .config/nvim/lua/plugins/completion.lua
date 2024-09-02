@@ -75,9 +75,9 @@ return {
     'github/copilot.vim',
     event = 'VeryLazy',
     config = function()
-      -- let g:copilot_filetypes = {
-      -- \ 'markdown': v:false,
-      -- \}
+      vim.g.copilot_filetypes = {
+        markdown = false,
+      }
     end,
   },
 }
