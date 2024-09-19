@@ -4,14 +4,11 @@ return {
     version = '~1.0',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
-      {
-        'mihyaeru21/nvim-lspconfig-bundler',
-        main = 'lspconfig-bundler',
-        config = true,
-      },
+      'mihyaeru21/nvim-lspconfig-bundler',
     },
     event = 'VeryLazy',
     config = function()
+      require('lspconfig-bundler').setup { only_bundler = true }
       local lspconfig = require('lspconfig')
 
       lspconfig.bashls.setup {}
