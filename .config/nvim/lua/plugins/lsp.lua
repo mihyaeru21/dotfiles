@@ -1,7 +1,7 @@
 return {
   {
     'neovim/nvim-lspconfig',
-    version = '~0.1',
+    version = '~1.0',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       {
@@ -54,7 +54,7 @@ return {
         },
       }
 
-      lspconfig.tsserver.setup {
+      lspconfig.ts_ls.setup {
         on_attach = function(client, bufnr)
           -- これは on_attach ではなく capabilities でやれば良さそうな気もする
           client.server_capabilities.documentFormattingProvider = false
@@ -130,7 +130,7 @@ return {
           'lua_ls',
           'rust_analyzer',
           'terraformls',
-          'tsserver',
+          'ts_ls',
           'vimls',
           'yamlls',
         },
