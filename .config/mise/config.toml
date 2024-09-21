@@ -1,6 +1,5 @@
 [tools]
 awscli = "2.15.53"
-direnv = "2.34.0"
 elixir = "1.16.2-otp-26"
 erlang = "26.2.4"
 flutter = "3.19.5-stable"
