@@ -26,7 +26,7 @@ if [ ! -e ~/.local/bin/mise ]; then
     curl https://mise.run | sh
 fi
 mise self-update
-mise install
+mise install -y
 
 # rust
 which rustc > /dev/null 2>&1
