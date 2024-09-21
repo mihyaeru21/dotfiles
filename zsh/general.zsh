@@ -2,9 +2,6 @@ export LANG=C.UTF-8 # ja_JP だと地味に日本語になって逆にわかり�
 export LESSCHARSET=UTF-8
 export EDITOR=nvim
 
-# direnv
-. $HOME/.config/asdf-direnv/zshrc
-
 # Rust
 . $HOME/.cargo/env
 

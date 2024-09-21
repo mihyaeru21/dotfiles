@@ -21,24 +21,12 @@ for localfile_path in `find local -name '*.sample'`; do
     test -e $target || cp $localfile_path $target
 done
 
-# asdf
-which asdf > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-    git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.14.0
-    . $HOME/.asdf/asdf.sh
+# mise
+if [ ! -e ~/.local/bin/mise ]; then
+    curl https://mise.run | sh
 fi
-
-# asdf で使っているやつを全部インストールする
-for plugin in `cat .tool-versions | cut -d ' ' -f 1`; do
-    asdf plugin add $plugin
-done
-asdf update --all
-asdf install perl
-asdf install
-
-# direnv は別途設定が必要
-asdf direnv setup --shell zsh --version $(cat .tool-versions | grep direnv | cut -d ' ' -f 2)
-sed -i '/asdf-direnv\/zshrc/d' $HOME/dotfiles/.zshrc # general.zsh に記述済みのやつが追加されてしまうので削除
+mise self-update
+mise install
 
 # rust
 which rustc > /dev/null 2>&1

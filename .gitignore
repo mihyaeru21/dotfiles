@@ -15,8 +15,11 @@
 # temporary files
 ,/
 
-# direnv
+# direnv(mise へ移行中)
 .envrc
+
+# mise
+.mise.toml
 
 # zsh
 /zsh/history
