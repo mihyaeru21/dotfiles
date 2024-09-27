@@ -24,6 +24,7 @@
 # zsh
 /zsh/history
 /zsh/zplug
+/zsh/completions
 
 # tmux
 /tmux-client-*.log

@@ -31,6 +31,9 @@ export RIPGREP_CONFIG_PATH=$HOME/dotfiles/.ripgreprc
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# 各環境で生成した補完を入れておく場所
+fpath=( $HOME/dotfiles/zsh/completions "${fpath[@]}" )
+
 autoload -Uz compinit && compinit # 補完
 autoload -Uz zmv                  # zmvを使えるように
 typeset -U path PATH              # pathの重複をみとめない
