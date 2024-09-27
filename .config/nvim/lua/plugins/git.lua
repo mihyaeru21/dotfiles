@@ -9,10 +9,12 @@ return {
     event = 'VeryLazy',
     config = function()
       require('neogit').setup {
-        disable_commit_confirmation = true,
+        disable_context_highlighting = true, -- ハイライトされてると見辛い
+        disable_commit_confirmation = true,  -- 確認が邪魔
         mappings = {
           status = {
             ['o'] = 'Toggle',
+            ["<tab>"] = "OpenTree",
           },
         },
         vim.keymap.set('n', '<space>gg', ':Neogit<CR>', { noremap = true })
