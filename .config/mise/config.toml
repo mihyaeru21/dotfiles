@@ -17,6 +17,7 @@ ruby = "3.3.5"
 saml2aws = "2.35.0"
 sops = "3.8.1"
 terraform = "1.8.0"
+usage = "0.6.0"
 yq = "4.43.1"
 
 [settings]
