@@ -19,10 +19,9 @@ return {
             node_decremental = 'grm',
           },
         },
-        -- まだ experimental なのでオフにしておく(Ruby で変になる気がする)
-        -- indent = {
-        --   enable = true,
-        -- },
+        indent = {
+          enable = true,
+        },
       }
 
       -- fold
