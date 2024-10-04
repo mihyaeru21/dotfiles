@@ -90,4 +90,19 @@ return {
       require('scrollbar.handlers.search').setup()
     end,
   },
+  {
+    'numToStr/FTerm.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('FTerm').setup {
+        border     = 'single',
+        dimensions = {
+          height = 0.9,
+          width = 0.9,
+        },
+      }
+      vim.keymap.set('n', '<A-k>', '<CMD>lua require("FTerm").toggle()<CR>')
+      vim.keymap.set('t', '<A-k>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+    end
+  },
 }
