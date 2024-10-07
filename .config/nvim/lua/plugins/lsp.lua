@@ -134,4 +134,17 @@ return {
       }
     end
   },
+  {
+    'nvimtools/none-ls.nvim',
+    -- prettier でしか使わないので javascript 系のみ
+    ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup {
+        sources = {
+          null_ls.builtins.formatting.prettier,
+        },
+      }
+    end,
+  },
 }
