@@ -1,3 +1,4 @@
+unset LANGUAGE # Linux Desktop で GUI を日本語にしていると ja:en が入ってくるが CUI では日本語になってほしくない
 export LANG=C.UTF-8 # ja_JP だと地味に日本語になって逆にわかりづらい
 export LESSCHARSET=UTF-8
 export EDITOR=nvim
