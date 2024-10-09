@@ -3,6 +3,8 @@ local config = {}
 
 config.font = wezterm.font_with_fallback { 'Bizin Gothic Discord NF' }
 config.font_size = 12.0
+config.underline_thickness = 1
+config.underline_position = -2
 config.color_scheme = 'nightfox'
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
