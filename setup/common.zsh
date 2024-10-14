@@ -1,4 +1,6 @@
-#!/usr/bin/env zsh -ex
+#!/usr/bin/env zsh
+
+set -ex
 
 # zsh が動く環境向けの設定をやっていく
 
