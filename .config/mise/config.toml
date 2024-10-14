@@ -1,8 +1,8 @@
 [tools]
 awscli = "2.15.53"
-elixir = "1.16.2-otp-26"
+elixir = "1.16.2"
 erlang = "26.2.4"
-flutter = "3.19.5-stable"
+flutter = "3.19.5"
 fzf = "0.50.0"
 ghq = "1.6.1"
 github-cli = "2.47.0"
