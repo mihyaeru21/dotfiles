@@ -39,7 +39,7 @@ fi
 
 # rust tools
 source $HOME/.cargo/env
-cargo install ripgrep fd-find cross cargo-update bat exa hexyl procs git-delta du-dust
+cargo install ripgrep fd-find cross cargo-update bat eza hexyl procs git-delta du-dust
 
 # go tools
 go install github.com/tomnomnom/gron@latest
