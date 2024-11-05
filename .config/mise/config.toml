@@ -21,6 +21,7 @@ sops = "3.8.1"
 task = "3.39.2"
 terraform = "1.8.0"
 usage = "0.6.0"
+yamlfmt = "0.14.0"
 yq = "4.43.1"
 
 [settings]
