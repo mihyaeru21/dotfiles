@@ -6,7 +6,7 @@ return {
     config = function()
       require('nightfox').setup {
         options = {
-          -- transparent = true,
+          transparent = true,
         },
         groups = {
           all = {
