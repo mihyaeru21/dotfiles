@@ -1,5 +1,5 @@
-export ANDROID_HOME $HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+# mac だと C.UTF-8 がない
+export LANG=ja_JP.UTF-8
 
 alias ls="ls -xFG"
 alias owata="notify-me ｵﾜﾀ '＼(^o^)／'"
