@@ -27,5 +27,5 @@ yq = "4.43.1"
 [settings]
 experimental = true
 
-[plugins]
+[alias]
 lazydocker = "https://github.com/comdotlinux/asdf-lazydocker"
