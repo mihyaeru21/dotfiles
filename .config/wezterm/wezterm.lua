@@ -14,6 +14,7 @@ config.window_padding = {
   bottom = 0,
 }
 config.unicode_version = 14
+config.audible_bell = 'Disabled'
 
 local act = wezterm.action
 config.keys = {
