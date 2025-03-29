@@ -65,7 +65,7 @@ return {
       }
 
       vim.diagnostic.config({
-        virtual_text = false, -- virtual text が常に表示されると邪魔なのでオフにする
+        virtual_lines = true,
         severity_sort = true, -- 深刻度の高いものを優先して表示する
       })
 
@@ -76,7 +76,13 @@ return {
       })
 
       local kmopts = { noremap = true, silent = true }
-      vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', kmopts)
+      vim.keymap.set('n', '<space>e', function()
+        if vim.diagnostic.config().virtual_lines then
+          vim.diagnostic.config({ virtual_lines = false })
+        else
+          vim.diagnostic.config({ virtual_lines = true })
+        end
+      end, kmopts)
       vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', kmopts)
       vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', kmopts)
 
