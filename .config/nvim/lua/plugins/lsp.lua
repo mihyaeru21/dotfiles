@@ -14,7 +14,6 @@ return {
       lspconfig.bashls.setup {}
       lspconfig.elixirls.setup {}
       lspconfig.elp.setup {}
-      lspconfig.flow.setup {}
       lspconfig.gopls.setup {}
       lspconfig.jsonls.setup {}
       lspconfig.rubocop.setup {}
@@ -56,12 +55,6 @@ return {
           -- これは on_attach ではなく capabilities でやれば良さそうな気もする
           client.server_capabilities.documentFormattingProvider = false
         end,
-        filetypes = {
-          -- 元の実装だと javascript 系も含まれているが、そちらは flow で見るので含めない
-          'typescript',
-          'typescriptreact',
-          'typescript.tsx',
-        },
       }
 
       vim.diagnostic.config({
@@ -122,7 +115,7 @@ return {
     event = 'VeryLazy',
     config = function()
       require('mason-lspconfig').setup {
-        -- ruby, flow はパッケージマネージャ経由で入れたいのでここでは入れない
+        -- ruby はパッケージマネージャ経由で入れたいのでここでは入れない
         ensure_installed = {
           'bashls',
           'elixirls',
