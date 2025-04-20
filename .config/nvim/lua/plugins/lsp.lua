@@ -8,37 +8,41 @@ return {
     },
     event = 'VeryLazy',
     config = function()
-      require('lspconfig-bundler').setup { only_bundler = true }
+      require('lspconfig-bundler').setup {}
       local lspconfig = require('lspconfig')
 
       lspconfig.bashls.setup {}
       lspconfig.elixirls.setup {}
       lspconfig.elp.setup {}
+      lspconfig.eslint.setup {}
       lspconfig.gopls.setup {}
       lspconfig.jsonls.setup {}
-      lspconfig.rubocop.setup {}
-      lspconfig.sorbet.setup {}
-      lspconfig.syntax_tree.setup {}
       lspconfig.terraformls.setup {}
       lspconfig.vimls.setup {}
       lspconfig.yamlls.setup {}
 
-      lspconfig.eslint.setup {
-        -- 元の実装だと .eslintrc と tsconfig が別のディレクトリにあるパターンでうまく動かないので、その環境で動くようにする
-        root_dir = lspconfig.util.root_pattern('package.json', '.git'),
+      lspconfig.biome.setup {
+        -- プロジェクト内でインストールされているやつを使う
+        cmd = { 'npx', 'biome', 'lsp-proxy' },
       }
 
-      -- 必要になるまでコメントアウト
-      -- lspconfig.ruby_lsp.setup {
-      --   on_attach = function(client, _)
-      --     -- sorbet の hover を郵政したいのでこちらはオフにする
-      --     -- TODO: hover に複数の provider がある場合にまとめて表示できるか調査
-      --     client.server_capabilities.hoverProvider = false
-      --   end,
-      --   init_options = {
-      --     formatter = 'syntax_tree',
-      --   },
-      -- }
+      lspconfig.sorbet.setup {
+        -- プロジェクトに sorbet/config がある場合（設定されている場合）のみ起動する
+        root_dir = function(fname)
+          local root_dir = lspconfig.util.root_pattern('Gemfile', '.git')(fname)
+          if root_dir == nil then
+            return nil
+          end
+          local sorbet_config = root_dir .. '/sorbet/config'
+          local config_exists = vim.fn.filereadable(sorbet_config) == 1
+          if config_exists then
+            return root_dir
+          end
+          return nil
+        end,
+      }
+
+      lspconfig.ruby_lsp.setup {}
 
       lspconfig.lua_ls.setup {
         settings = {
@@ -51,9 +55,9 @@ return {
       }
 
       lspconfig.ts_ls.setup {
-        on_attach = function(client, bufnr)
-          -- これは on_attach ではなく capabilities でやれば良さそうな気もする
+        on_attach = function(client, _)
           client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
         end,
       }
 
@@ -115,7 +119,7 @@ return {
     event = 'VeryLazy',
     config = function()
       require('mason-lspconfig').setup {
-        -- ruby はパッケージマネージャ経由で入れたいのでここでは入れない
+        -- 一部はパッケージマネージャ経由で入れたいのでここでは入れない
         ensure_installed = {
           'bashls',
           'elixirls',
@@ -130,6 +134,7 @@ return {
           'vimls',
           'yamlls',
         },
+        automatic_installation = false,
       }
     end
   },
@@ -141,7 +146,17 @@ return {
       local null_ls = require("null-ls")
       null_ls.setup {
         sources = {
-          null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.prettier.with {
+            condition = function(utils)
+              return utils.root_has_file {
+                '.prettierrc',
+                '.prettierrc.json', '.prettierrc.json5',
+                '.prettierrc.yml', '.prettierrc.yaml', '.prettierrc.toml',
+                '.prettierrc.js', 'prettier.config.js',
+                '.prettierrc.tjs', 'prettier.config.tjs',
+              }
+            end,
+          },
         },
       }
     end,
