@@ -62,7 +62,7 @@ return {
       }
 
       vim.diagnostic.config({
-        virtual_lines = true,
+        virtual_lines = { current_line = true },
         severity_sort = true, -- 深刻度の高いものを優先して表示する
       })
 
@@ -77,7 +77,7 @@ return {
         if vim.diagnostic.config().virtual_lines then
           vim.diagnostic.config({ virtual_lines = false })
         else
-          vim.diagnostic.config({ virtual_lines = true })
+          vim.diagnostic.config({ virtual_lines = { current_line = true } })
         end
       end, kmopts)
       vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', kmopts)
