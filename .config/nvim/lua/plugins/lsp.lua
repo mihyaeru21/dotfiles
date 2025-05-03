@@ -1,7 +1,7 @@
 return {
   {
     'neovim/nvim-lspconfig',
-    version = '~1.0',
+    version = '~2',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'mihyaeru21/nvim-lspconfig-bundler',
