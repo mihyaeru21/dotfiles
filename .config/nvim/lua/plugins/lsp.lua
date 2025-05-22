@@ -18,6 +18,7 @@ return {
       lspconfig.gopls.setup {}
       lspconfig.jsonls.setup {}
       lspconfig.terraformls.setup {}
+      lspconfig.tsp_server.setup {}
       lspconfig.vimls.setup {}
       lspconfig.yamlls.setup {}
 
