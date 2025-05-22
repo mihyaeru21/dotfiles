@@ -48,8 +48,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完する時に大文�
 HISTFILE=$HOME/dotfiles/zsh/history
 HISTSIZE=300000
 SAVEHIST=300000
-setopt hist_ignore_dups  # 重複を無視
-setopt share_history     # 履歴共有
+setopt HIST_IGNORE_ALL_DUPS # 過去の重複を削除
+setopt HIST_IGNORE_SPACE    # スペースで始まるコマンドを履歴に保存しない
+setopt SHARE_HISTORY        # 履歴共有
+setopt EXTENDED_HISTORY     # 履歴にコマンドの実行時間を保存
 
 # キーバインドを vi モードにする
 bindkey -v
