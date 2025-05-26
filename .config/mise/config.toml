@@ -27,3 +27,4 @@ yq = "4.45.1"
 
 [settings]
 experimental = true
+idiomatic_version_file_enable_tools = []
