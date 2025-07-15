@@ -1,33 +1,16 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = ':TSUpdate',
-    event = 'VeryLazy',
+    lazy = false, -- lazy はサポートされてない
     config = function()
-      require 'nvim-treesitter.configs'.setup {
-        ensure_installed = 'all',
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = 'gnn',
-            node_incremental = 'grn',
-            scope_incremental = 'grc',
-            node_decremental = 'grm',
-          },
-        },
-        indent = {
-          enable = true,
-        },
-      }
+      require 'nvim-treesitter'.setup()
 
       -- fold
-      vim.opt.foldmethod = 'expr'
-      vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-      vim.opt.foldenable = false
+      vim.wo.foldmethod = 'expr'
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.wo.foldenable = false
     end
   },
   {
