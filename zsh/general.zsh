@@ -35,13 +35,14 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # 各環境で生成した補完を入れておく場所
 fpath=( $HOME/dotfiles/zsh/completions "${fpath[@]}" )
 
-autoload -Uz compinit && compinit # 補完
-autoload -Uz zmv                  # zmvを使えるように
-typeset -U path PATH              # pathの重複をみとめない
-setopt auto_pushd                 # ディレクトリ履歴
-setopt correct                    # 類似コマンド表示
-setopt list_packed                # 補完候補を詰めて表示
-setopt nolistbeep                 # ビープ音を鳴らさない
+autoload -Uz compinit && compinit     # 補完
+autoload bashcompinit && bashcompinit # bash の補完を使えるように
+autoload -Uz zmv                      # zmvを使えるように
+typeset -U path PATH                  # pathの重複をみとめない
+setopt auto_pushd                     # ディレクトリ履歴
+setopt correct                        # 類似コマンド表示
+setopt list_packed                    # 補完候補を詰めて表示
+setopt nolistbeep                     # ビープ音を鳴らさない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完する時に大文字小文字を区別しない
 
 # 履歴関連
