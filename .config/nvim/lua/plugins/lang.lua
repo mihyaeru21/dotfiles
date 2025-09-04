@@ -32,7 +32,7 @@ return {
     },
     config = function()
       require('flutter-tools').setup {
-        flutter_lookup_cmd = 'asdf where flutter',
+        flutter_lookup_cmd = 'mise where flutter',
       }
 
       require('telescope').load_extension('flutter')
