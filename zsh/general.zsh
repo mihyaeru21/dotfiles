@@ -30,6 +30,9 @@ export RIPGREP_CONFIG_PATH=$HOME/dotfiles/.ripgreprc
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# awc cli で pager が動くと邪魔
+export AWS_PAGER=''
+
 # 各環境で生成した補完を入れておく場所
 fpath=( $HOME/dotfiles/zsh/completions "${fpath[@]}" )
 
