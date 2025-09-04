@@ -7,7 +7,7 @@ alias owata="notify-me ｵﾜﾀ '＼(^o^)／'"
 notify-me()
 {
     title=$1
-    content=$!
+    content=$2
     osascript -e "display notification \"$content\" with title \"$title\""
 }
 
