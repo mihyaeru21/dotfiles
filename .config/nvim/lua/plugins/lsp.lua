@@ -4,77 +4,36 @@ return {
     version = '~2',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
-      'mihyaeru21/nvim-lspconfig-bundler',
     },
     event = 'VeryLazy',
     config = function()
-      require('lspconfig-bundler').setup {}
-      local lspconfig = require('lspconfig')
+      vim.lsp.config('*', {
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+      })
 
-      lspconfig.bashls.setup {}
-      lspconfig.elixirls.setup {}
-      lspconfig.elp.setup {}
-      lspconfig.eslint.setup {}
-      lspconfig.gopls.setup {}
-      lspconfig.jsonls.setup {}
-      lspconfig.terraformls.setup {}
-      lspconfig.tsp_server.setup {}
-      lspconfig.vimls.setup {}
-      lspconfig.yamlls.setup {}
-
-      lspconfig.biome.setup {
-        -- プロジェクト内でインストールされているやつを使う
-        cmd = { 'npx', 'biome', 'lsp-proxy' },
-      }
-
-      lspconfig.sorbet.setup {
-        -- プロジェクトに sorbet/config がある場合（設定されている場合）のみ起動する
-        root_dir = function(fname)
-          local root_dir = lspconfig.util.root_pattern('Gemfile', '.git')(fname)
-          if root_dir == nil then
-            return nil
-          end
-          local sorbet_config = root_dir .. '/sorbet/config'
-          local config_exists = vim.fn.filereadable(sorbet_config) == 1
-          if config_exists then
-            return root_dir
-          end
-          return nil
-        end,
-      }
-
-      lspconfig.ruby_lsp.setup {}
-
-      lspconfig.lua_ls.setup {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { 'vim' }
-            },
-          },
-        },
-      }
-
-      lspconfig.ts_ls.setup {
-        on_attach = function(client, _)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      }
+      vim.lsp.enable({
+        'bashls',
+        'elixirls',
+        'elp',
+        'eslint',
+        'gopls',
+        'jsonls',
+        'lua_ls',
+        'ruby_lsp',
+        'terraformls',
+        'tsp_server',
+        'vimls',
+        'yamlls',
+      })
 
       vim.diagnostic.config({
         virtual_lines = { current_line = true },
         severity_sort = true, -- 深刻度の高いものを優先して表示する
       })
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-      lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
-        capabilities = capabilities,
-      })
-
       local kmopts = { noremap = true, silent = true }
       vim.keymap.set('n', '<space>e', function()
+        -- diagnostic 表示をトグルする
         if vim.diagnostic.config().virtual_lines then
           vim.diagnostic.config({ virtual_lines = false })
         else
@@ -89,7 +48,6 @@ return {
           local buf = args.buf
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', kmopts)
