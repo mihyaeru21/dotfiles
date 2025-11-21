@@ -13,6 +13,7 @@ return {
 
       vim.lsp.enable({
         'bashls',
+        'biome',
         'elixirls',
         'elp',
         'eslint',
@@ -20,7 +21,9 @@ return {
         'jsonls',
         'lua_ls',
         'ruby_lsp',
+        'sorbet',
         'terraformls',
+        'ts_ls',
         'tsp_server',
         'vimls',
         'yamlls',
