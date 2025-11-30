@@ -25,6 +25,7 @@ tree-sitter = "0.25.10"
 usage = "2.8.0"
 yamlfmt = "0.20.0"
 yq = "4.48.2"
+zig = "0.15.2"
 
 [settings]
 experimental = true
