@@ -1,5 +1,9 @@
 theme = Nightfox
 
+font-family = ""
+font-family = "Bizin Gothic Discord NF"
+font-size = 14
+
 keybind = alt+c=copy_to_clipboard:mixed
 keybind = alt+v=paste_from_clipboard
 keybind = alt+enter=toggle_fullscreen
