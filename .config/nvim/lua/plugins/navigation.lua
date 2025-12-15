@@ -43,9 +43,8 @@ return {
         },
       }
 
-      vim.keymap.set('n', '<space>n', ':Neotree toggle<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>j', ':Neotree toggle buffers<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>m', ':Neotree toggle git_status<CR>', { noremap = true })
+      vim.keymap.set('n', '<space>n', ':Neotree float toggle reveal<CR>', { noremap = true })
+      vim.keymap.set('n', '<space>j', ':Neotree float toggle buffers<CR>', { noremap = true })
     end
   },
   {
