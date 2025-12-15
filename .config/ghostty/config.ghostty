@@ -2,7 +2,7 @@ theme = Nightfox
 
 font-family = ""
 font-family = "Bizin Gothic Discord NF"
-font-size = 14
+font-size = 12
 
 keybind = alt+c=copy_to_clipboard:mixed
 keybind = alt+v=paste_from_clipboard
