@@ -13,8 +13,7 @@ return {
       'onsails/lspkind.nvim', -- アイコン表示
     },
     config = function()
-      local cmp = require 'cmp'
-      local lspkind = require('lspkind')
+      local cmp = require('cmp')
 
       cmp.setup({
         snippet = {
@@ -41,15 +40,6 @@ return {
           { name = 'buffer' },
           { name = 'path' },
         }),
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = 'symbol_text',
-            maxwidth = 50,
-            before = function(_, vim_item)
-              return vim_item
-            end
-          })
-        },
       })
 
       -- 検索時に buffer から補完する
