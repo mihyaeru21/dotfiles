@@ -23,7 +23,7 @@ export PATH=$PATH:$HOME/.local/bin
 export FZF_DEFAULT_OPTS=--no-mouse
 
 # ripgrep のデフォルト引数を設定するファイル
-export RIPGREP_CONFIG_PATH=$HOME/dotfiles/.ripgreprc
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgreprc
 
 # bun
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

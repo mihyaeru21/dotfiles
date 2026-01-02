@@ -4,7 +4,6 @@
     ui = true
 [core]
     editor = nvim
-    excludesfile = ~/.gitignore
     quotepath = false
     pager = delta
 [alias]
@@ -47,7 +46,7 @@
 [ghq]
     root = ~/ghq
 [commit]
-    template = ~/.gitcommittemplate
+    template = ~/.config/git/commit-template
 [interactive]
     diffFilter = delta --color-only
 [delta]

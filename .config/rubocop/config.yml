@@ -27,4 +27,3 @@ Style/TrailingCommaInHashLiteral:
 
 Style/NumericLiterals:
   Enabled: false
-

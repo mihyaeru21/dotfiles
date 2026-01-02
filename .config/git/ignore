@@ -1,0 +1,25 @@
+# Vim
+*~
+.*~
+
+# Mac
+.DS_Store
+
+# editors
+.idea
+.vscode
+
+# temporary files
+,/
+
+# direnv(mise へ移行中)
+.envrc
+
+# mise
+.mise.toml
+
+# ccls
+.ccls-cache
+
+# WSL
+*:Zone.Identifier

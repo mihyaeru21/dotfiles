@@ -1,43 +1,12 @@
-# Vim
+# この gitignore は dotfiles 向け
+
 /.vim/autoload/plug.vim
 /.vim/plugged/
-*~
-.*~
-
-# Mac
-.DS_Store
 /.config/karabiner/assets/
-
-# editors
-.idea
-.vscode
-
-# temporary files
-,/
-
-# direnv(mise へ移行中)
-.envrc
-
-# mise
-.mise.toml
-
-# zsh
 /zsh/history
 /zsh/zplug
 /zsh/completions/*
 !/zsh/completions/.gitkeep
-
-# tmux
 /tmux-client-*.log
-
-# local settings
-/local/nvim.vim
-/local/gitconfig
-/local/zsh.zsh
-
-# ccls
-.ccls-cache
-
-# WSL
-*:Zone.Identifier
-
+/local/*
+!/local/*.sample
