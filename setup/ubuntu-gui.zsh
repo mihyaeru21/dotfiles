@@ -3,8 +3,11 @@
 # Ubuntu GUI 環境向け
 
 # xremap
-which xremap > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+set +e
+command -v xremap > /dev/null 2>&1
+xremap_exists=$?
+set -e
+if [ $xremap_exists -ne 0 ]; then
     curl -L https://github.com/xremap/xremap/releases/latest/download/xremap-linux-x86_64-x11.zip > xremap.zip
     unzip xremap.zip
     sudo mv xremap /usr/local/bin

@@ -27,12 +27,15 @@ done
 if [ ! -e ~/.local/bin/mise ]; then
     curl https://mise.run | sh
 fi
-mise self-update
-mise install -y
+$HOME/.local/bin/mise self-update -y
+$HOME/.local/bin/mise install -y
 
 # rust
-which rustc > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+set +e
+command -v rustc > /dev/null 2>&1
+rust_exists=$?
+set -e
+if [ $rust_exists -ne 0 ]; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     rm $HOME/.zshenv # zshrc に記述済みのやつが追加されてしまうので削除
 fi
@@ -45,7 +48,7 @@ cargo install ripgrep fd-find cross cargo-update bat eza hexyl procs git-delta d
 go install github.com/tomnomnom/gron@latest
 
 # python tools
-pip3 install tmuxp
+pip install --upgrade tmuxp
 
 # vim
 plug_path=$HOME/.vim/autoload/plug.vim
@@ -62,8 +65,11 @@ if [ ! -e $zplug_path ]; then
 fi
 
 # tmux-mem-cpu-load
-which tmux-mem-cpu-load > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+set +e
+command -v tmux-mem-cpu-load > /dev/null 2>&1
+tmcl_exists=$?
+set -e
+if [ $tmcl_exists -ne 0 ]; then
     git clone --depth 1 https://github.com/thewtex/tmux-mem-cpu-load.git /tmp/tmux-mem-cpu-load
     pushd /tmp/tmux-mem-cpu-load
     cmake .
@@ -73,4 +79,3 @@ if [ $? -ne 0 ]; then
 fi
 
 echo 'Done.'
-
