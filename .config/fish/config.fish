@@ -9,12 +9,6 @@ set -x EDITOR nvim
 set -x FZF_DEFAULT_OPTS --no-mouse
 
 if status --is-interactive
-    # anyenv
-    set -x PATH $PATH $HOME/.anyenv/bin
-    anyenv init - fish | source
-
-    # direnv
-    direnv hook fish | source
 
     # Rust
     set -x PATH $PATH $HOME/.cargo/bin
@@ -37,25 +31,10 @@ end
 # OSごとの設定
 switch (uname)
 case Darwin
-    if status --is-interactive
-        # Android系
-        set -x ANDROID_HOME $HOME/Library/Android/sdk
-        set -x PATH $PATH $ANDROID_HOME/tools
-        set -x PATH $PATH $ANDROID_HOME/platform-tools
-
-        # El Capitan以上ではやっておくとようさそう感
-        # https://github.com/servo/servo/ より
-        set -x OPENSSL_INCLUDE_DIR "(brew --prefix openssl)/include"
-        set -x OPENSSL_LIB_DIR "(brew --prefix openssl)/lib"
-    end
-
-    alias ls="ls -xFG"
-    alias owata="notify-me ｵﾜﾀ '＼(^o^)／'"
+    source $HOME/.config/fish/mac.fish
 case Linux
-    alias ls="ls -xF --color=auto"
-    alias pbcopy='xsel --clipboard --input'
+    source $HOME/.config/fish/linux.fish
 end
 
 # 環境ごとの設定
 test -f $HOME/dotfiles/local/fish.fish; and source $HOME/dotfiles/local/fish.fish
-
