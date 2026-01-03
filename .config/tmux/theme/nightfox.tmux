@@ -14,10 +14,23 @@ set -g status-left-length "100"
 set -g status-right-length "100"
 set -g status-left-style NONE
 set -g status-right-style NONE
-set -g status-left "#[fg=#131a24,bg=#719cd6,bold] #S #[fg=#719cd6,bg=#131a24,nobold,nounderscore,noitalics]"
-set -g status-right "#[fg=#131a24,bg=#131a24,nobold,nounderscore,noitalics]#[fg=#719cd6,bg=#131a24] #{prefix_highlight} #[fg=#aeafb0,bg=#131a24,nobold,nounderscore,noitalics]#[fg=#131a24,bg=#aeafb0] %Y-%m-%d  %I:%M %p #[fg=#719cd6,bg=#aeafb0,nobold,nounderscore,noitalics]#[fg=#131a24,bg=#719cd6,bold] #h "
 setw -g window-status-activity-style "underscore,fg=#71839b,bg=#131a24"
 setw -g window-status-separator ""
 setw -g window-status-style "NONE,fg=#71839b,bg=#131a24"
-setw -g window-status-format "#[fg=#131a24,bg=#131a24,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#131a24,bg=#131a24,nobold,nounderscore,noitalics]"
-setw -g window-status-current-format "#[fg=#131a24,bg=#aeafb0,nobold,nounderscore,noitalics]#[fg=#131a24,bg=#aeafb0,bold] #I  #W #F #[fg=#aeafb0,bg=#131a24,nobold,nounderscore,noitalics]"
+
+# 以下は書き換え済み
+set -g status-left "#[fg=#131a24,bg=#719cd6,bold]  #S #[fg=#719cd6,bg=#131a24,nobold,nounderscore,noitalics] "
+set -g status-right "#[fg=#131a24,bg=#131a24,nobold,nounderscore,noitalics]#[fg=#719cd6,bg=#131a24] #{prefix_highlight} #[fg=#aeafb0,bg=#131a24,nobold,nounderscore,noitalics]#[fg=#131a24,bg=#aeafb0] #(tmux-mem-cpu-load -i 1 -g 0 -a 1)  󰃭 %Y-%m-%d  󰥔 %H:%M:%S #[fg=#719cd6,bg=#aeafb0,nobold,nounderscore,noitalics]#[fg=#131a24,bg=#719cd6,bold] 󰍹 #h "
+setw -g window-status-format " #[default]#I:#W#F "
+setw -g window-status-current-format "#[fg=#131a24,bg=#aeafb0,bold]#I:#W#F "
+
+# for prefix_highlight
+set -g @prefix_highlight_prefix_prompt 'Wait'
+set -g @prefix_highlight_copy_prompt 'Copy'
+set -g @prefix_highlight_sync_prompt 'Sync'
+set -g @prefix_highlight_fg '#131a24,bold'
+set -g @prefix_highlight_bg '#719cd6'
+set -g @prefix_highlight_show_copy_mode 'on'
+set -g @prefix_highlight_copy_mode_attr 'fg=black,bg=yellow,bold'
+set -g @prefix_highlight_show_sync_mode 'on'
+set -g @prefix_highlight_sync_mode_attr 'fg=black,bg=green'
