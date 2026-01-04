@@ -5,7 +5,7 @@ set -ex
 # zsh が動く環境向けの設定をやっていく
 
 # .hoge の sym link
-for dotfile_path in `find . -maxdepth 1 -name '.*' | sed 's/\.\///' | grep -v '^\.$' | grep -vE '^\.(git|config)$' | sort`; do
+for dotfile_path in `find . -maxdepth 1 -name '.*' | sed 's/\.\///' | grep -v '^\.$' | grep -vE '^\.(git|gitignore|config)$' | sort`; do
     target=$HOME/$dotfile_path
     test -L $target || ln -s $HOME/dotfiles/$dotfile_path $target
 done
