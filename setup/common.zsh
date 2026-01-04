@@ -51,7 +51,7 @@ go install github.com/tomnomnom/gron@latest
 pip install --upgrade tmuxp
 
 # vim
-plug_path=$HOME/.vim/autoload/plug.vim
+plug_path=$HOME/.config/vim/autoload/plug.vim
 if [ ! -e $plug_path ]; then
     curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim +'PlugInstall --sync' +qa

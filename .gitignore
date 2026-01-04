@@ -1,7 +1,7 @@
 # この gitignore は dotfiles 向け
 
-/.vim/autoload/plug.vim
-/.vim/plugged/
+/.config/vim/autoload/plug.vim
+/.config/vim/plugged/
 /.config/karabiner/assets/
 /zsh/history
 /zsh/zplug

@@ -34,7 +34,7 @@ set history=1000
 set tags+=.git/tags " tagsを.git/tagsからも読む
 
 " スワップファイルとバックアップのディレクトリ
-set backupdir=~/.vim/backup
+set backupdir=~/.config/vim/backup
 let &directory = &backupdir
 
 "----------------------------------------
