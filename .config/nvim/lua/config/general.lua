@@ -33,6 +33,7 @@ vim.opt.scrolloff     = 0
 vim.opt.cursorline    = true     -- これをsyntaxと一緒に有効にするとカーソル移動が激重になる場合がある
 vim.opt.cmdheight     = 2
 vim.opt.ambiwidth     = 'single' -- 一部の記号が小さくなるが罫線が半角になることで全体的に表示崩れが減る
+vim.opt.showtabline   = 0        -- タブは lualine で status に表示するので本来のやつは表示しない
 vim.opt.laststatus    = 3
 vim.opt.statusline    = '[%n]%m%r%f %= %w%y[%{&fenc}:%{&ff}][%l/%L,%c]'
 vim.opt.inccommand    = 'split'

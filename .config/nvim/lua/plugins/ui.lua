@@ -4,6 +4,7 @@ return {
     dependencies = {
       'kyazdani42/nvim-web-devicons',
       'EdenEast/nightfox.nvim', -- lualine の前に colorschema が読み込まれていてほしい
+      'stevearc/aerial.nvim',
     },
     lazy = false,
     priority = 500,
@@ -17,15 +18,69 @@ return {
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = {
             {
-              'filename',
-              path = 1,
+              'tabs',
+              mode = 2,
             },
           },
-          lualine_x = { 'searchcount', 'encoding', 'fileformat', 'filetype' },
-          lualine_y = { 'progress' },
+          lualine_x = {
+            'searchcount',
+            { 'encoding', show_bomb = true },
+            'fileformat',
+            'filetype',
+          },
+          lualine_y = {
+            {
+              'lsp_status',
+              ignore_lsp = {
+                'harper_ls',
+                'GitHub Copilot',
+              },
+            },
+          },
           lualine_z = { 'location' },
         },
+        winbar = {
+          lualine_a = {
+            {
+              'filetype',
+              icon_only = true,
+              padding = { left = 1, right = 0 },
+              separator = { left = '', right = '' }
+            },
+            {
+              'filename',
+              path = 1,
+              padding = { left = 0, right = 1 },
+            },
+          },
+          lualine_b = { 'aerial' },
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        },
+        inactive_winbar = {
+          lualine_a = {},
+          lualine_b = {
+            {
+              'filetype',
+              icon_only = true,
+              padding = { left = 1, right = 0 },
+              separator = { left = '', right = '' }
+            },
+            {
+              'filename',
+              path = 1,
+              padding = { left = 0, right = 1 },
+            },
+          },
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        },
         extensions = {
+          'aerial',
           'neo-tree',
           'quickfix',
         },
