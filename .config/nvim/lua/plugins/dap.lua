@@ -81,7 +81,6 @@ return {
       vim.keymap.set('n', '<Space>dk', function() dap.step_out() end)
       vim.keymap.set('n', '<Space>db', function() dap.toggle_breakpoint() end)
       vim.keymap.set('n', '<Space>dq', function() dap.terminate() end)
-      vim.keymap.set('n', '<Space>dk', function() dap.step_out() end)
       vim.keymap.set('n', '<Space>dr', function() dap.repl.open() end)
       vim.keymap.set('n', '<Space>dh', function() widgets.hover() end)
       vim.keymap.set('n', '<Space>dp', function() widgets.preview() end)
