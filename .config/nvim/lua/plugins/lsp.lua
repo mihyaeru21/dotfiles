@@ -11,23 +11,12 @@ return {
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
       })
 
+      -- mason 経由で入れるやつは mason-lspconfig 側に書く
       vim.lsp.enable({
-        'bashls',
         'biome',
-        'elixirls',
-        'elp',
-        'eslint',
-        'gopls',
-        'harper_ls',
-        'jsonls',
-        'lua_ls',
         'ruby_lsp',
         'sorbet',
-        'terraformls',
-        'ts_ls',
         'tsp_server',
-        'vimls',
-        'yamlls',
       })
 
       vim.diagnostic.config({
@@ -67,15 +56,15 @@ return {
     end
   },
   {
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     version = '~2',
     event = 'VeryLazy',
     config = true,
   },
   {
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
     dependencies = {
-      'williamboman/mason.nvim',
+      'mason-org/mason.nvim',
       'neovim/nvim-lspconfig',
     },
     version = '~2',
@@ -95,10 +84,15 @@ return {
           'rust_analyzer',
           'terraformls',
           'ts_ls',
+          'tsp_server',
           'vimls',
           'yamlls',
         },
-        automatic_installation = false,
+        automatic_enable = {
+          exclude = {
+            "rust_analyzer", -- rustaceanvim 側で起動されるので自動起動させない
+          },
+        },
       }
     end
   },
