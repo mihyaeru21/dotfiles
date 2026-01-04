@@ -67,7 +67,7 @@ return {
   },
   {
     'williamboman/mason.nvim',
-    version = '~1',
+    version = '~2',
     event = 'VeryLazy',
     config = true,
   },
@@ -77,7 +77,7 @@ return {
       'williamboman/mason.nvim',
       'neovim/nvim-lspconfig',
     },
-    version = '~1',
+    version = '~2',
     event = 'VeryLazy',
     config = function()
       require('mason-lspconfig').setup {
