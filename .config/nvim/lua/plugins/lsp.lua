@@ -18,6 +18,7 @@ return {
         'elp',
         'eslint',
         'gopls',
+        'harper_ls',
         'jsonls',
         'lua_ls',
         'ruby_lsp',
@@ -88,6 +89,7 @@ return {
           'elp',
           'eslint',
           'gopls',
+          'harper_ls',
           'jsonls',
           'lua_ls',
           'rust_analyzer',
@@ -102,7 +104,7 @@ return {
   },
   {
     'nvimtools/none-ls.nvim',
-    -- prettier でしか使わないので javascript 系のみ
+    -- prettier でしか使わないので JavaScript 系のみ
     ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
     config = function()
       local null_ls = require("null-ls")
