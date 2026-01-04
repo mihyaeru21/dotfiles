@@ -1,7 +1,7 @@
 return {
   {
     'mrcjkb/rustaceanvim',
-    version = '^5',
+    version = '^7',
     lazy = false, -- 元々 lazy になっている
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
