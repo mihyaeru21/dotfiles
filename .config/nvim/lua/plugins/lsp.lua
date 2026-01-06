@@ -1,7 +1,6 @@
 return {
   {
     'neovim/nvim-lspconfig',
-    version = '~2',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
     },
