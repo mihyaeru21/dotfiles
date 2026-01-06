@@ -80,6 +80,7 @@ return {
           'harper_ls',
           'jsonls',
           'lua_ls',
+          'postgres_lsp',
           'rust_analyzer',
           'terraformls',
           'ts_ls',
