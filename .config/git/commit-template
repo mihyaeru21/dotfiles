@@ -1,17 +1,13 @@
 
-# ==== Emojis ====
-# ✏️  :pencil2: Writing docs
-# 🐛  :bug: Fix bugs
-# ❤  :heart: Fix bugs
-# 👍  :+1: Feature improvements
-# ✨  :sparkles: Additional partial feature
-# 🎉  :tada: Grand major features added to celebrate
-# ♻️  :recycle :Refactoring
-# 🚿  :shower: Removal of obsolete functions or features.
-# 💚  :green_heart: Modification and improvement of testing and CI
-# 👕  :shirt: Fixing of errors found by Lint.
-# 🚀  :rocket: Performance improvement
-# 🆙  :up: Updates, such as dependent package
-# 🔒  :lock: Limit of the range of new features
-# 👮  :cop: Security-related improvements
-# ⚙  :gear: Improve settings
+# ==== Conventional Commits Types ====
+# ✨     feat: 機能追加
+# 🐛      fix: バグ修正
+# 📝     docs: ドキュメント
+# 🎨    style: コードの意味に影響を与えない変更
+# ♻️ refactor: バグを修正せず、機能を追加しないコード変更
+# 💚     test: テストの追加や修正
+# 🚀     perf: パフォーマンス向上
+# 📦    build: ビルドシステムや依存関係の変更
+# 👷       ci: CIの設定ファイルやスクリプトの変更
+# 🔧    chore: その他の変更
+# 🔥   revert: 変更の取り消し
