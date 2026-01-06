@@ -12,6 +12,11 @@ return {
       require('lualine').setup {
         options = {
           globalstatus = true,
+          disabled_filetypes = {
+            winbar = {
+              'dap-repl', -- 競合するので無効化する
+            },
+          },
         },
         sections = {
           lualine_a = { 'mode' },
