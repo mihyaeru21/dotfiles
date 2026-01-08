@@ -18,6 +18,15 @@ return {
         'tsp_server',
       })
 
+      vim.lsp.config.gopls = {
+        settings = {
+          gopls = {
+            staticcheck = true,
+            semanticTokens = true,
+          },
+        },
+      }
+
       vim.diagnostic.config({
         virtual_lines = { current_line = true },
         severity_sort = true, -- 深刻度の高いものを優先して表示する
