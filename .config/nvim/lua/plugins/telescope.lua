@@ -26,6 +26,7 @@ return {
 
     require('telescope-tabs').setup()
 
+    vim.keymap.set('n', '<space>uu', ':Telescope builtin<CR>', { noremap = true })
     vim.keymap.set('n', '<space>uf', ':Telescope find_files<CR>', { noremap = true })
     vim.keymap.set('n', '<space>um', ':Telescope oldfiles<CR>', { noremap = true })
     vim.keymap.set('n', '<space>ug', ':Telescope live_grep_args<CR>', { noremap = true })
