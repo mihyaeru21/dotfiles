@@ -13,6 +13,9 @@ return {
             -- これらはデフォルトは細くて見づらい
             VertSplit = { bg = 'bg0' },
             WinSeparator = { bg = 'bg0' },
+
+            -- 境界をわかりやすくする
+            TreesitterContextBottom = { style = 'underline', sp = 'fg3' },
           },
         },
       }
