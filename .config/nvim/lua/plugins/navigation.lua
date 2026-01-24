@@ -52,7 +52,10 @@ return {
     event = 'VeryLazy',
     config = function()
       require('aerial').setup()
+      vim.keymap.set('n', ']a', ':AerialNext<CR>', { noremap = true })
+      vim.keymap.set('n', '[a', ':AerialPrev<CR>', { noremap = true })
       vim.keymap.set('n', '<space>a', ':AerialToggle left<CR>', { noremap = true })
+      vim.keymap.set('n', '<space>z', ':AerialNavToggle<CR>', { noremap = true })
     end
   }
 }
