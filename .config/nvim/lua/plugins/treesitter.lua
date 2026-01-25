@@ -27,4 +27,9 @@ return {
     'windwp/nvim-ts-autotag',
     config = true,
   },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true,
+  },
 }
