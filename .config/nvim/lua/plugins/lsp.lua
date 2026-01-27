@@ -108,6 +108,7 @@ return {
           'lua_ls',
           'postgres_lsp',
           'rust_analyzer',
+          'tailwindcss',
           'terraformls',
           'ts_ls',
           'tsp_server',
