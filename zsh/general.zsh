@@ -3,6 +3,8 @@ export LANG=C.UTF-8 # ja_JP だと地味に日本語になって逆にわかり�
 export LESSCHARSET=UTF-8
 export EDITOR=nvim
 
+export XDG_CONFIG_HOME=$HOME/.config
+
 # Rust
 . $HOME/.cargo/env
 
