@@ -18,13 +18,29 @@ return {
         'tsp_server',
       })
 
+      vim.lsp.config.lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' },
+            },
+          },
+        },
+      }
+
       vim.lsp.config.gopls = {
         settings = {
           gopls = {
-            staticcheck = true,
+            -- staticcheck = true, -- TODO: あとで有効化したい
             semanticTokens = true,
           },
         },
+      }
+
+      -- harpar は現時点でだいたいの言語ではコメント内しかスペルチェックしてくれないらしい
+      -- あと厳しすぎるのでプログラミング言語ではオフにしておく
+      vim.lsp.config.harper_ls = {
+        filetypes = { 'markdown', 'gitcommit' },
       }
 
       vim.diagnostic.config({

@@ -1,4 +1,8 @@
 dap
 fuga
 hoge
+lspconfig
+nvim
 piyo
+repl
+rustaceanvim
