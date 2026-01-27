@@ -82,6 +82,7 @@ return {
         -- 一部はパッケージマネージャ経由で入れたいのでここでは入れない
         ensure_installed = {
           'bashls',
+          'cssls',
           'elixirls',
           'elp',
           'eslint',
