@@ -41,6 +41,12 @@ return {
       -- あと厳しすぎるのでプログラミング言語ではオフにしておく
       vim.lsp.config.harper_ls = {
         filetypes = { 'markdown', 'gitcommit' },
+        settings = {
+          ['harper-ls'] = {
+            -- mac だとパスが違うので明示的に指定する
+            userDictPath = '~/.config/harper-ls/dictionary.txt',
+          },
+        },
       }
 
       vim.diagnostic.config({
