@@ -19,7 +19,7 @@ return {
           },
         },
       }
-      vim.cmd('colorscheme nightfox') -- lualine の前に呼び出しておく
+      vim.cmd('colorscheme nordfox') -- lualine の前に呼び出しておく
     end,
   },
   {
