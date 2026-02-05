@@ -17,8 +17,9 @@ return {
             ["<tab>"] = "OpenTree",
           },
         },
-        vim.keymap.set('n', '<space>gg', ':Neogit<CR>', { noremap = true })
       }
+
+      vim.keymap.set('n', '<space>gg', ':Neogit<CR>', { noremap = true })
     end
   },
   {
