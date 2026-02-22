@@ -23,3 +23,5 @@
 
 # WSL
 *:Zone.Identifier
+
+**/.claude/settings.local.json
