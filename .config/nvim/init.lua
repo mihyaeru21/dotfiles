@@ -1,5 +1,6 @@
 require('config.lazy')
 require('config.general')
+require('config.builtin')
 require('config.mapping')
 require('config.osc52')
 
