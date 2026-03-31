@@ -133,6 +133,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "com.mitchellh.ghostty",
                                             "com.googlecode.iterm2",
                                             "org.vim.MacVim",
                                             "com.happenapps.Quiver",
