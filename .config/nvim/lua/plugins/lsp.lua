@@ -129,27 +129,28 @@ return {
       }
     end
   },
-  {
-    'nvimtools/none-ls.nvim',
-    -- prettier でしか使わないので JavaScript 系のみ
-    ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
-    config = function()
-      local null_ls = require("null-ls")
-      null_ls.setup {
-        sources = {
-          null_ls.builtins.formatting.prettier.with {
-            condition = function(utils)
-              return utils.root_has_file {
-                '.prettierrc',
-                '.prettierrc.json', '.prettierrc.json5',
-                '.prettierrc.yml', '.prettierrc.yaml', '.prettierrc.toml',
-                '.prettierrc.js', 'prettier.config.js',
-                '.prettierrc.tjs', 'prettier.config.tjs',
-              }
-            end,
-          },
-        },
-      }
-    end,
-  },
+  -- 1年くらい使わなかったら完全に削除する
+  -- {
+  --   'nvimtools/none-ls.nvim',
+  --   -- prettier でしか使わないので JavaScript 系のみ
+  --   ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+  --   config = function()
+  --     local null_ls = require("null-ls")
+  --     null_ls.setup {
+  --       sources = {
+  --         null_ls.builtins.formatting.prettier.with {
+  --           condition = function(utils)
+  --             return utils.root_has_file {
+  --               '.prettierrc',
+  --               '.prettierrc.json', '.prettierrc.json5',
+  --               '.prettierrc.yml', '.prettierrc.yaml', '.prettierrc.toml',
+  --               '.prettierrc.js', 'prettier.config.js',
+  --               '.prettierrc.tjs', 'prettier.config.tjs',
+  --             }
+  --           end,
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
 }
