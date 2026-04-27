@@ -109,7 +109,7 @@ return {
           'elp',
           'eslint',
           'gopls',
-          'harper_ls',
+          -- 'harper_ls', -- しばしオフで生活する
           'jsonls',
           'lua_ls',
           'postgres_lsp',
