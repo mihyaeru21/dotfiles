@@ -2,7 +2,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons',
       'EdenEast/nightfox.nvim', -- lualine の前に colorschema が読み込まれていてほしい
       'stevearc/aerial.nvim',
     },
