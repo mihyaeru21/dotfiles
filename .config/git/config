@@ -39,6 +39,7 @@
     current-branch = rev-parse --abbrev-ref HEAD
     show-pr = "!f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
     public-config = "!git config user.name Mihyaeru && git config user.email mihyaeru21@gmail.com"
+    localize-config = "!git config user.name $(git config user.name) && git config user.email $(git config user.email)"
 [push]
     default = simple
 [github]
