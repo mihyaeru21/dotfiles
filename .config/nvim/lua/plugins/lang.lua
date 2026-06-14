@@ -25,6 +25,7 @@ return {
   },
   {
     'akinsho/flutter-tools.nvim',
+    version = '*',
     ft = { 'dart' },
     dependencies = {
       'nvim-lua/plenary.nvim',
