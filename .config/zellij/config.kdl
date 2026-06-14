@@ -3,11 +3,14 @@ keybinds clear-defaults=true {
         bind "Ctrl t" { SwitchToMode "normal"; }
     }
     normal {
+        bind "H" { GoToPreviousTab; SwitchToMode "locked"; }
+        bind "L" { GoToNextTab; SwitchToMode "locked"; }
+        bind "c" { NewTab; SwitchToMode "locked"; }
+
         bind "h" { MoveFocus "left"; SwitchToMode "locked"; }
         bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
         bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
         bind "l" { MoveFocus "right"; SwitchToMode "locked"; }
-
         bind "%" { NewPane "right"; SwitchToMode "locked"; }
         bind "\"" { NewPane "down"; SwitchToMode "locked"; }
 
@@ -20,6 +23,9 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "locked"; }
         bind "8" { GoToTab 8; SwitchToMode "locked"; }
         bind "9" { GoToTab 9; SwitchToMode "locked"; }
+
+        bind "f" { ToggleFloatingPanes; SwitchToMode "locked"; }
+        bind "d" { Detach; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
