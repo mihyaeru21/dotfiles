@@ -1,5 +1,6 @@
 alias ls="ls -xF --color=auto"
 alias pbcopy='xsel --clipboard --input'
+alias bat='batcat'
 
 ut2dt() {
   if [[ -z "$1" ]]; then
