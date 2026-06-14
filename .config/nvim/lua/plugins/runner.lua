@@ -9,6 +9,7 @@ return {
   },
   {
     'nvim-neotest/neotest',
+    version = '*',
     event = 'VeryLazy',
     dependencies = {
       'nvim-neotest/nvim-nio',
