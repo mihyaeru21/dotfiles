@@ -18,6 +18,10 @@ return {
           prompt_position = 'top',
         },
         sorting_strategy = 'ascending',
+        cache_picker = {
+          num_pickers = 100,
+          limit_entries = 1000,
+        },
       },
     }
 
@@ -35,7 +39,9 @@ return {
     vim.keymap.set('n', '<space>uts', ':Telescope treesitter<CR>', { noremap = true })
     vim.keymap.set('n', '<space>ud', ':Telescope diagnostics<CR>', { noremap = true })
     vim.keymap.set('n', '<space>ub', ':Telescope buffers<CR>', { noremap = true })
+    vim.keymap.set('n', '<space>us', ':Telescope tagstack<CR>', { noremap = true })
     vim.keymap.set('n', '<space>ur', ':Telescope resume<CR>', { noremap = true })
+    vim.keymap.set('n', '<space>up', ':Telescope pickers<CR>', { noremap = true })
     vim.keymap.set('n', '<space>uld', ':Telescope lsp_definitions<CR>', { noremap = true })
     vim.keymap.set('n', '<space>ulr', ':Telescope lsp_references<CR>', { noremap = true })
     vim.keymap.set('n', '<space>uli', ':Telescope lsp_implementations<CR>', { noremap = true })
