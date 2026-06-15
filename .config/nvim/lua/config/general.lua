@@ -25,6 +25,7 @@ vim.opt.wildmode      = 'full'
 vim.opt.history       = 1000
 vim.opt.hidden        = true
 
+vim.opt.winborder     = 'rounded'
 vim.opt.showcmd       = true
 vim.opt.showmode      = true
 vim.opt.showmatch     = true
