@@ -38,7 +38,7 @@ export AWS_PAGER=''
 # 各環境で生成した補完を入れておく場所
 fpath=( $HOME/dotfiles/zsh/completions "${fpath[@]}" )
 
-autoload -Uz compinit && compinit     # 補完
+# autoload -Uz compinit && compinit     # 補完 (ez-compinit を使う場合は実行しない)
 autoload bashcompinit && bashcompinit # bash の補完を使えるように
 autoload -Uz zmv                      # zmvを使えるように
 typeset -U path PATH                  # pathの重複をみとめない

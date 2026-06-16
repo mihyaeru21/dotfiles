@@ -4,7 +4,8 @@
 /.config/vim/plugged/
 /.config/karabiner/assets/
 /zsh/history
-/zsh/zplug
+/zsh/antidote
+/zsh/plugins.zsh*
 /zsh/completions/*
 !/zsh/completions/.gitkeep
 /tmux-client-*.log

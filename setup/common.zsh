@@ -51,13 +51,6 @@ if [ ! -e $plug_path ]; then
     vim +'PlugInstall --sync' +qa
 fi
 
-# zsh
-zplug_path=$HOME/dotfiles/zsh/zplug
-if [ ! -e $zplug_path ]; then
-    git clone https://github.com/zplug/zplug $zplug_path
-    chsh -s /usr/bin/zsh
-fi
-
 # tmux-mem-cpu-load
 set +e
 command -v tmux-mem-cpu-load > /dev/null 2>&1
