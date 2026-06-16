@@ -1,31 +1,18 @@
 keybinds clear-defaults=true {
-    locked {
-        bind "Ctrl t" { SwitchToMode "normal"; }
-    }
     normal {
+        bind "\"" { NewPane "down"; SwitchToMode "locked"; }
+        bind "%" { NewPane "right"; SwitchToMode "locked"; }
         bind "H" { GoToPreviousTab; SwitchToMode "locked"; }
         bind "L" { GoToNextTab; SwitchToMode "locked"; }
         bind "c" { NewTab; SwitchToMode "locked"; }
-
+        bind "f" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "h" { MoveFocus "left"; SwitchToMode "locked"; }
         bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
         bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
         bind "l" { MoveFocus "right"; SwitchToMode "locked"; }
-        bind "%" { NewPane "right"; SwitchToMode "locked"; }
-        bind "\"" { NewPane "down"; SwitchToMode "locked"; }
-
-        bind "1" { GoToTab 1; SwitchToMode "locked"; }
-        bind "2" { GoToTab 2; SwitchToMode "locked"; }
-        bind "3" { GoToTab 3; SwitchToMode "locked"; }
-        bind "4" { GoToTab 4; SwitchToMode "locked"; }
-        bind "5" { GoToTab 5; SwitchToMode "locked"; }
-        bind "6" { GoToTab 6; SwitchToMode "locked"; }
-        bind "7" { GoToTab 7; SwitchToMode "locked"; }
-        bind "8" { GoToTab 8; SwitchToMode "locked"; }
-        bind "9" { GoToTab 9; SwitchToMode "locked"; }
-
-        bind "f" { ToggleFloatingPanes; SwitchToMode "locked"; }
-        bind "d" { Detach; }
+    }
+    locked {
+        bind "Ctrl t" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -55,15 +42,6 @@ keybinds clear-defaults=true {
         bind "down" { GoToNextTab; }
         bind "up" { GoToPreviousTab; }
         bind "right" { GoToNextTab; }
-        bind "1" { GoToTab 1; SwitchToMode "locked"; }
-        bind "2" { GoToTab 2; SwitchToMode "locked"; }
-        bind "3" { GoToTab 3; SwitchToMode "locked"; }
-        bind "4" { GoToTab 4; SwitchToMode "locked"; }
-        bind "5" { GoToTab 5; SwitchToMode "locked"; }
-        bind "6" { GoToTab 6; SwitchToMode "locked"; }
-        bind "7" { GoToTab 7; SwitchToMode "locked"; }
-        bind "8" { GoToTab 8; SwitchToMode "locked"; }
-        bind "9" { GoToTab 9; SwitchToMode "locked"; }
         bind "[" { BreakPaneLeft; SwitchToMode "locked"; }
         bind "]" { BreakPaneRight; SwitchToMode "locked"; }
         bind "b" { BreakPane; SwitchToMode "locked"; }
@@ -145,7 +123,6 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "locked"
         }
-        bind "d" { Detach; }
         bind "l" {
             LaunchOrFocusPlugin "zellij:layout-manager" {
                 floating true
@@ -222,8 +199,22 @@ keybinds clear-defaults=true {
     shared_among "normal" "resize" "search" "move" "prompt" "tmux" {
         bind "s" { SwitchToMode "scroll"; }
     }
+    shared_among "normal" "tab" {
+        bind "1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "locked"; }
+    }
     shared_except "locked" "resize" "pane" "tab" "entersearch" "renametab" "renamepane" {
         bind "r" { SwitchToMode "resize"; }
+    }
+    shared_among "normal" "session" {
+        bind "d" { Detach; }
     }
     shared_among "scroll" "search" {
         bind "PageDown" { PageScrollDown; }
@@ -535,7 +526,7 @@ default_mode "locked"
 // Whether to show tips on startup
 // Default: true
 // 
-// show_startup_tips false
+show_startup_tips false
  
 // Whether to show release notes on first version run
 // Default: true
