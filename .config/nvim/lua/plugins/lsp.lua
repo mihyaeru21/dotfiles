@@ -116,6 +116,7 @@ return {
           'postgres_lsp',
           'rust_analyzer',
           'tailwindcss',
+          'taplo',
           'terraformls',
           'ts_ls',
           'tsp_server',
