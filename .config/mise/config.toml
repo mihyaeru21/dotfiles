@@ -1,3 +1,5 @@
+#: schema https://mise.en.dev/schema/mise.json
+
 [tools]
 awscli = { version = "2.34.37", symlink_bins = "true" }
 elixir = "1.19.5"
@@ -31,3 +33,5 @@ zig = "0.16.0"
 experimental = true
 idiomatic_version_file_enable_tools = []
 minimum_release_age = "7d"
+paranoid = true
+disable_backends = ["asdf"]
