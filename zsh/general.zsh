@@ -35,6 +35,15 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # awc cli で pager が動くと邪魔
 export AWS_PAGER=''
 
+# secure package registry proxy
+# https://shisho.dev/docs/ja/t/guard/
+export NPM_CONFIG_REGISTRY=https://npm.flatt.tech
+export PNPM_CONFIG_REGISTRY=https://npm.flatt.tech
+export YARN_NPM_REGISTRY_SERVER=https://npm.flatt.tech
+export GOPROXY=https://golang.flatt.tech
+export BUNDLE_MIRROR__RUBYGEMS__ORG=https://rubygems.flatt.tech
+export PIP_INDEX_URL=https://pypi.flatt.tech/simple
+
 # 各環境で生成した補完を入れておく場所
 fpath=( $HOME/dotfiles/zsh/completions "${fpath[@]}" )
 
