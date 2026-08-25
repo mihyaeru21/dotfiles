@@ -8,9 +8,19 @@ return {
       require 'nvim-treesitter'.setup()
 
       -- fold
-      vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-      vim.wo[0][0].foldmethod = 'expr'
-      vim.wo[0][0].foldenable = false
+      vim.opt.foldmethod = 'expr'
+      vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.opt.foldlevel = 99
+      vim.opt.foldlevelstart = 99
+      vim.opt.foldtext = ""
+      vim.opt.foldcolumn = "1"
+      vim.opt.fillchars = {
+        eob = " ",
+        foldclose = "",
+        foldopen = "",
+        foldsep = " ",
+        foldinner = " ",
+      }
     end
   },
   {
