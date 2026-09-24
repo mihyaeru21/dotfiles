@@ -51,6 +51,7 @@ return {
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', kmopts)
+          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>h', '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', kmopts)
         end
       })
     end
