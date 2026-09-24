@@ -19,37 +19,6 @@ return {
         'tsp_server',
       })
 
-      vim.lsp.config.lua_ls = {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { 'vim' },
-            },
-          },
-        },
-      }
-
-      vim.lsp.config.gopls = {
-        settings = {
-          gopls = {
-            -- staticcheck = true, -- TODO: あとで有効化したい
-            semanticTokens = true,
-          },
-        },
-      }
-
-      -- harpar は現時点でだいたいの言語ではコメント内しかスペルチェックしてくれないらしい
-      -- あと厳しすぎるのでプログラミング言語ではオフにしておく
-      vim.lsp.config.harper_ls = {
-        filetypes = { 'markdown', 'gitcommit' },
-        settings = {
-          ['harper-ls'] = {
-            -- mac だとパスが違うので明示的に指定する
-            userDictPath = '~/.config/harper-ls/dictionary.txt',
-          },
-        },
-      }
-
       vim.diagnostic.config({
         virtual_lines = { current_line = true },
         severity_sort = true, -- 深刻度の高いものを優先して表示する
