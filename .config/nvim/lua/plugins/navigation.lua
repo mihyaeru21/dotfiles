@@ -43,8 +43,8 @@ return {
         },
       })
 
-      vim.keymap.set('n', '<space>n', ':Neotree float toggle reveal<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>j', ':Neotree float toggle buffers<CR>', { noremap = true })
+      vim.keymap.set('n', '<Space>n', ':Neotree float toggle reveal<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>j', ':Neotree float toggle buffers<CR>', { silent = true })
     end,
   },
   {
@@ -52,10 +52,10 @@ return {
     event = 'VeryLazy',
     config = function()
       require('aerial').setup()
-      vim.keymap.set('n', ']a', ':AerialNext<CR>', { noremap = true })
-      vim.keymap.set('n', '[a', ':AerialPrev<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>a', ':AerialToggle left<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>z', ':AerialNavToggle<CR>', { noremap = true })
+      vim.keymap.set('n', ']a', ':AerialNext<CR>', { silent = true })
+      vim.keymap.set('n', '[a', ':AerialPrev<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>a', ':AerialToggle left<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>z', ':AerialNavToggle<CR>', { silent = true })
     end,
   },
 }

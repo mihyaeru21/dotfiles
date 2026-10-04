@@ -11,9 +11,9 @@ vim.g.clipboard = {
 }
 
 -- 選択した範囲をコピー
-vim.keymap.set('x', '<space>c', '"+y')
+vim.keymap.set('x', '<space>c', '"+y', { silent = true })
 -- 現在の行をコピー
-vim.keymap.set('n', '<space>cc', 'V"+y')
+vim.keymap.set('n', '<space>cc', 'V"+y', { silent = true })
 -- 現在のファイルの相対パスをコピー
 vim.keymap.set('n', '<space>cf', function()
   local path = vim.fn.expand('%:.')
@@ -21,4 +21,4 @@ vim.keymap.set('n', '<space>cf', function()
 
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
-end)
+end, { silent = true })

@@ -75,19 +75,24 @@ return {
         },
       }
 
-      vim.keymap.set('n', '<Space>dd', function() dapui.toggle() end)
-      vim.keymap.set('n', '<Space>dc', function() dap.continue() end)
-      vim.keymap.set('n', '<Space>dl', function() dap.step_over() end)
-      vim.keymap.set('n', '<Space>dj', function() dap.step_into() end)
-      vim.keymap.set('n', '<Space>dk', function() dap.step_out() end)
-      vim.keymap.set('n', '<Space>db', function() dap.toggle_breakpoint() end)
-      vim.keymap.set('n', '<Space>dq', function() dap.terminate() end)
-      vim.keymap.set('n', '<Space>dr', function() dap.repl.open() end)
-      vim.keymap.set('n', '<Space>dh', function() widgets.hover() end)
-      vim.keymap.set('n', '<Space>dp', function() widgets.preview() end)
-      vim.keymap.set('n', '<Space>dm', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-      vim.keymap.set('n', '<Space>df', function() widgets.centered_float(widgets.frames) end)
-      vim.keymap.set('n', '<Space>ds', function() widgets.centered_float(widgets.scopes) end)
+      vim.keymap.set('n', '<Space>dd', function() dapui.toggle() end, { silent = true })
+      vim.keymap.set('n', '<Space>dc', function() dap.continue() end, { silent = true })
+      vim.keymap.set('n', '<Space>dl', function() dap.step_over() end, { silent = true })
+      vim.keymap.set('n', '<Space>dj', function() dap.step_into() end, { silent = true })
+      vim.keymap.set('n', '<Space>dk', function() dap.step_out() end, { silent = true })
+      vim.keymap.set('n', '<Space>db', function() dap.toggle_breakpoint() end, { silent = true })
+      vim.keymap.set('n', '<Space>dq', function() dap.terminate() end, { silent = true })
+      vim.keymap.set('n', '<Space>dr', function() dap.repl.open() end, { silent = true })
+      vim.keymap.set('n', '<Space>dh', function() widgets.hover() end, { silent = true })
+      vim.keymap.set('n', '<Space>dp', function() widgets.preview() end, { silent = true })
+      vim.keymap.set(
+        'n',
+        '<Space>dm',
+        function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end,
+        { silent = true }
+      )
+      vim.keymap.set('n', '<Space>df', function() widgets.centered_float(widgets.frames) end, { silent = true })
+      vim.keymap.set('n', '<Space>ds', function() widgets.centered_float(widgets.scopes) end, { silent = true })
     end,
   },
   {

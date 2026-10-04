@@ -8,6 +8,6 @@ return {
   build = function() require('dbee').install() end,
   config = function()
     require('dbee').setup()
-    vim.api.nvim_set_keymap('n', '<space>b', '<cmd>lua require("dbee").toggle()<CR>', { noremap = true, silent = true })
+    vim.keymap.set('n', '<Space>b', function() require('dbee').toggle() end, { silent = true })
   end,
 }

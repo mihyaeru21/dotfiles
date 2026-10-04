@@ -24,50 +24,51 @@ return {
         severity_sort = true, -- 深刻度の高いものを優先して表示する
       })
 
-      local kmopts = { noremap = true, silent = true }
-      vim.keymap.set('n', '<space>e', function()
+      vim.keymap.set('n', '<Space>e', function()
         -- diagnostic 表示をトグルする
         if vim.diagnostic.config().virtual_lines then
           vim.diagnostic.config({ virtual_lines = false })
         else
           vim.diagnostic.config({ virtual_lines = { current_line = true } })
         end
-      end, kmopts)
-      vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', kmopts)
-      vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', kmopts)
+      end, { silent = true })
+      vim.keymap.set('n', '<Space>q', function() vim.diagnostic.setloclist() end, { silent = true })
+      vim.keymap.set('n', '<Space>f', function() vim.lsp.buf.format({ async = true }) end, { silent = true })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local buf = args.buf
-          vim.api.nvim_buf_set_keymap(buf, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(
-            buf,
+          vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, { buf = buf, silent = true })
+          vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, { buf = buf, silent = true })
+          vim.keymap.set('n', 'gi', function() vim.lsp.buf.implementation() end, { buf = buf, silent = true })
+          vim.keymap.set('n', '<C-k>', function() vim.lsp.buf.signature_help() end, { buf = buf, silent = true })
+          vim.keymap.set(
             'n',
-            '<space>wr',
-            '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
-            kmopts
+            '<Space>wa',
+            function() vim.lsp.buf.add_workspace_folder() end,
+            { buf = buf, silent = true }
           )
-          vim.api.nvim_buf_set_keymap(
-            buf,
+          vim.keymap.set(
             'n',
-            '<space>wl',
-            '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-            kmopts
+            '<Space>wr',
+            function() vim.lsp.buf.remove_workspace_folder() end,
+            { buf = buf, silent = true }
           )
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(
-            buf,
+          vim.keymap.set(
             'n',
-            '<space>h',
-            '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
-            kmopts
+            '<Space>wl',
+            function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+            { buf = buf, silent = true }
+          )
+          vim.keymap.set('n', '<Space>D', function() vim.lsp.buf.type_definition() end, { buf = buf, silent = true })
+          vim.keymap.set('n', '<Space>rn', function() vim.lsp.buf.rename() end, { buf = buf, silent = true })
+          vim.keymap.set('n', '<Space>ca', function() vim.lsp.buf.code_action() end, { buf = buf, silent = true })
+          vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, { buf = buf, silent = true })
+          vim.keymap.set(
+            'n',
+            '<Space>h',
+            function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+            { buf = buf, silent = true }
           )
         end,
       })

@@ -3,8 +3,8 @@ return {
     'thinca/vim-quickrun',
     event = 'VeryLazy',
     config = function()
-      vim.keymap.set('n', '<space>R', ':<C-u>QuickRun -mode n<CR>', { noremap = true })
-      vim.keymap.set('v', '<space>R', ':<C-u>QuickRun -mode n<CR>', { noremap = true })
+      vim.keymap.set('n', '<Space>R', ':<C-u>QuickRun -mode n<CR>', { silent = true })
+      vim.keymap.set('v', '<Space>R', ':<C-u>QuickRun -mode n<CR>', { silent = true })
     end,
   },
   {
@@ -34,9 +34,9 @@ return {
         },
       })
 
-      vim.keymap.set('n', '<space>rr', ':Neotest run<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>rs', ':Neotest summary<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>rp', ':Neotest output-panel<CR>', { noremap = true })
+      vim.keymap.set('n', '<Space>rr', ':Neotest run<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>rs', ':Neotest summary<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>rp', ':Neotest output-panel<CR>', { silent = true })
     end,
   },
 }

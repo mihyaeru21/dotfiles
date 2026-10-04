@@ -109,24 +109,23 @@ return {
     config = function()
       require('hlslens').setup()
 
-      local kmopts = { noremap = true, silent = true }
       vim.api.nvim_set_keymap(
         'n',
         'n',
         [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-        kmopts
+        { silent = true }
       )
       vim.api.nvim_set_keymap(
         'n',
         'N',
         [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-        kmopts
+        { silent = true }
       )
-      vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kmopts)
-      vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kmopts)
-      vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kmopts)
-      vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kmopts)
-      vim.api.nvim_set_keymap('n', '<space>l', ':noh<CR>', kmopts)
+      vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], { silent = true })
+      vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], { silent = true })
+      vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], { silent = true })
+      vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], { silent = true })
+      vim.api.nvim_set_keymap('n', '<space>l', ':noh<CR>', { silent = true })
     end,
   },
   {

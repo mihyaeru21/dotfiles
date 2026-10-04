@@ -19,7 +19,7 @@ return {
         },
       })
 
-      vim.keymap.set('n', '<space>gg', ':Neogit<CR>', { noremap = true })
+      vim.keymap.set('n', '<Space>gg', ':Neogit<CR>', { silent = true })
     end,
   },
   {
@@ -29,11 +29,11 @@ return {
     config = function()
       require('gitsigns').setup()
 
-      vim.keymap.set('n', '<space>gp', ':Gitsigns preview_hunk<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>gd', ':Gitsigns diffthis<CR>', { noremap = true })
-      vim.keymap.set('n', '<space>gb', ':Gitsigns blame_line<CR>', { noremap = true })
-      vim.keymap.set('n', '[g', ':Gitsigns prev_hunk<CR>', { noremap = true })
-      vim.keymap.set('n', ']g', ':Gitsigns next_hunk<CR>', { noremap = true })
+      vim.keymap.set('n', '<Space>gp', ':Gitsigns preview_hunk<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>gd', ':Gitsigns diffthis<CR>', { silent = true })
+      vim.keymap.set('n', '<Space>gb', ':Gitsigns blame_line<CR>', { silent = true })
+      vim.keymap.set('n', '[g', ':Gitsigns prev_hunk<CR>', { silent = true })
+      vim.keymap.set('n', ']g', ':Gitsigns next_hunk<CR>', { silent = true })
     end,
   },
 }
