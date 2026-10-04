@@ -31,4 +31,7 @@ require('lazy').setup({
   change_detection = {
     enabled = false,
   },
+  install = {
+    missing = false, -- 勝手にインストールが走らないようにしておく
+  },
 })
