@@ -5,7 +5,7 @@ return {
     config = function()
       vim.keymap.set('n', '<space>R', ':<C-u>QuickRun -mode n<CR>', { noremap = true })
       vim.keymap.set('v', '<space>R', ':<C-u>QuickRun -mode n<CR>', { noremap = true })
-    end
+    end,
   },
   {
     'nvim-neotest/neotest',
@@ -19,22 +19,20 @@ return {
       {
         'fredrikaverpil/neotest-golang',
         version = '*',
-        build = function()
-          vim.system({ 'go', 'install', 'gotest.tools/gotestsum@latest' }):wait()
-        end,
+        build = function() vim.system({ 'go', 'install', 'gotest.tools/gotestsum@latest' }):wait() end,
       },
       'marilari88/neotest-vitest',
     },
     config = function()
-      require('neotest').setup {
+      require('neotest').setup({
         adapters = {
           require('rustaceanvim.neotest'),
-          require('neotest-golang') {
+          require('neotest-golang')({
             runner = 'gotestsum',
-          },
-          require("neotest-vitest"),
+          }),
+          require('neotest-vitest'),
         },
-      }
+      })
 
       vim.keymap.set('n', '<space>rr', ':Neotest run<CR>', { noremap = true })
       vim.keymap.set('n', '<space>rs', ':Neotest summary<CR>', { noremap = true })

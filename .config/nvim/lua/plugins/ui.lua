@@ -9,7 +9,7 @@ return {
     lazy = false,
     priority = 500,
     config = function()
-      require('lualine').setup {
+      require('lualine').setup({
         options = {
           globalstatus = true,
           disabled_filetypes = {
@@ -50,7 +50,7 @@ return {
               'filetype',
               icon_only = true,
               padding = { left = 1, right = 0 },
-              separator = { left = '', right = '' }
+              separator = { left = '', right = '' },
             },
             {
               'filename',
@@ -71,7 +71,7 @@ return {
               'filetype',
               icon_only = true,
               padding = { left = 1, right = 0 },
-              separator = { left = '', right = '' }
+              separator = { left = '', right = '' },
             },
             {
               'filename',
@@ -89,8 +89,8 @@ return {
           'neo-tree',
           'quickfix',
         },
-      }
-    end
+      })
+    end,
   },
   {
     'stevearc/dressing.nvim',
@@ -110,16 +110,24 @@ return {
       require('hlslens').setup()
 
       local kmopts = { noremap = true, silent = true }
-      vim.api.nvim_set_keymap('n', 'n',
-        [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kmopts)
-      vim.api.nvim_set_keymap('n', 'N',
-        [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kmopts)
+      vim.api.nvim_set_keymap(
+        'n',
+        'n',
+        [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+        kmopts
+      )
+      vim.api.nvim_set_keymap(
+        'n',
+        'N',
+        [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+        kmopts
+      )
       vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kmopts)
       vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kmopts)
       vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kmopts)
       vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kmopts)
       vim.api.nvim_set_keymap('n', '<space>l', ':noh<CR>', kmopts)
-    end
+    end,
   },
   {
     'petertriho/nvim-scrollbar',
@@ -129,7 +137,7 @@ return {
     },
     event = 'VeryLazy',
     config = function()
-      require('scrollbar').setup {
+      require('scrollbar').setup({
         show_in_active_only = true,
         hide_if_all_visible = true,
         excluded_filetypes = {
@@ -146,7 +154,7 @@ return {
           'dapui_stacks',
           'dapui_watches',
         },
-      }
+      })
       require('scrollbar.handlers.search').setup()
     end,
   },
@@ -154,15 +162,15 @@ return {
     'numToStr/FTerm.nvim',
     event = 'VeryLazy',
     config = function()
-      require('FTerm').setup {
-        border     = 'single',
+      require('FTerm').setup({
+        border = 'single',
         dimensions = {
           height = 0.9,
           width = 0.9,
         },
-      }
+      })
       vim.keymap.set('n', '<A-k>', '<CMD>lua require("FTerm").toggle()<CR>')
       vim.keymap.set('t', '<A-k>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-    end
+    end,
   },
 }

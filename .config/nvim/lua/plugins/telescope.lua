@@ -11,7 +11,7 @@ return {
   config = function()
     local ts = require('telescope')
 
-    ts.setup {
+    ts.setup({
       defaults = {
         layout_strategy = 'flex',
         layout_config = {
@@ -23,7 +23,7 @@ return {
           limit_entries = 1000,
         },
       },
-    }
+    })
 
     ts.load_extension('live_grep_args')
     ts.load_extension('telescope-tabs')
@@ -48,5 +48,5 @@ return {
     vim.keymap.set('n', '<space>ulsd', ':Telescope lsp_document_symbols<CR>', { noremap = true })
     vim.keymap.set('n', '<space>ulsw', ':Telescope lsp_workspace_symbols<CR>', { noremap = true })
     vim.keymap.set('n', '<space>uaf', ':Telescope flutter commands<CR>', { noremap = true })
-  end
+  end,
 }

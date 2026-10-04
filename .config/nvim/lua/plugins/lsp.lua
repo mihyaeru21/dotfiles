@@ -36,7 +36,7 @@ return {
       vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', kmopts)
       vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', kmopts)
 
-      vim.api.nvim_create_autocmd("LspAttach", {
+      vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local buf = args.buf
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', kmopts)
@@ -44,17 +44,34 @@ return {
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>wl',
-            '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', kmopts)
+          vim.api.nvim_buf_set_keymap(
+            buf,
+            'n',
+            '<space>wr',
+            '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
+            kmopts
+          )
+          vim.api.nvim_buf_set_keymap(
+            buf,
+            'n',
+            '<space>wl',
+            '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
+            kmopts
+          )
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', kmopts)
           vim.api.nvim_buf_set_keymap(buf, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', kmopts)
-          vim.api.nvim_buf_set_keymap(buf, 'n', '<space>h', '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', kmopts)
-        end
+          vim.api.nvim_buf_set_keymap(
+            buf,
+            'n',
+            '<space>h',
+            '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
+            kmopts
+          )
+        end,
       })
-    end
+    end,
   },
   {
     'mason-org/mason.nvim',
@@ -71,7 +88,7 @@ return {
     version = '~2',
     event = 'VeryLazy',
     config = function()
-      require('mason-lspconfig').setup {
+      require('mason-lspconfig').setup({
         -- 一部はパッケージマネージャ経由で入れたいのでここでは入れない
         ensure_installed = {
           'bashls',
@@ -85,6 +102,7 @@ return {
           'lua_ls',
           'postgres_lsp',
           'rust_analyzer',
+          'stylua',
           'tailwindcss',
           'taplo',
           'terraformls',
@@ -95,11 +113,11 @@ return {
         },
         automatic_enable = {
           exclude = {
-            "rust_analyzer", -- rustaceanvim 側で起動されるので自動起動させない
+            'rust_analyzer', -- rustaceanvim 側で起動されるので自動起動させない
           },
         },
-      }
-    end
+      })
+    end,
   },
   -- 1年くらい使わなかったら完全に削除する
   -- {

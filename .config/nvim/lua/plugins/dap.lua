@@ -19,7 +19,8 @@ return {
             command = 'bundle',
             args = vim.list_extend(
               { 'exec', 'rdbg', '-n', '--open', '--port', '${port}', '-c', '--', 'bundle', 'exec', config.command },
-              config.args),
+              config.args
+            ),
           }
         else
           executable = {
@@ -28,12 +29,12 @@ return {
           }
         end
 
-        callback {
+        callback({
           type = 'server',
           host = '127.0.0.1',
           port = '${port}',
           executable = executable,
-        }
+        })
       end
       dap.configurations.ruby = {
         {
@@ -87,7 +88,7 @@ return {
       vim.keymap.set('n', '<Space>dm', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
       vim.keymap.set('n', '<Space>df', function() widgets.centered_float(widgets.frames) end)
       vim.keymap.set('n', '<Space>ds', function() widgets.centered_float(widgets.scopes) end)
-    end
+    end,
   },
   {
     'theHamsta/nvim-dap-virtual-text',
@@ -106,16 +107,16 @@ return {
     },
     event = 'VeryLazy',
     config = function()
-      require('dap-go').setup {
+      require('dap-go').setup({
         dap_configurations = {
           {
-            type = "go",
-            name = "Attach remote",
-            mode = "remote",
-            request = "attach",
+            type = 'go',
+            name = 'Attach remote',
+            mode = 'remote',
+            request = 'attach',
           },
         },
-      }
-    end
+      })
+    end,
   },
 }

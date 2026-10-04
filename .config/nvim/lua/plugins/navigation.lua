@@ -11,7 +11,7 @@ return {
     config = function()
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-      require('neo-tree').setup {
+      require('neo-tree').setup({
         filesystem = {
           follow_current_file = {
             enabled = true,
@@ -39,13 +39,13 @@ return {
             ['o'] = 'open',
             ['i'] = 'open_split',
             ['s'] = 'open_vsplit',
-          }
+          },
         },
-      }
+      })
 
       vim.keymap.set('n', '<space>n', ':Neotree float toggle reveal<CR>', { noremap = true })
       vim.keymap.set('n', '<space>j', ':Neotree float toggle buffers<CR>', { noremap = true })
-    end
+    end,
   },
   {
     'stevearc/aerial.nvim',
@@ -56,6 +56,6 @@ return {
       vim.keymap.set('n', '[a', ':AerialPrev<CR>', { noremap = true })
       vim.keymap.set('n', '<space>a', ':AerialToggle left<CR>', { noremap = true })
       vim.keymap.set('n', '<space>z', ':AerialNavToggle<CR>', { noremap = true })
-    end
-  }
+    end,
+  },
 }

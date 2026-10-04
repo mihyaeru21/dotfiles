@@ -9,19 +9,17 @@ return {
     },
     config = function()
       vim.g.rustaceanvim = {
-        tools = {
-        },
+        tools = {},
         server = {
           default_settings = {
-            ['rust-analyzer'] = {
-            },
+            ['rust-analyzer'] = {},
           },
         },
         dap = {
           autoload_configurations = true,
         },
       }
-    end
+    end,
   },
   {
     'akinsho/flutter-tools.nvim',
@@ -32,12 +30,12 @@ return {
       'nvim-telescope/telescope.nvim',
     },
     config = function()
-      require('flutter-tools').setup {
+      require('flutter-tools').setup({
         flutter_lookup_cmd = 'mise where flutter',
-      }
+      })
 
       require('telescope').load_extension('flutter')
-    end
+    end,
   },
   {
     'folke/lazydev.nvim',
@@ -46,7 +44,7 @@ return {
       {
         'Bilal2453/luvit-meta',
         lazy = true,
-      }
+      },
     },
     opts = {
       library = {

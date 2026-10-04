@@ -5,33 +5,33 @@ return {
     build = ':TSUpdate',
     lazy = false, -- lazy はサポートされてない
     config = function()
-      require 'nvim-treesitter'.setup()
+      require('nvim-treesitter').setup()
 
       -- fold
       vim.opt.foldmethod = 'expr'
       vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
       vim.opt.foldlevel = 99
       vim.opt.foldlevelstart = 99
-      vim.opt.foldtext = ""
-      vim.opt.foldcolumn = "1"
+      vim.opt.foldtext = ''
+      vim.opt.foldcolumn = '1'
       vim.opt.fillchars = {
-        eob = " ",
-        foldclose = "",
-        foldopen = "",
-        foldsep = " ",
-        foldinner = " ",
+        eob = ' ',
+        foldclose = '',
+        foldopen = '',
+        foldsep = ' ',
+        foldinner = ' ',
       }
-    end
+    end,
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
     event = 'VeryLazy',
     config = function()
-      require('treesitter-context').setup {
+      require('treesitter-context').setup({
         enable = true,
         multiline_threshold = 1,
-      }
-    end
+      })
+    end,
   },
   {
     'windwp/nvim-ts-autotag',
@@ -39,7 +39,7 @@ return {
   },
   {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
+    event = 'InsertEnter',
     config = true,
   },
 }

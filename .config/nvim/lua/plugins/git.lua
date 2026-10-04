@@ -8,19 +8,19 @@ return {
     },
     event = 'VeryLazy',
     config = function()
-      require('neogit').setup {
+      require('neogit').setup({
         disable_context_highlighting = true, -- ハイライトされてると見辛い
-        disable_commit_confirmation = true,  -- 確認が邪魔
+        disable_commit_confirmation = true, -- 確認が邪魔
         mappings = {
           status = {
             ['o'] = 'Toggle',
-            ["<tab>"] = "OpenTree",
+            ['<tab>'] = 'OpenTree',
           },
         },
-      }
+      })
 
       vim.keymap.set('n', '<space>gg', ':Neogit<CR>', { noremap = true })
-    end
+    end,
   },
   {
     'lewis6991/gitsigns.nvim',
@@ -34,6 +34,6 @@ return {
       vim.keymap.set('n', '<space>gb', ':Gitsigns blame_line<CR>', { noremap = true })
       vim.keymap.set('n', '[g', ':Gitsigns prev_hunk<CR>', { noremap = true })
       vim.keymap.set('n', ']g', ':Gitsigns next_hunk<CR>', { noremap = true })
-    end
+    end,
   },
 }

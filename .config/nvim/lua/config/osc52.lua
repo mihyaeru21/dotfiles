@@ -17,9 +17,8 @@ vim.keymap.set('n', '<space>cc', 'V"+y')
 -- 現在のファイルの相対パスをコピー
 vim.keymap.set('n', '<space>cf', function()
   local path = vim.fn.expand('%:.')
-  if path == '' then
-    return
-  end
+  if path == '' then return end
+
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
 end)

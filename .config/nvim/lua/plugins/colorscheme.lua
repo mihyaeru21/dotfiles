@@ -4,7 +4,7 @@ return {
     lazy = false, -- メインのやつなので遅延読み込みしない
     priority = 1000,
     config = function()
-      require('nightfox').setup {
+      require('nightfox').setup({
         options = {
           -- transparent = true,
         },
@@ -18,7 +18,7 @@ return {
             TreesitterContextBottom = { style = 'underline', sp = 'fg3' },
           },
         },
-      }
+      })
       vim.cmd('colorscheme nordfox') -- lualine の前に呼び出しておく
     end,
   },

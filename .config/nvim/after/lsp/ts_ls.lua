@@ -1,5 +1,5 @@
 local hints = {
-  includeInlayParameterNameHints = "all", -- "none" | "literals" | "all"
+  includeInlayParameterNameHints = 'all', -- 'none' | 'literals' | 'all'
   includeInlayParameterNameHintsWhenArgumentMatchesName = false,
   includeInlayFunctionParameterTypeHints = true,
   includeInlayVariableTypeHints = true,

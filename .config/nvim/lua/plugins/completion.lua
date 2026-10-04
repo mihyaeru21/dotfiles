@@ -17,9 +17,7 @@ return {
 
       cmp.setup({
         snippet = {
-          expand = function(args)
-            vim.fn['vsnip#anonymous'](args.body)
-          end,
+          expand = function(args) vim.fn['vsnip#anonymous'](args.body) end,
         },
         window = {
           completion = cmp.config.window.bordered({ border = 'rounded' }),
@@ -57,8 +55,8 @@ return {
           { name = 'path' },
         }, {
           { name = 'cmdline' },
-        })
+        }),
       })
-    end
+    end,
   },
 }
