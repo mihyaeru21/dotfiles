@@ -3,6 +3,7 @@
 /.config/vim/autoload/plug.vim
 /.config/vim/plugged/
 /.config/karabiner/assets/
+/.config/zellij/layouts/*-local.kdl
 /zsh/history
 /zsh/antidote
 /zsh/plugins.zsh*
