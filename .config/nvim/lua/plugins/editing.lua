@@ -9,4 +9,8 @@ return {
     'tpope/vim-abolish',
     event = 'VeryLazy',
   },
+  {
+    'rhysd/clever-f.vim',
+    event = 'VeryLazy',
+  },
 }
