@@ -10,7 +10,13 @@ return {
     event = 'VeryLazy',
   },
   {
-    'rhysd/clever-f.vim',
+    'folke/flash.nvim',
     event = 'VeryLazy',
+    ---@type Flash.Config
+    opts = {},
+    keys = {
+      { '[s', function() require('flash').jump() end, silent = true, desc = 'Flash' },
+      { ']s', function() require('flash').treesitter() end, silent = true, desc = 'Flash Treesitter' },
+    },
   },
 }
