@@ -17,6 +17,7 @@
 
 # mise
 .mise.toml
+.mise/
 
 # ccls
 .ccls-cache
