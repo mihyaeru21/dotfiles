@@ -10,7 +10,7 @@ return {
   {
     'nvim-neotest/neotest',
     version = '*',
-    event = 'VeryLazy',
+    cmd = 'Neotest', -- require('rustaceanvim.neotest') に 1500 ms ほどかかるので使うタイミングでロードする
     dependencies = {
       'nvim-neotest/nvim-nio',
       'nvim-lua/plenary.nvim',
@@ -33,10 +33,11 @@ return {
           require('neotest-vitest'),
         },
       })
-
-      vim.keymap.set('n', '<Space>rr', ':Neotest run<CR>', { silent = true })
-      vim.keymap.set('n', '<Space>rs', ':Neotest summary<CR>', { silent = true })
-      vim.keymap.set('n', '<Space>rp', ':Neotest output-panel<CR>', { silent = true })
     end,
+    keys = {
+      { '<Space>rr', ':Neotest run<CR>', { silent = true } },
+      { '<Space>rs', ':Neotest summary<CR>', { silent = true } },
+      { '<Space>rp', ':Neotest output-panel<CR>', { silent = true } },
+    },
   },
 }
