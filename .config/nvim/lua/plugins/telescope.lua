@@ -3,9 +3,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'LukasPietzschmann/telescope-tabs',
-    {
-      'nvim-telescope/telescope-live-grep-args.nvim',
-    },
+    'nvim-telescope/telescope-live-grep-args.nvim',
   },
   event = 'VeryLazy',
   config = function()
@@ -29,24 +27,25 @@ return {
     ts.load_extension('telescope-tabs')
 
     require('telescope-tabs').setup()
-
-    vim.keymap.set('n', '<space>uu', ':Telescope builtin<CR>', { silent = true })
-    vim.keymap.set('n', '<space>uf', ':Telescope find_files<CR>', { silent = true })
-    vim.keymap.set('n', '<space>um', ':Telescope oldfiles<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ug', ':Telescope live_grep_args<CR>', { silent = true })
-    vim.keymap.set('n', '<space>uwg', ':Telescope grep_string<CR>', { silent = true })
-    vim.keymap.set('n', '<space>utt', ':Telescope telescope-tabs list_tabs<CR>', { silent = true })
-    vim.keymap.set('n', '<space>uts', ':Telescope treesitter<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ud', ':Telescope diagnostics<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ub', ':Telescope buffers<CR>', { silent = true })
-    vim.keymap.set('n', '<space>us', ':Telescope tagstack<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ur', ':Telescope resume<CR>', { silent = true })
-    vim.keymap.set('n', '<space>up', ':Telescope pickers<CR>', { silent = true })
-    vim.keymap.set('n', '<space>uld', ':Telescope lsp_definitions<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ulr', ':Telescope lsp_references<CR>', { silent = true })
-    vim.keymap.set('n', '<space>uli', ':Telescope lsp_implementations<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ulsd', ':Telescope lsp_document_symbols<CR>', { silent = true })
-    vim.keymap.set('n', '<space>ulsw', ':Telescope lsp_workspace_symbols<CR>', { silent = true })
-    vim.keymap.set('n', '<space>uaf', ':Telescope flutter commands<CR>', { silent = true })
   end,
+  keys = {
+    { '<Space>uu', ':Telescope builtin<CR>', { silent = true } },
+    { '<Space>uf', ':Telescope find_files<CR>', { silent = true } },
+    { '<Space>um', ':Telescope oldfiles<CR>', { silent = true } },
+    { '<Space>ug', ':Telescope live_grep_args<CR>', { silent = true } },
+    { '<Space>uwg', ':Telescope grep_string<CR>', { silent = true } },
+    { '<Space>utt', ':Telescope telescope-tabs list_tabs<CR>', { silent = true } },
+    { '<Space>uts', ':Telescope treesitter<CR>', { silent = true } },
+    { '<Space>ud', ':Telescope diagnostics<CR>', { silent = true } },
+    { '<Space>ub', ':Telescope buffers<CR>', { silent = true } },
+    { '<Space>us', ':Telescope tagstack<CR>', { silent = true } },
+    { '<Space>ur', ':Telescope resume<CR>', { silent = true } },
+    { '<Space>up', ':Telescope pickers<CR>', { silent = true } },
+    { '<Space>uld', ':Telescope lsp_definitions<CR>', { silent = true } },
+    { '<Space>ulr', ':Telescope lsp_references<CR>', { silent = true } },
+    { '<Space>uli', ':Telescope lsp_implementations<CR>', { silent = true } },
+    { '<Space>ulsd', ':Telescope lsp_document_symbols<CR>', { silent = true } },
+    { '<Space>ulsw', ':Telescope lsp_workspace_symbols<CR>', { silent = true } },
+    { '<Space>uaf', ':Telescope flutter commands<CR>', { silent = true } },
+  },
 }
