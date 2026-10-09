@@ -2,24 +2,25 @@ return {
   {
     'EdenEast/nightfox.nvim',
     lazy = false, -- メインのやつなので遅延読み込みしない
-    priority = 1000,
-    config = function()
-      require('nightfox').setup({
-        options = {
-          -- transparent = true,
-        },
-        groups = {
-          all = {
-            -- これらはデフォルトは細くて見づらい
-            VertSplit = { bg = 'bg0' },
-            WinSeparator = { bg = 'bg0' },
+    priority = 1000, -- lualine より大きい値に設定して先に読み込む
+    opts = {
+      options = {
+        -- transparent = true,
+      },
+      groups = {
+        all = {
+          -- これらはデフォルトは細くて見づらい
+          VertSplit = { bg = 'bg0' },
+          WinSeparator = { bg = 'bg0' },
 
-            -- 境界をわかりやすくする
-            TreesitterContextBottom = { style = 'underline', sp = 'fg3' },
-          },
+          -- 境界をわかりやすくする
+          TreesitterContextBottom = { style = 'underline', sp = 'fg3' },
         },
-      })
-      vim.cmd('colorscheme nordfox') -- lualine の前に呼び出しておく
+      },
+    },
+    config = function()
+      -- lualine より先に呼び出したい
+      vim.cmd.colorscheme('nordfox')
     end,
   },
   {
