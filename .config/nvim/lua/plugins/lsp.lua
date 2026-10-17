@@ -16,6 +16,7 @@ return {
         'biome',
         'ruby_lsp',
         'sorbet',
+        'sourcekit',
         'tsp_server',
       })
 
