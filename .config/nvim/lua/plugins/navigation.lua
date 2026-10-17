@@ -47,6 +47,20 @@ return {
   {
     'stevearc/aerial.nvim',
     event = 'VeryLazy',
+    opts = {
+      -- デフォルトに Namespace を追加
+      filter_kind = {
+        'Class',
+        'Constructor',
+        'Enum',
+        'Function',
+        'Interface',
+        'Module',
+        'Method',
+        'Namespace',
+        'Struct',
+      },
+    },
     config = true,
     keys = {
       { ']a', ':AerialNext<CR>', { silent = true } },
