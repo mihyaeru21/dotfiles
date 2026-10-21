@@ -20,6 +20,13 @@ return {
           num_pickers = 100,
           limit_entries = 1000,
         },
+        mappings = {
+          n = {
+            ['t'] = 'select_tab',
+            ['s'] = 'select_horizontal',
+            ['v'] = 'select_vertical',
+          }
+        }
       },
     })
 
@@ -47,5 +54,6 @@ return {
     { '<Space>ulsd', ':Telescope lsp_document_symbols<CR>', { silent = true } },
     { '<Space>ulsw', ':Telescope lsp_workspace_symbols<CR>', { silent = true } },
     { '<Space>uaf', ':Telescope flutter commands<CR>', { silent = true } },
+    { '<Space>uh', ':Telescope help_tags<CR>', { silent = true } },
   },
 }
