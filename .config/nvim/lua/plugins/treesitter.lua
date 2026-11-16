@@ -21,6 +21,16 @@ return {
         foldsep = ' ',
         foldinner = ' ',
       }
+
+      -- syntax highlight
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('treesitter_start', { clear = true }),
+        callback = function(args)
+          -- パーサーがある場合だけ start する
+          local lang = vim.treesitter.language.get_lang(args.match)
+          if lang and vim.treesitter.language.add(lang) then vim.treesitter.start(args.buf, lang) end
+        end,
+      })
     end,
   },
   {
